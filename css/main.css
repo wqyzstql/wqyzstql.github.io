@@ -1833,7 +1833,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #2bf617;
+  background: #ff22c3;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2810,9 +2810,9 @@ ul.breadcrumb li+li:last-child {
   font-family: "Microsoft Yahei";
   cursor: pointer;
 }
-.close:after {
-  content: " ▼";
+* {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword2.ico"), auto !important;
 }
-.open:after {
-  content: " ▲";
+:active {
+  cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
 }

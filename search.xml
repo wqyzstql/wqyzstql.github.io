@@ -12,6 +12,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[qbxt D2T2 Code 题解]]></title>
+    <url>%2F2018%2F11%2F04%2F%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[看了一眼之后完全就是一脸懵逼的题….]]></content>
+      <tags>
+        <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[题解] Noip2016D1T3 换教室]]></title>
     <url>%2F2018%2F11%2F02%2F%E6%8D%A2%E6%95%99%E5%AE%A4%E9%A2%98%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[一道被天天爱跑步抢尽了风头的最没有排面的$T3…..$说实话，这道题我刚开始是不会的，然后我看了L_Y_T大爷的$Blog$之后才恍然大悟（$Blog$写的很好，赞一个）先安利完$Blog$再说L_Y_T大爷的Blog 看了$Blog$之后,突然发现，这东西要求的概率知识点我都是会的，只是DP式子想不出来而已$qaq…$(我好菜啊) 因为题目中说，我们最多可以换$m$次，而题目中说的你只能在开始之前选择方案的说法完全没用，毕竟谁会知道你是预测了未来呢（逃 然后，因为有$n$个课程，所以我们设$f[i][j][0/1]$来表示第i个点,第j次换,换不换 然后我们分情况来表示转移：每个教室分为两种情况 1.换2.不换这个是挺平常的然后复杂在换与不换的分情况上了~~~不换:不换是分为这样几种情况:上一个也不换 , 上一个换 且成功,上一个换但失败同理,换也有好多种情况:上一个点不换,这个点失败上一个点不换,这个点成功上一个点换成功,这个点成功上一个点换成功,这个点失败上一个点换失败,这个点成功上一个点换失败,这个点也失败 然后方程好复杂的，是：1234567891011121314151617181920212223242526 上一点不换:f[i-1][j-1][0]这一点换1.失败消耗体力: dis[c[i-1]][c[i]] 分析: 由于上一个点不换,所以上一个点一定是在c[]中的;假定这次失败,那么这次也只能去c[]中的教室;2.成功消耗体力: dis[c[i-1]][d[i]]分析: 由于上一个点不换,所以上一个点一定是在c[]中的;假定这次成功,那么这次能去d[]中的教室;那么,失败的概率是1-k[],成功的概率是k[].综上,这种情况就是:f[i-1][j-1][0]+dis[c[i-1]][d[i]]*k[i]+dis[c[i-1]][c[i]]*(1.0-k[i]) 同理,上一点换,这一点换1.上一点失败,这一点失败(以后省一点哈)消耗体力: dis[c[i-1]][c[i]]概率:都失败这运气也没谁了!!!! 概率:(1.0-k[i-1])*(1.0-k[i])2.失败,成功消耗体力: dis[c[i-1]][d[i]]概率 : (1.0-k[i-1])*k[i]3.成功,失败消耗体力 : dis[d[i-1]][c[i]]概率: k[i-1]*(1.0-k[i])4.成功,成功消耗体力: dis[d[i-1]][d[i]] 概率: k[i-1]*k[i] 然后对于不换的方程：12f[i][j][0] = min(f[i-1][j][0]+dis[c[i-1]][c[i]],f[i-1][j][1]+dis[c[i-1]][c[i]]*(1.0-k[i-1])+dis[d[i-1]][c[i]]*k[i-1]) ; 之前需要Floyd预处理一下，然后就好啦(这道题的确比天天爱跑步简单23333)123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;const int N = 2050;const int M = 350;int n , m , v , e;int c[N] , d[N] ;double G[M][M] , f[N][N][2];double k[N];template &lt; class T &gt;inline T min ( T x , T y ) &#123; return x &lt; y ? x : y;&#125;int main ( void ) &#123; scanf ( "%d%d%d%d" , &amp;n , &amp;m , &amp;v , &amp;e ); for ( int i = 1 ; i &lt;= n ; i++ ) scanf ( "%d" , &amp;c[i] ); for ( int i = 1 ; i &lt;= n ; i++ ) scanf ( "%d" , &amp;d[i] ); for ( int i = 1 ; i &lt;= n ; i++ ) scanf ( "%lf" , &amp;k[i] ); for ( int i = 1 ; i &lt;= v ; i++ ) for ( int j = 1 ; j &lt;= v ; j++ ) G[i][j] = 0x3f3f3f3f; for ( int i = 1 ; i &lt;= n ; i++ ) for ( int j = 0 ; j &lt;= m ; j++ ) f[i][j][0] = f[i][j][1] = 0x3f3f3f3f; for ( int i = 1 ; i &lt;= v ; i++ ) G[i][i] = 0 ; for ( int i = 1 ; i &lt;= e ; i++ ) &#123; int x , y; double z; scanf ( "%d%d%lf" , &amp;x , &amp;y , &amp;z ); if ( G[x][y] &gt; z ) G[x][y] = G[y][x] = z; &#125; for ( int l = 1 ; l &lt;= v ; l++ ) for ( int i = 1 ; i &lt;= v ; i++ ) for ( int j = 1 ; j &lt;= v ; j++ ) G[i][j] = min ( G[i][j] , G[i][l] + G[l][j] ); f[1][0][0] = f[1][1][1] = 0.0000; for ( int i = 2 ; i &lt;= n ; i++ ) for ( int j = 0 ; j &lt;= min ( i , m ) ; j++ ) &#123; f[i][j][0] = min ( f[i - 1][j][0] + G[c[i - 1]][c[i]] , f[i - 1][j][1] + G[c[i - 1]][c[i]] * ( 1.0 - k[i - 1] ) + G[d[i - 1]][c[i]] * k[i - 1] ); if(j &gt;= 1) &#123; f[i][j][1] = min ( f[i - 1][j - 1][0] + G[c[i - 1]][d[i]] * k[i] + G[c[i - 1]][c[i]] * ( 1.0 - k[i] ) , f[i - 1][j - 1][1] + G[c[i - 1]][c[i]] * ( 1.0 - k[i - 1] ) * ( 1.0 - k[i] ) + G[c[i - 1]][d[i]] *k[i] * ( 1.0 - k[i - 1] ) + G[d[i - 1]][c[i]] * k[i - 1]* ( 1.0 - k[i] ) + G[d[i - 1]][d[i]] * k[i - 1] * k[i] ); &#125; &#125; double ans = 0x7fffffff; for ( int i = 0 ; i &lt;= m ; i++ ) for ( int j = 0 ; j &lt;= 1 ; j++ ) ans = min ( ans , f[n][i][j] ); printf ( "%.2lf\n" , ans ) ; return 0 ;&#125;]]></content>
@@ -31,14 +39,6 @@
     <title><![CDATA[[POI2015]WIL-Wilcze题解]]></title>
     <url>%2F2018%2F11%2F02%2FPOI2015-WIL-Wilcze%E9%A2%98%E8%A7%A3%2F</url>
     <content type="text"><![CDATA[其实这本来是$QBXT$的$T2$，但是由于毒瘤$zhw$跑得快（雾），导致我们发现这是某$poi$原题。 首先看题面:题目链接 详细读了一遍之后，其实对于这道题，我的第一反应是贪心（也许是因为我太菜了）。然后打了一遍，小样例过了，然后被大样例$hack$。 之后我又用命分析了一下。可以发现，因为题目中保证每个数的值全部$&gt;=0$，即每个数都是正整数。所以我们与其选长度不到$d$的区间删除，不如直接选择长度为$d$的区间删除。 那么在一段长度已知的序列中，长度为$d$的子序列个数是已知的，那么我们就可以预处理出每一段长度为$d$的子序列。然后我们又发现，题目中要求区间的长度不超过p，那么我们很明显的可以想到尺取法。 然后我们就可以用单调队列来维护我们预处理出的这些长度为$d$的子序列。然后对于区间长度取$max$就是答案了。 最后怒斥一波出原题的出题人$qaq$….(虽然$zhw$很帅) 代码： 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include&lt;cstdio&gt;#include&lt;deque&gt;typedef long long ll;using std::deque;const ll N=2000010;ll n,p,d;ll a[N];ll sum[N];ll hea[N];struct Node&#123; ll pos,val; Node(ll pos,ll val):pos(pos),val(val)&#123;&#125; Node()&#123;&#125;&#125;;inline void read(ll &amp;x)&#123; ll s=0,w=1; char ch=getchar(); while(ch&gt;'9'||ch&lt;'0')&#123;if(ch=='-')w=-1;ch=getchar();&#125; while(ch&gt;='0'&amp;&amp;ch&lt;='9')&#123;s=s*10+ch-'0';ch=getchar();&#125; x=s*w; return;&#125;deque&lt;Node&gt;q;int main()&#123; read(n);read(p);read(d); for(int i=1;i&lt;=n;i++)read(a[i]),sum[i]=sum[i-1]+a[i]; for(int i=1;i&lt;=n-d;i++) hea[i]=sum[i+d]-sum[i]; for(int i=n-d+1;i&lt;=n;i++) hea[i]=sum[n]-sum[i]; ll ans=0; int l=0; for(int i=d+1;i&lt;=n;i++) &#123; while(!q.empty()&amp;&amp;q.back().val&lt;hea[i-d])q.pop_back(); q.push_back(Node(i-d,hea[i-d])); while(l&lt;i-d&amp;&amp;sum[i]-sum[l]-q.front().val&gt;p) &#123; l++; while(l&gt;q.front().pos)q.pop_front(); &#125; ans=std::max(ans,(ll)i-l); &#125; printf("%lld",ans); return 0;&#125;]]></content>
-      <tags>
-        <tag>题解</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[qbxt D2T2 Code 题解]]></title>
-    <url>%2F2018%2F11%2F02%2F%E9%A2%98%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[看了一眼之后完全就是一脸懵逼的题….]]></content>
       <tags>
         <tag>题解</tag>
       </tags>

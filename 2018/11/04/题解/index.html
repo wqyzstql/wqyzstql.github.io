@@ -146,25 +146,25 @@
   <meta name="keywords" content="题解," />
 
 
-<meta name="description" content="一道被天天爱跑步抢尽了风头的最没有排面的$T3…..$">
+<meta name="description" content="看了一眼之后完全就是一脸懵逼的题….">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[题解] Noip2016D1T3 换教室">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/换教室题解/index.html">
+<meta property="og:title" content="qbxt D2T2 Code 题解">
+<meta property="og:url" content="http://yoursite.com/2018/11/04/题解/index.html">
 <meta property="og:site_name" content="Wqyzstql_Blog">
-<meta property="og:description" content="一道被天天爱跑步抢尽了风头的最没有排面的$T3…..$">
+<meta property="og:description" content="看了一眼之后完全就是一脸懵逼的题….">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-02T03:35:04.315Z">
+<meta property="og:updated_time" content="2018-11-04T11:01:58.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[题解] Noip2016D1T3 换教室">
-<meta name="twitter:description" content="一道被天天爱跑步抢尽了风头的最没有排面的$T3…..$">
+<meta name="twitter:title" content="qbxt D2T2 Code 题解">
+<meta name="twitter:description" content="看了一眼之后完全就是一脸懵逼的题….">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/02/换教室题解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/04/题解/"/>
 
 
 
@@ -173,7 +173,7 @@
     sidebar: "",
   };
 </script>
-  <title>[题解] Noip2016D1T3 换教室 | Wqyzstql_Blog</title>
+  <title>qbxt D2T2 Code 题解 | Wqyzstql_Blog</title>
   
 
 
@@ -362,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/换教室题解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/题解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wqyzstql">
@@ -379,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[题解] Noip2016D1T3 换教室</h1>
+          <h1 class="post-title" itemprop="name headline">qbxt D2T2 Code 题解</h1>
         
 
         <div class="post-meta">
@@ -392,7 +392,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-02T11:10:17+08:00">2018-11-02</time>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-04T10:40:29+08:00">2018-11-04</time>
             
 
             
@@ -410,9 +410,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/换教室题解/#comments" itemprop="discussionUrl">
+                <a href="/2018/11/04/题解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/02/换教室题解/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/11/04/题解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -420,7 +420,7 @@
 
           
           
-             <span id="/2018/11/02/换教室题解/" class="leancloud_visitors" data-flag-title="[题解] Noip2016D1T3 换教室">
+             <span id="/2018/11/04/题解/" class="leancloud_visitors" data-flag-title="qbxt D2T2 Code 题解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -451,15 +451,8 @@
       
 
       
-        <p>一道被天天爱跑步抢尽了风头的最没有排面的$T3…..$<br><a id="more"></a><br>说实话，这道题我刚开始是不会的，然后我看了<br>L_Y_T大爷的$Blog$之后才恍然大悟（$Blog$写的很好，赞一个）<br>先安利完$Blog$再说<br><a href="https://blog.csdn.net/L_Y_T020321/article/details/82498661" target="_blank" rel="noopener">L_Y_T大爷的Blog</a>  </p>
-<p>看了$Blog$之后,突然发现，这东西要求的概率知识点我都是会的，只是DP式子想不出来而已$qaq…$(我好菜啊)  </p>
-<p>因为题目中说，我们最多可以换$m$次，而题目中说的你只能在开始之前选择方案的说法完全没用，毕竟谁会知道你是预测了未来呢（逃  </p>
-<p>然后，因为有$n$个课程，所以我们设$f[i][j][0/1]$来表示<strong>第i个点,第j次换,换不换</strong>  </p>
-<p>然后我们分情况来表示转移：<br>每个教室分为两种情况</p>
-<p>1.换<br>2.不换<br>这个是挺平常的<br>然后复杂在换与不换的分情况上了~~~<br>不换:<br>不换是分为这样几种情况:<br>上一个也不换 , 上一个换 且成功,上一个换但失败<br>同理,换也有好多种情况:<br>上一个点不换,这个点失败<br>上一个点不换,这个点成功<br>上一个点换成功,这个点成功<br>上一个点换成功,这个点失败<br>上一个点换失败,这个点成功<br>上一个点换失败,这个点也失败</p>
-<p>然后方程好复杂的，是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">上一点不换:f[i<span class="number">-1</span>][j<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">这一点换</span><br><span class="line"><span class="number">1.</span>失败</span><br><span class="line">消耗体力: dis[c[i<span class="number">-1</span>]][c[i]] </span><br><span class="line">分析: 由于上一个点不换,所以上一个点一定是在c[]中的;假定这次失败,那么这次也只能去c[]中的教室;</span><br><span class="line"><span class="number">2.</span>成功</span><br><span class="line">消耗体力: dis[c[i<span class="number">-1</span>]][d[i]]</span><br><span class="line">分析: 由于上一个点不换,所以上一个点一定是在c[]中的;假定这次成功,那么这次能去d[]中的教室;</span><br><span class="line">那么,失败的概率是<span class="number">1</span>-k[],成功的概率是k[].</span><br><span class="line">综上,这种情况就是:</span><br><span class="line">f[i<span class="number">-1</span>][j<span class="number">-1</span>][<span class="number">0</span>]+dis[c[i<span class="number">-1</span>]][d[i]]*k[i]+dis[c[i<span class="number">-1</span>]][c[i]]*(<span class="number">1.0</span>-k[i])</span><br><span class="line"> </span><br><span class="line">同理,上一点换,这一点换</span><br><span class="line"><span class="number">1.</span>上一点失败,这一点失败(以后省一点哈)</span><br><span class="line">消耗体力: dis[c[i<span class="number">-1</span>]][c[i]]</span><br><span class="line">概率:都失败这运气也没谁了!!!! 概率:(<span class="number">1.0</span>-k[i<span class="number">-1</span>])*(<span class="number">1.0</span>-k[i])</span><br><span class="line"><span class="number">2.</span>失败,成功</span><br><span class="line">消耗体力: dis[c[i<span class="number">-1</span>]][d[i]]</span><br><span class="line">概率 : (<span class="number">1.0</span>-k[i<span class="number">-1</span>])*k[i]</span><br><span class="line"><span class="number">3.</span>成功,失败</span><br><span class="line">消耗体力 : dis[d[i<span class="number">-1</span>]][c[i]]</span><br><span class="line">概率: k[i<span class="number">-1</span>]*(<span class="number">1.0</span>-k[i])</span><br><span class="line"><span class="number">4.</span>成功,成功</span><br><span class="line">消耗体力: dis[d[i<span class="number">-1</span>]][d[i]] </span><br><span class="line">概率: k[i<span class="number">-1</span>]*k[i]</span><br></pre></td></tr></table></figure></p>
-<p>然后对于不换的方程：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f[i][j][<span class="number">0</span>] = min(f[i<span class="number">-1</span>][j][<span class="number">0</span>]+dis[c[i<span class="number">-1</span>]][c[i]],</span><br><span class="line">f[i<span class="number">-1</span>][j][<span class="number">1</span>]+dis[c[i<span class="number">-1</span>]][c[i]]*(<span class="number">1.0</span>-k[i<span class="number">-1</span>])+dis[d[i<span class="number">-1</span>]][c[i]]*k[i<span class="number">-1</span>]) ;</span><br></pre></td></tr></table></figure></p>
-<p>之前需要Floyd预处理一下，然后就好啦<br>(这道题的确比天天爱跑步简单23333)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2050</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">350</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n , m , v , e;</span><br><span class="line"><span class="keyword">int</span> c[N] , d[N] ;</span><br><span class="line"><span class="keyword">double</span> G[M][M] , f[N][N][<span class="number">2</span>];</span><br><span class="line"><span class="keyword">double</span> k[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt; <span class="class"><span class="keyword">class</span> <span class="title">T</span> &gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">T</span> <span class="title">min</span> ( <span class="title">T</span> <span class="title">x</span> , <span class="title">T</span> <span class="title">y</span> ) &#123;</span></span><br><span class="line">    <span class="keyword">return</span> x &lt; y ? x : y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span> ( <span class="string">"%d%d%d%d"</span> , &amp;n , &amp;m , &amp;v , &amp;e );</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++ ) </span><br><span class="line">    	<span class="built_in">scanf</span> ( <span class="string">"%d"</span> , &amp;c[i] );</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++ ) </span><br><span class="line">    	<span class="built_in">scanf</span> ( <span class="string">"%d"</span> , &amp;d[i] );</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++ ) </span><br><span class="line">    	<span class="built_in">scanf</span> ( <span class="string">"%lf"</span> , &amp;k[i] );</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= v ; i++ ) </span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= v ; j++ ) </span><br><span class="line">            G[i][j] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i++ ) </span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= m ; j++ ) </span><br><span class="line">            f[i][j][<span class="number">0</span>] = f[i][j][<span class="number">1</span>] = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= v ; i++ )</span><br><span class="line">        G[i][i] = <span class="number">0</span> ;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= e ; i++ ) &#123;</span><br><span class="line">    	<span class="keyword">int</span> x , y;</span><br><span class="line">    	<span class="keyword">double</span> z;</span><br><span class="line">    	<span class="built_in">scanf</span> ( <span class="string">"%d%d%lf"</span> , &amp;x , &amp;y , &amp;z );</span><br><span class="line">    	<span class="keyword">if</span> ( G[x][y] &gt; z ) </span><br><span class="line">    		G[x][y] = G[y][x] = z;</span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> l = <span class="number">1</span> ; l &lt;= v ; l++ ) </span><br><span class="line">    	<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= v ; i++ ) </span><br><span class="line">    		<span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= v ; j++ ) </span><br><span class="line">    			G[i][j] = min ( G[i][j] , G[i][l] + G[l][j] );</span><br><span class="line">    f[<span class="number">1</span>][<span class="number">0</span>][<span class="number">0</span>] = f[<span class="number">1</span>][<span class="number">1</span>][<span class="number">1</span>] = <span class="number">0.0000</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= n ; i++ )</span><br><span class="line">    	<span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= min ( i , m ) ; j++ ) &#123;</span><br><span class="line">            f[i][j][<span class="number">0</span>] = min ( f[i - <span class="number">1</span>][j][<span class="number">0</span>] + G[c[i - <span class="number">1</span>]][c[i]] , f[i - <span class="number">1</span>][j][<span class="number">1</span>] + G[c[i - <span class="number">1</span>]][c[i]]</span><br><span class="line">                * ( <span class="number">1.0</span> - k[i - <span class="number">1</span>] ) + G[d[i - <span class="number">1</span>]][c[i]] * k[i - <span class="number">1</span>] );</span><br><span class="line">            <span class="keyword">if</span>(j &gt;= <span class="number">1</span>) &#123;</span><br><span class="line">                f[i][j][<span class="number">1</span>] = min ( f[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">0</span>] + G[c[i - <span class="number">1</span>]][d[i]] * k[i] + G[c[i - <span class="number">1</span>]][c[i]] * ( <span class="number">1.0</span> - k[i] ) ,</span><br><span class="line">                f[i - <span class="number">1</span>][j - <span class="number">1</span>][<span class="number">1</span>] + G[c[i - <span class="number">1</span>]][c[i]] * ( <span class="number">1.0</span> - k[i - <span class="number">1</span>] ) * ( <span class="number">1.0</span> - k[i] ) + G[c[i - <span class="number">1</span>]][d[i]]</span><br><span class="line">                *k[i] * ( <span class="number">1.0</span> - k[i - <span class="number">1</span>] ) + G[d[i - <span class="number">1</span>]][c[i]] * k[i - <span class="number">1</span>]* ( <span class="number">1.0</span> - k[i] ) + G[d[i - <span class="number">1</span>]][d[i]] * k[i - <span class="number">1</span>] * k[i] );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">double</span> ans = <span class="number">0x7fffffff</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= m ; i++ ) </span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= <span class="number">1</span> ; j++ ) </span><br><span class="line">            ans = min ( ans , f[n][i][j] );</span><br><span class="line">    <span class="built_in">printf</span> ( <span class="string">"%.2lf\n"</span> , ans ) ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>看了一眼之后完全就是一脸懵逼的题….</p>
+<a id="more"></a>
 
       
     </div>
@@ -493,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/概率入门/" rel="next" title="概率入门">
-                <i class="fa fa-chevron-left"></i> 概率入门
+              <a href="/2018/11/02/换教室题解/" rel="next" title="[题解] Noip2016D1T3 换教室">
+                <i class="fa fa-chevron-left"></i> [题解] Noip2016D1T3 换教室
               </a>
             
           </div>
@@ -503,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/04/题解/" rel="prev" title="qbxt D2T2 Code 题解">
-                qbxt D2T2 Code 题解 <i class="fa fa-chevron-right"></i>
+              <a href="/9999/10/13/My_Code_Style/" rel="prev" title="My_Code_Style">
+                My_Code_Style <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -849,9 +842,9 @@ var jiathis_config={
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/11/02/换教室题解/';
-        this.page.identifier = '2018/11/02/换教室题解/';
-        this.page.title = '[题解] Noip2016D1T3 换教室';
+        this.page.url = 'http://yoursite.com/2018/11/04/题解/';
+        this.page.identifier = '2018/11/04/题解/';
+        this.page.title = 'qbxt D2T2 Code 题解';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

@@ -1870,7 +1870,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #adffc7;
+  background: #862b18;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2971,7 +2971,7 @@ ul.breadcrumb li+li:last-child {
   }
 }
 body {
-  background: url("https://i.loli.net/2019/09/11/VcwNxkvt27lpABX.png");
+  background: url("");
 }
 .main-inner {
   opacity: 0.8;
@@ -2985,4 +2985,15 @@ body {
 }
 :active {
   cursor: url("http://om8u46rmb.bkt.clouddn.com/sword1.ico"), auto !important;
+}
+@media screen and (min-width: 1200px) {
+  body {
+    background-image: url("/images/1.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 40% 50%;
+  }
+  #footer a {
+    color: #eee;
+  }
 }

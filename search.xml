@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[题解:树]]></title>
     <url>%2F2019%2F09%2F12%2F%E9%A2%98%E8%A7%A3-%E6%A0%91%2F</url>
-    <content type="text"><![CDATA[暴力都不想写的题… 考虑到题目中]]></content>
+    <content type="text"><![CDATA[暴力都不想写的题… 考虑到题目中要求的最小的那个东西不太好求所以我们可以找一个最大的符合条件的值,我们记为$tmp$,那么有$ans=tmp+1$ 那我们考虑一下这个$tmp$怎么求.]]></content>
       <categories>
         <category>OI</category>
       </categories>

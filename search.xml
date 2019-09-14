@@ -12,6 +12,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[数据生成]]></title>
+    <url>%2F2019%2F09%2F14%2F%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%2F</url>
+    <content type="text"><![CDATA[图和树的数据生成器 图有向图和无向图同样适用的数据生成器,可生成随机图 12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstdlib&gt;#include&lt;cstring&gt;#include&lt;set&gt;#include&lt;ctime&gt;#include&lt;iostream&gt;using namespace std;int n,m,s,T;inline int random() &#123; static int seed = s; return seed = (int)(seed*48271ll%2147483647);&#125;set&lt;int&gt;to[100005];//去重int main() &#123; srand ( time ( NULL ) ) ; cin &gt;&gt; T; cout &lt;&lt; T &lt;&lt; endl; while(T--) &#123; s = rand(); n = 96; m = 102; printf("%d %d \n",n,m); for(int i = 1 ; i &lt;= m ; i++) &#123; int u = random() % n + 1; int v = random() % n + 1; while(to[u].find(v) != to[u].end() || u == v) &#123; u = random() % n + 1; v = random() % n + 1; &#125; printf("%d %d\n",u,v); to[u].insert(v); &#125; printf("\n"); &#125; return 0;&#125; 树保证数据为一棵随机树 1234567891011121314151617181920212223242526272829303132333435363738#include&lt;iostream&gt;#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;ctime&gt;#include&lt;cstring&gt;#include&lt;cstdlib&gt;using namespace std;int a[10005],e[10005][2];int n = 1000;bool flag[10005];int main() &#123; freopen("testdata.in","w",stdout); printf("%d\n",n); for(int i = 1 ; i &lt;= n ; i++) &#123; a[i] = rand() % n + 1; while(flag[a[i]]) a[i] = rand() % n + 1; flag[a[i]] = 1; &#125; for(int i = 2 ; i &lt;= n ; i++) &#123; e[i-1][0] = a[i]; e[i-1][1] = a[rand() % (i - 1) + 1]; &#125; memset(flag,0,sizeof(flag)); for(int i = 1 ; i &lt; n ; i++) &#123; int x = rand() % (n - 1) + 1; while(flag[x]) x = rand() % (n - 1) + 1; flag[x] = 1; int f = rand() % 2; if(f) printf("%d %d\n",e[x][0],e[x][1]); else printf("%d %d\n",e[x][1],e[x][0]); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>知识水平</category>
+      </categories>
+      <tags>
+        <tag>数据制造</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[普及五联测D1]]></title>
     <url>%2F2019%2F09%2F14%2F%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD1%2F</url>
     <content type="text"><![CDATA[版权原因,题面不公开 还没写完呢]]></content>

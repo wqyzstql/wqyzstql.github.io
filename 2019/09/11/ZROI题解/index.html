@@ -156,7 +156,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/09/08/oDFaG84Hwk6ScyR.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/09/XVBmHuNLRrtxlf2.png">
-<meta property="og:updated_time" content="2019-09-14T06:44:05.205Z">
+<meta property="og:updated_time" content="2019-09-15T13:37:26.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZROI普转提D1题解">
 <meta name="twitter:description" content="版权问题,题面不公开">
@@ -505,6 +505,10 @@
 <p>但是直接这样枚举是$O(3^m)$的时间复杂度,我们考虑一下怎么优化:  </p>
 <p>我们发现,对于每一个状态$i$,它能贡献的只有将它作为子集的状态那么我们发现,如果我们枚举第$j$位是$1$的话.那么如果一个状态$i$去异或这个$(1&lt;&lt;j)$,那么我们可以发现新状态$i \bigoplus (1&lt;&lt;j)$的$1$的个数一定比现在的状态$i$的$1$的个数至少少$1$.换句话说$i \bigoplus (1&lt;&lt;j)$这个状态一定是$i$这个状态的子集.所以我们只需要枚举$m$,然后$2^m$枚举状态做个前缀和,当我们会发现,这个前缀和就是$cnt$数组,然后我们就可以愉快的根据上边的式子推答案了.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt; </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=(<span class="number">1</span>&lt;&lt;<span class="number">21</span>)+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> HA=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,ans;</span><br><span class="line"><span class="keyword">int</span> poww[N],cnt[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(x) &#123;</span><br><span class="line">		x -= (x&amp;-x);</span><br><span class="line">		cnt++;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</span><br><span class="line">	poww[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">		poww[i]=<span class="number">1l</span>l*(poww[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>)%HA;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t,tmp=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">        <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        	<span class="keyword">int</span> x;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">			tmp|=<span class="number">1</span>&lt;&lt;(x<span class="number">-1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">        cnt[tmp]++;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=(<span class="number">1</span>&lt;&lt;m)<span class="number">-1</span>;j++)</span><br><span class="line">            <span class="keyword">if</span>(j&amp;(<span class="number">1</span>&lt;&lt;i))</span><br><span class="line">				cnt[j]+=cnt[j^(<span class="number">1</span>&lt;&lt;i)];   </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=(<span class="number">1</span>&lt;&lt;m)<span class="number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>((cal(i)&amp;<span class="number">1</span>)==(m&amp;<span class="number">1</span>))</span><br><span class="line">			ans=(ans+poww[cnt[i]])%HA;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">			ans=(ans-poww[cnt[i]]+HA)%HA;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
       
     </div>
 
@@ -525,7 +529,7 @@
   <p><span>本文标题:</span><a href="/2019/09/11/ZROI题解/">ZROI普转提D1题解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年09月11日 - 20:09</p>
-  <p><span>最后更新:</span>2019年09月14日 - 14:09</p>
+  <p><span>最后更新:</span>2019年09月15日 - 21:09</p>
   <p><span>原始链接:</span><a href="/2019/09/11/ZROI题解/" title="ZROI普转提D1题解">http://yoursite.com/2019/09/11/ZROI题解/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/09/11/ZROI题解/"  aria-label="复制成功！"></i></span>
   </p>
@@ -696,7 +700,7 @@ var jiathis_config={
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -850,7 +854,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共23.8k字</span>
+  <span class="post-count">博客全站共24.8k字</span>
 </div>
 
         

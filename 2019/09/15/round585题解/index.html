@@ -143,30 +143,27 @@
 </style>
 
   
-  <meta name="keywords" content="学习笔记," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
-<meta name="description" content="其实这道初赛题是我第一次做的概率题">
-<meta name="keywords" content="学习笔记">
+<meta name="description" content="qwq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率入门">
-<meta property="og:url" content="http://yoursite.com/2018/11/02/概率入门/index.html">
+<meta property="og:title" content="CodeForces round585题解">
+<meta property="og:url" content="http://yoursite.com/2019/09/15/round585题解/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="其实这道初赛题是我第一次做的概率题">
+<meta property="og:description" content="qwq">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2018/10/12/5bc08e4948a41.jpg">
-<meta property="og:updated_time" content="2019-09-11T12:38:21.862Z">
+<meta property="og:updated_time" content="2019-09-15T13:37:08.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率入门">
-<meta name="twitter:description" content="其实这道初赛题是我第一次做的概率题">
-<meta name="twitter:image" content="https://i.loli.net/2018/10/12/5bc08e4948a41.jpg">
+<meta name="twitter:title" content="CodeForces round585题解">
+<meta name="twitter:description" content="qwq">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/02/概率入门/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/15/round585题解/"/>
 
 
 
@@ -175,7 +172,7 @@
     sidebar: "",
   };
 </script>
-  <title>概率入门 | KRrrrrrrrr_Blog</title>
+  <title>CodeForces round585题解 | KRrrrrrrrr_Blog</title>
   
 
 
@@ -376,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/02/概率入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/15/round585题解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KRrrrrrrrr">
@@ -393,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">概率入门</h1>
+          <h1 class="post-title" itemprop="name headline">CodeForces round585题解</h1>
         
 
         <div class="post-meta">
@@ -406,7 +403,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T11:04:29+08:00">2018-11-02</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-15T18:27:30+08:00">2019-09-15</time>
             
 
             
@@ -442,9 +439,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/02/概率入门/#comments" itemprop="discussionUrl">
+                <a href="/2019/09/15/round585题解/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/02/概率入门/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/09/15/round585题解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,7 +449,7 @@
 
           
           
-             <span id="/2018/11/02/概率入门/" class="leancloud_visitors" data-flag-title="概率入门">
+             <span id="/2019/09/15/round585题解/" class="leancloud_visitors" data-flag-title="CodeForces round585题解">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -483,25 +480,11 @@
       
 
       
-        <p>其实这道初赛题是我第一次做的概率题<br><a id="more"></a></p>
-<p>我们来看一眼这道毒瘤题：   </p>
-<p>题面其实已经很清楚了，我们可以发现，当这个青蛙在第$1$块石头时，那么这只青蛙完全可以不用跳，我们设$f(k)$表示这只青蛙在$k$号荷叶上，<strong>期望</strong>需要$f(k)$次跳到$1$号荷叶，那么我们有：</p>
-<script type="math/tex; mode=display">f(1)=0</script><p>我们接着来考虑当这只青蛙在$2$号荷叶时的情况，它可以跳到$1$号和$2$号荷叶，当它跳到$1$号荷叶时，它完成了任务，跳了一步。当它跳到$2$号时，它还有$f(2)$步，因为每一次跳跃时，跳跃到每一个荷叶上的几率是相等的，所以我们有：</p>
-<script type="math/tex; mode=display">f(2)=[1+(1+f(2))]/2</script><p>同理，我们可以得到：  </p>
-<script type="math/tex; mode=display">f(3)=[1+(1+f(2))+(1+f(3))]/3</script><p>推广到一般形式则有:  </p>
-<script type="math/tex; mode=display">f(k)=[\sum_{i=1}^k{f(i)+1}]/k</script><p>我们化简一下，有：</p>
-<script type="math/tex; mode=display">f(k)=1+\frac {1}{k}\sum_{i=1}^kf(i)</script><hr>
-<p>我们看到这个式子：$f(k)=1+\frac {1}{k}\sum_{i=1}^kf(i)$</p>
-<p><img src="https://i.loli.net/2018/10/12/5bc08e4948a41.jpg" alt="mengbi"></p>
-<p>当$i==k$的时候,我们会发现式子里出现了一个$f(k)$…..  </p>
-<p>这咋求啊</p>
-<hr>
-<p>我们展开这个式子，会发现原来的式子等价于：</p>
-<script type="math/tex; mode=display">f(k)=1+\frac {1}{k}\sum_{i=1}^{k-1}f(i)+\frac 1kf(k)</script><p>这时候如果把$f(k)$看作一个未知数的话，我们可以发现$f(k)$的这一项是可以合并的。<br>但是我们先两边同乘一个$k$，把分母去掉，就会有：  </p>
-<script type="math/tex; mode=display">k*f(k)=k+\sum_{i=1}^{k-1}f(i)+f(k)</script><p>这样答案就很显然了，合并掉等式两边相等的$f(k)$，会得到：</p>
-<script type="math/tex; mode=display">(k-1)*f(k)=k+\sum_{i=1}^{k-1}f(i)</script><p>最后，两边同除$(k-1)$，有最后答案上的公式：</p>
-<script type="math/tex; mode=display">f(k)=\frac{k}{k-1}(1+\frac {\sum_{i=1}^{k-1}f(i)}{k-1})</script><p>通过这个式子计算可以得到$f(5)=\frac{37}{12}$,也就是答案</p>
-<h2 id="做完了QAQ-写Markdown好累啊qwq…"><a href="#做完了QAQ-写Markdown好累啊qwq…" class="headerlink" title="做完了QAQ(写Markdown好累啊qwq…)"></a>做完了QAQ(写Markdown好累啊qwq…)</h2>
+        <p>qwq<br><a id="more"></a></p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
       
     </div>
 
@@ -519,12 +502,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/11/02/概率入门/">概率入门</a></p>
+  <p><span>本文标题:</span><a href="/2019/09/15/round585题解/">CodeForces round585题解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
-  <p><span>发布时间:</span>2018年11月02日 - 11:11</p>
-  <p><span>最后更新:</span>2019年09月11日 - 20:09</p>
-  <p><span>原始链接:</span><a href="/2018/11/02/概率入门/" title="概率入门">http://yoursite.com/2018/11/02/概率入门/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/02/概率入门/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月15日 - 18:09</p>
+  <p><span>最后更新:</span>2019年09月15日 - 21:09</p>
+  <p><span>原始链接:</span><a href="/2019/09/15/round585题解/" title="CodeForces round585题解">http://yoursite.com/2019/09/15/round585题解/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/09/15/round585题解/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -552,12 +535,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/标签/学习笔记/" rel="tag"># 学习笔记</a>
-          
-        </div>
-      
 
       
       
@@ -567,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/POI2015-WIL-Wilcze题解/" rel="next" title="[POI2015]WIL-Wilcze题解">
-                <i class="fa fa-chevron-left"></i> [POI2015]WIL-Wilcze题解
+              <a href="/2019/09/15/普专提D2/" rel="next" title="普专提D2">
+                <i class="fa fa-chevron-left"></i> 普专提D2
               </a>
             
           </div>
@@ -577,8 +554,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/02/换教室题解/" rel="prev" title="[题解] Noip2016D1T3 换教室">
-                [题解] Noip2016D1T3 换教室 <i class="fa fa-chevron-right"></i>
+              <a href="/8012/10/13/My_Code_Style/" rel="prev" title="My_Code_Style">
+                My_Code_Style <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,17 +641,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -786,22 +754,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#做完了QAQ-写Markdown好累啊qwq…"><span class="nav-number">1.</span> <span class="nav-text">做完了QAQ(写Markdown好累啊qwq…)</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -979,9 +931,9 @@ var jiathis_config={
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://yoursite.com/2018/11/02/概率入门/';
-        this.page.identifier = '2018/11/02/概率入门/';
-        this.page.title = '概率入门';
+        this.page.url = 'http://yoursite.com/2019/09/15/round585题解/';
+        this.page.identifier = '2019/09/15/round585题解/';
+        this.page.title = 'CodeForces round585题解';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

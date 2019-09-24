@@ -25,7 +25,7 @@
   <entry>
     <title><![CDATA[普转提七连测D3]]></title>
     <url>%2F2019%2F09%2F22%2FP%E8%BD%ACTD3%2F</url>
-    <content type="text"><![CDATA[版权原因,题面不公开password: zhengrui666abstract: 只有知道密码的人才能看呢message: 你一定知道密码趴 序列我们考虑化简式子: (x^2+y)^2\equiv(x^2-y)^2+1\pmod{p}两边的平方式展开之后再合并同类项之后可有 4x^2y\equiv1\pmod{p}我们发现,如果我们把$4x^2$看作一个整体,那么$y$就是$4x^2$在膜$p$意义下的逆元.所以我们现在的任务变成了找对于每个$num_i$,$4num_i$的逆元有多少个 又因为题面中说了数字互不相等,所以我们完全可以使用$unordered$_$map$统计. 注意去重即可,时间复杂度$O(nlogINTMAX)$ 汽水 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[版权原因,题面不公开password: zhengrui666abstract: 只有知道密码的人才能看呢message: 你一定知道密码趴 序列我们考虑化简式子: (x^2+y)^2\equiv(x^2-y)^2+1\pmod{p}两边的平方式展开之后再合并同类项之后可有 4x^2y\equiv1\pmod{p}我们发现,如果我们把$4x^2$看作一个整体,那么$y$就是$4x^2$在膜$p$意义下的逆元.所以我们现在的任务变成了找对于每个$num_i$,$4num_i$的逆元有多少个 又因为题面中说了数字互不相等,所以我们完全可以使用$unordered$_$map$统计. 注意去重即可,时间复杂度$O(nlogINTMAX)$ 汽水乍一看并莫得啥思路.然后我们想一下,如果我们把每个糖浆的浓度都减少$n$的话,那么我们的任务就变成了怎么凑出$0$浓度的任务. 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
         <category>OI</category>
       </categories>

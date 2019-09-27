@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Codeforces Round #588 (Div. 2)题解]]></title>
     <url>%2F2019%2F09%2F27%2FCF588%E9%A2%98%E8%A7%A3%2F</url>
-    <content type="text"><![CDATA[lyt我对不起你啊/ll 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[lyt我对不起你啊/ll Dawid and Bags of Candies其实我们按照大小排序了之后,我们发现可能的答案只有第$1,4$组成或者第$4$个单独组成,判断一下即可.注意精度,不然直接除$2$的时候可能会被卡. Ania and Minimizing发现如果把高位变小了之后,那么答案一定会变得更优.所以我们直接从高位向低位贪心即可.注意判断$k$为$0$的情况. Anadi and Domino$emmmmm….$看题面就非常高大上然后我们认真读了读题发现真的很高大上.看一眼数据范围,$n&lt;=7$,所以我们考虑一下枚举与每个点相连的边的颜色.然后我们直接暴力$check$即可.对不起数据范围小真的可以为所欲为 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
         <category>OI</category>
       </categories>

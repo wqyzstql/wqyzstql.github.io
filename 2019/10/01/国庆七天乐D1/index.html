@@ -154,18 +154,18 @@
   <meta name="keywords" content="ZROI,">
 
 
-<meta name="description" content="password: zhengrui666版权原因,题面不公开w">
+<meta name="description" content="只有知道密码的人才能看呢">
 <meta name="keywords" content="ZROI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="国庆七天乐D1">
 <meta property="og:url" content="http://krrrr.xyz/2019/10/01/国庆七天乐D1/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="password: zhengrui666版权原因,题面不公开w">
+<meta property="og:description" content="只有知道密码的人才能看呢">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-06T13:34:31.859Z">
+<meta property="og:updated_time" content="2019-10-06T13:35:32.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国庆七天乐D1">
-<meta name="twitter:description" content="password: zhengrui666版权原因,题面不公开w">
+<meta name="twitter:description" content="只有知道密码的人才能看呢">
 
 
 
@@ -486,17 +486,20 @@
       
 
       
-        <p>password: zhengrui666<br>版权原因,题面不公开w<br><a id="more"></a></p>
-<h3 id="幸福"><a href="#幸福" class="headerlink" title="幸福"></a>幸福</h3><p>题目中要我们去求$\sum_{i=0}^n F_i$<br>我们发现直接去由$f$数组去递推$F$数组的话时间复杂度是$O(n^2)$的,显然过不了,所以我们要推一波式子.<br>由题意可知</p>
-<script type="math/tex; mode=display">F_i=\sum_{i=0}^n f_i\times f_{n-i}</script><p>我们发现$f_i=f_{i-1}+f_{i-2}$,那么我们把$f_0$和$f_1$单独拿出来之后,上边的式子就可以拆成 </p>
-<script type="math/tex; mode=display">F_i=\sum_{i=2}^n [(f_{i-1}+f_{i-2}) \times f_{n-i}]+f_0 \times f_n + f_1 \times f_{n-1}</script><p>再根据万能的加法结合律,我们把上式中的几个$\sum$拆分魔改之后得到</p>
-<script type="math/tex; mode=display">F_i=\sum_{i=0}^{n-1} f_i \times f_{n-i-1} + \sum_{i=0}^{n-2} f_i \times f_{n-i-2} + f_0 \times f_n - f_1 \times f_n + f_0 \times f_n</script><p>然后发现前边那两个$\sum$的式子分别是$F_{i-1}和F_{i-2}$,又因为$f_0=f_1=1$,带入这个式子之后我们可以得到: </p>
-<script type="math/tex; mode=display">F_i=F_{i-1}+F_{i-2}+f_i</script><p>然后就可以愉快的矩乘求出来了.<br>但是因为我比较菜,只会用矩阵快速幂求第$i$项,但是题目中要求你求$\sum_{i=0}^nF_i$,我们怎么办呢?<br>然后我们来考虑一下怎么用矩阵快速幂的过程中直接求出前缀和.</p>
-<p>我们想一下矩阵乘法的过程,因为我们的目标矩阵是由原来的矩阵和我们构造的矩阵相乘得到的,如果我们中间构造一个$01$矩阵的话,矩阵乘法就可以看成是矩阵中的元素不断的相加,所以原理上在矩阵快速幂的过程中是可以直接求出我们要求的数列的前缀和的.<br>我们以求斐波那契数列的前缀和为例子,因为我们知道,一个$n \times m$的矩阵与一个$m \times k$的矩阵相乘之后,我们得到的矩阵是一个$n \times k$的矩阵.<br>所以我们考虑在我们原来构造的矩阵中加上一位,这样的话矩阵就变成了{$f_i,f_{i+1},\sum_{j=1}^{i+1}f_j$}.相应的,在我们构造的矩阵中,我们可以通过使$f_i与f_{i+1}$都被加入我们新加的一维来达到更新前缀和的目的.<br>综上,我们可以在求$F_i$的矩阵中加一维表示前缀和,然后直接矩阵快速幂即可.<br>时间复杂度为$O(logn)$,可以通过本题</p>
-<blockquote>
-<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
-</blockquote>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="你一定知道密码趴">
+    <label for="pass">你一定知道密码趴</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+U2FsdGVkX19mqrhRqCHwEAulz9aHBKdc5om5S+9uk9Ebcuri7t2LYkZmywVKejcB7PJS5x9uW0gbfzurQqW3xAdIDY1ay5XB75khuew+BDXySG8covZ3vuVA9Gcs5fiFCUqzx8CkiDb4vnxrT9dezqychmBQ9SKyb2S9qr0ZFjX8BC/iXH0HVM6KA3khucKNrCf0PW9KcK8WuWzqUW9/ePQRn9Mk2Iu+gvKjdqlY5oJPih6qruoRuoziwtINcVJH6IAnjwhJnp1Lr+Xgm2QBiJCL48lRE4anDRFqEUiKIqfqNg9vfnGv1yaOIK5bENs5t5SckEhCFQNZohh9ogdS5JkDxd1ZFLY5pG4vQKkdKFJAoalHG95dw1lzDffHPpnKo+fRDn/VdCKzMq9fjYwXVdtclmxZ+JY/ZqKa4nyjZypkV7RrOKYa4HLD/6kkwh8KA3k619npKunCLNXjijTPQ432MQdpJHiA+FoE43FjmENnO7wmqAFM2Zs5mferO4+fUPSM7k8l2D1sIngt0YLGDjygX3jK/mUXQMlRX6SYtPHCVv/PQmRgeNHUYcfI6yURu0lsPafpJS3xFdAhBw+sPDmTclk/sWRSd3hBC7Iha7GGId+5k3qmWXxw6KJ1x+59yh5MgJKQx9npNgLdZ75cnJU2m3Hj5/k/x3hAce576TuJwPYWdCccWP9PJ8NeeC6Jsx5SSG1QPbgxNFTM5mWRWn8ct8hm5/1oud2Za6elnaf5/Z4oonH1oVxxEtSnSh6pCt62YT4xPjDyafjsfTjszGHOOXdaVjAxbUDU7FEpigWSvM5hdIVNwfSxtFgJOKDbiKogItKHsgzLapZJjtOBvZkx1pT5RfS3wwm2siswNTmUlXUPYocV7uWrqXEv4L9n9V8hjt4Vw5TLWe8sXs+/YhZIN9CgoqEMzlypRejBdOKptrs659YzWgRAzEpclCX1UgXnr6wq12zRLmbJY2m05JOkwraaSF/w9PgZEo7S4SUhvU8UmhPcz3erGRmfXvuJwbRFw5/7S/Dj+F2xTU9lcAcqAmEnMqCnmRlg+SY5veI5idBnilLloEuJ9HqjVNotnBQA/1r0iqWuuRphbqspLKIw/RDHSnP4CdoSaipuPY9dXXqbEPyvzmugkun7IxcjNjZHxjirS0Bmqii1Bai31vhR61CCwfQbAUj4rrRj9aYSi1aSimv91ALGr+zDZgvEnC79ifGv6Y35bAvlCGWwBiJC+fE7TGLmM1J96Mqp5ap4ivywppDYYFO8MGSpqXZpCubDWa+DVKOccmjVqibNeTHHDj1zrtTMk0gIEX0notemMDTULs4KK5qABvAKPeqDMzmOcmTIpU6BKmXXkqqBo7jMBfLxq0/NdMOU/Po+UNvOe3MNfwNlGIH5ifXX0Q3Pd42qWKY5Lsc6bJtN14ASV5WBCRSLWtcP1HfnKWQPddfzhdLghp2wCVdv7ZDdkt02HdT4K0qem8Zj+bl2/Hq4n08xMXXFc8cH3BIdHBZnP9XojKIPbPL3H7CCMHY6YGaHfDKTrIvgLALUUtWGQVRTlk8ZFDzUN1r5VSy0Rp1iyfI0FI7WRFsXBPQn+uvPVsCqTETFX8sfo5PDIVW1b7I7BNduxoJXBbBtt4NGPSxKLBvqPk7iK5Xdbx9Ue2bhSfy8Szq5jT6sQmgwWU8Z5vtxURT6AMM2qgpgM2zQxa+ktHcO1my9z1DGg23joANep1liDjjZsuIWR+KziD6j+TjEUujX0av0+8mSq+n6AlQ9hEHhLSqRxEihTfXt44HEv1qoc0wkbD4XW1Yfwpz2JXyhwH4l9yGksRE9x0ILyZ4Jg8jTAIwVAiaWLtt1OvCGfNPPTEOc+nWXC34NP2YyWrdNxz+v6z41ERKFcNEobhTg1gZUHsRVQ5IXZR8xSlnF2Kovexot2LEE742GXsAmwM3u7BG1PXTY77H8sX45b+yUQq82v/lYZEh1PvOi27gtjzKDb6Cs8wGt543co9q/ZOiZt0qymXQ7VqKR+qAjLqwVQaipsFrkpQF4/A8cHLhj8n6agGH151lWF0rlraAQBt1TPEOxUeuOq8aCzDV+K15mEPeTF2rykxsxybbgFAFnZle3CPBXFIs+tfidldc6qM5XakxY7vFZRYzbrCieeuSEuKCZ/Nw4tSBfomqJ5V+RFxXYBEg77CbzgB2SU1Gvfoei9BmTrhHWJHJKbhasPbNNNZSIDgk9vUEFu7i19f4SPcBBiPabTbxt17czCI6u19HLpvmWO3IaqxxePpOAtv7J7kaLAxiyjHZyz7RalX4tXR6e9LCzurDUXohdw+ETsyBAXXJ0bIcDC9o0XQDpSstryygL57qv3sLr2G0rsPkAya4CYu1QfbnezFb1OL5MLC5sj1RSVlWMovO8wkbvsDjsMEF29wsyiqIdWT89XkaD5TChShp8wLGk2inQl9BqOcue6umokQy46EDHDg4j1pBNRzN22qdQ47nS2NxF/doXUBPR2qlVVcJe/n6gH8g7/QRDZWqnfoL0+iyVf8KVPfVynOqnddgorXZ7PBzx39Vt90+U215turojGhS9xAFB7fLt8zUVqfflzHpIICyg7iBnPnyz+sLXrDySjizcXCn50ApZlwZ3NLns91qCrHoPdI4H2v77p3NA5+hFLOYq6xvzwPnYVtefOyzJ2oy+nSspdoSEwaeKGcPditY53Du2Bwm4Y5ia2TVXhX7Z27G67PaH8D2F1QNHlVYsTXuGE9sl9eq391TK9sDT4LavF1N4a67ffgq++TxUfpeJh2iapEF5C/ip6VuoMNgNgjPg7yNysGjSt4/BR2s7HobWDxd9z8YRCjaykB4rcr/8MQQgDpfqfzYwsurY1yrj/ibdWtSlevp3RAC64mNf+EmKtvBfk8//hDQOFHUttdJZIsbQPbcFBndufWBV0ndGj+XKRRqS9VZpkOfVp3f42YvVJ02XB6lRRic2V8PjnWxHf6iHyzR4kBLDD0vpxvGI+At/5y/vAGEYCU2DodvtiWdtelUUfmV3uchJOpRUd3HIiKlflifZjEKH1UZ7rzJxGSs1cLH9VyeHe3/Zi3hhAZdF+hxgMuV7CK1djZlBq5F54wkTEI1Y9eXhjfTR00lYZ9ltX1qlbbjErekg3pqQaXSefgHV7ZAJHb42FcvIytzymjy1fPWyxHwiB7iUnMzmNLVZsDD6ADrtYvy4YFoOXvUyB2RzDWxRXcFead6DQ5Cfla5m39u5ftOLyHTb7WNHiL24lCiVHrL3XZlHWxuUB3Mh0hkvsH66GITdg+2+rN9P8kS4KNOHWzm1zHAHm+f7UckK/oQxS28YYpVY7miuUV3gYnMnr+inaA2dWs5O+EMviIHApVUbK4787B4ps4xkp7UFmejhxFteaAWeo/zEIHsx3CymjuG0JdwRWYynz7I57IIKXWsc+yy5j9s0/k1MNDZAmfzAH3uLv+LQg+3EcXq4/v0kv2GqhLLQJ7n3IMNirSXlDNOPjsaYkqoHeFiVwP0thz93Z6N0Vz9Vxf2AP2FFH0CDkFMZ/jxFxwnBGjRd+AU1DoxCcMW1tmE09s+3KYe/983RJ0cI7NnY41ScQoiYGz2W9T6Gm+ogu9u/U6yrU4zxVM7t0E8xgMdicv2a6XMBzFXC8RBfL4xOxXu3i8vZzwRlqeod2wPQot7ZhPqhgeSZH2+2rv0fucQb4jWC9H7GT5yV9CQdf+p1DtOOuID24VEjUUn4AmI29S/ngHgGT3agTqcRAtwyRiTMmZOaXyCBmGDjsZkAD27JxrAmkYPd7Gp/E4GBEFQjYxt308qAM21e2brorQIVqxrUrt4xgthlJ35Qu3X77QSM4HfwRfWVPKiRoUSzy9dngekmuVhX/z7PtR2jpdLqZ0ee+UMvUMF5uP1IBjy8pbc62Nayr/GjadugC/lAmYkJ9RTFB4do+yaji+KAtUwsWozFY1jbbwXtP/zNrGbwFv+Lxduv2baUwMBbhr1K5Epe8i9UP9+pxVX/xYM5IrpcmJEoKWOBmePrUPKBpFdY3A4QZ0dvxIQu4z+Y2ytljksieG1vNlpEe8UoSD0zCL7UjgcQ7flTtQ3t/CvmERwQy0C+SDZ8QnR1etCqReZ3tLgF62hJLQ1gc/Sxv/SvxkqNoGsyvzhSFN4puyjMCoi+p20xje4IORgsIvWJXJja4u+LgGmFQoMO8gCrkJjdkgqqKUqcQbrY5Ctrv4WtWAUrzjkdJoxQWzH9iUm/WKtTSjIs3IQdzQd50UdwNp1XpOS2iCqETNQsRoIcxTfm1U8TCI968aJWiJXVhxxvkI7jlCv7F8dbPCtUThV9nf5BPD3AF/VIUa/Jv+3u7Ve5oQWZzcEUx6jG6qo9JCG01SB7frWubZ40WgbtK/JfgXzagQF/faX86yLLx8Y2i60PFs6PfJafDukNuCDqupP1aQr8RZq26Ww7/01FXC5JIT9impo/0/6C0wbei2k2JjHLly4QJCj+J1AsgJQdWf46moppzJar7JYeqmBinYyCE+4NoiIjiepmr7ICBLUZFKm4/dPBrCo+YLuQwdLydAN06ericgFFaeAR6BBme60P54UdecugUw30yvoEOm03kax7/Ba5BgxsnDO9z7E9JRpS2oTd/B4nFm5qo7oAkF22T9cH3ykNjRuaHfCP4tkXPPhyj3Ahp3F8jmH8RWVOfeZJgt7jQuPinIZtzgrqlkn09E2CEL5AZK7zzatIV9vBQ7eMn2koTZRnX9GCO+f8LSpOelUr3rArNXH3cVDtzkhHW7pZ+ZRpJ9Cl6tuULmQq1d9lW8etYnVOZJulkQV4LN1QFwkn38qBLu7jaaW5na0SijdwFJTBnmydyZZ5eRE6cTwV/eXuwm0Nz8PkRaIqg2lKQNRsN6Krz94CcScAMbgdJv0VEJAbpv5b3gb+V4mZgajVF/CPQw8Q1eSsdM7QqFf4xcO9IcjXNES7jKdMWfWNUTA6vQ43gnxZ9mFPCjqfaZnCm3sFsXfgRMP5nc+Ak4Dby1BcNd5d+XuPEo0ktcajytubtp+lzs71oO1SH4Ark7FOGhxUJu8fIYBlFIqUG/Hw0/VgbBdsR7MokBhqoem0ESawuCD7pigfC/CPRoLZjUzcqO7ztApGw/JXmrGRcdtGl+oQ6lJoTRmclj21YHWEgxoSlDeqBjSXDa6vk9Vdlw5x8VaPXSsr/TwVbFcE8/bIE7G4ACJjE6huudyK3pDqhCPDrsoUtnwm0dCZrskDw0Pw93TdaSgSZc3ZVr8ULwoXAR1PA/L1288pD+vkpF/+EhkpKwyHV0bKWyBPILChIR8TjEItbgCv50C+OTzcqFUGpl5BbNIQ4kc08c17iLuoCwNNtCdhmmLhbzS1bFdd2YZoBd8dHrbxcXHwdYFy5SZk40d4UixYcp6F2miH1ubB5tOYOIKq0u4ouGkls0IJHnHhLaw1YQRem9HnvZdjX0FJGYgWSQBJipMGGQ+tf4Rh8nVclshFM9pbG8Y6tGbI72b7EdVj7NkCkdeLabEd6Kk81kM74Fjh/CFhBdf5E9nehPcagcYpQlABuLHD8VX8hwuf/4FYoAlsNeyz05eIvywpl7f9437OGAU0s3KEW+h318uOe1CQSObHiziiPWPPbxupR7aCnYUfhJuxOSOZQA9Y/mSZdsnYejnNe8Xei39fEkQTiZdlIJoyrXcYoHxOIX9VNi6fDy7uDuJHxoxIxX0IxAQr4ThKRVTTXh0ZkHBI6swfBew4cl6+t8ifh2L080XNGZILODtW2XvZ+kyHMGs7t/OAARg5daV9Bxcm/Gl9SidFXjYviHiBTl25SxqMk1r2GcXDgaCp2xXfaz0QeF+/SKBXdoJu5qAEqopKd0pwTaGy+LBv1EO+oi4NzDK1z9Se2WRYNnFn/t89kzBJfUAbbIksXVDltNak2P70XPkAiLwth1ir3wsE95VoM2c4MRGNjtgAE9mC7fowWcSXR9rGfMhyyDR53CSy7xeQeC3zOI8hQTpK9Q4f84qutsFN28UqPMsjW574brijcKhv7gOWxzIamT7nolV/z0D2TbQyJPToJmP+nkbAmYx8UGTV9B/0M2AOvvJ0WcAr6qaOjxn68aVPMxAG5Pc5/wbx5TMw3k4BhocwAciAimJlwyAHnf94xdgCkmg+wNHjUI+rZdvNzDJBfyl5YcSy35qJRY8pWd5w9dTN4dL+wdXphi15NH7wRw+YThzvaZGCzMtFQHnzwYnOV64GwQeTD5v4eMxUEOWaiYiYLfAHbk54TubTgDD11gYXNoGLTE4jdg2AIykwCk0mHLr8f9CcAXpltTlu6ACndhe6dsqHS7f7HZY/XoYSYrtRHjS934IIa3pMFafnwnSrudcdnChLes5+xp/6P+LJ8vTDsKqD65HOWgyWfayLloJnvRtdgg2CensI0E0qkG8xrjZlYuH7wfR9Q565PX27zA0/nlGhL5wfJWNN6up6KPq2aCTS0NkU33ky+HimoDNMTeQoWpwcZDaOpmYQJuLtcvDocO4PJZJCQS7m8GV/6aC3QGwZtSVvCFU/31Wgm28XwCDp/LHloq4OY2ap4uq06NEMnyEC0ldQ9giWgpQslIhnOQyaTlD+GSOQBwW3/JT0Pq843VE89Yhkf/ygTeerDO6LNEjGXntemqAXf9kJ4JCs+VXL7ImkGuf9AVO6WzfmBUAkZ5vdkSSjMFfmSjLZZhqLrXQx1kIbkXKRIUqYXmPIaMKb+nsymjL+b+HNqJbOmtPzPmUqPyxfH7E+u6GmWvS7DtTSl3PPJ4tdz5ELjExq76thyNHatjycfdMz647WEQBUGDDh1/5MwV9UhvKWUGUGPBhomwOHsUaIRBxZITE1NMErM/OBQP4MNOndzcDFn68C8resCxexLTf5JVtRz277dJyawps74fAbPUFWS6U9J5ssVOHnAk/UkHILA3GTf/07Lukq3J6fxtGXGNsZKa2jUK6T46por5Gx1dGhuxeCoL+237c5NEtstB22spTnB4T1eqEuM3a8XMVNnc48cF9brtyjmhxYDoovMEm15ZrqPaISP0bFC5Wcd7drO0t3JJbe/OWxgDW4zEXxuh/wYD0xt8U2Sn+E73Mm5HI0XMwuce5GxQ7b4sE9nNb+xfXsuXhlBYTSyFLCXo91mPKHi7dWCUznXqz97wJmA4MES3zAm1mjX8wf98SokNJKUDIAdNAvoWcB7eH4BMJuzuAIljE47ss5MbMc+9qEpt4avEJjeOlbv3zJivh3Qui+Ecn76d24Fg6vqs7QQs5rW/PBvHhq94BYf85pfzmzpt5spr93UaP0/UVRbPoJdHO5FfiPCe5nUFH5cQOIUBAioXmzyGFkaLlv2yi21c3fdDCTjEhG1VEATNw4wJmVbQ6hW2rXSOoNZ0/100KDVN218LgZ5r+R3CaSJbHBZ3i+Uf9uMvtf177RHQnYRH0JZM2bTJiCVyyDQScvrcUB1SHyvKvaXOzRB+BDQ6kcQS9e3tkW//GVGSaD4KJhWDfMyqBCbTra2StHhz0HGnGZLtbQaKAHURJIfR6A2MYTL7dEMYLnnwVW8TpxD/jnj2CRT4QUp/ZzirrP/IeG685CQ7udpBQkMB2WQ/RSDQ5WYBQEWvfFrXPSKqQCDSj4wwo95O5Up4tf/IxBWUHeRldvBG9co4x62Pb96S1lyBDhWZQVrTok4JWG711aQcSJSyzTpEsuxGNcSP6sQsxVkr+8+JjgmkX+Has666g/EuUNM5XF9z+pYMvf+D/kbhzTpmnW8hJHbloINqZ7jneRVPxGS38WAwjtAllfSZgCyJwOZIxMJKCXT5cL2Af0FZt5RkOKtZAhjXN04iIzSzMpWHyQDPI4Iv8IyFPPj9N+fmeYzZshmxsvE2NpaGszACcIOEV5U+f1liuiGKVDZlwqsMN/vQhC3OevRzS41PJx+QOx2I4kEbflA7QZLDJrr7moLiOufCgIEGHbfHWkqWp3GFxbxOrl42DSFWNVFm9EPRQUX951L0xXLsg+f+qEMDGLiR5G+HL+SQXc/leSrKmtmd87MVXrXbwvS8YM1Uj0h3OBehlWO++1wM0LQ7IMP1+ssl4ymktW34O1UYrSCzmsCL1z4I0+Ypd1hxN4mNMhs4p6gF2R4e1P5l1waFi5yAISVPi9wSRPYyBoRknmq6CptesYZHJv3rVW6D/tNhLe4rS3T/CXf7OG5GXpricXV1Xqhxw87/7z2mqv2k2S1XuITcw/fnbR3BokoiowLR941Plhy2jUGf8y6izdH/zw9HdLtUq634jA5AcxnZ/KJw70ojKYINhqb+wh+HRxXNpqB3fzk7vBfkhHCsV5uK0Tyq3aorPUdbiuuWkrOaKX3BIbN4RJWlx+DNNcadol7I45wYvZQEAeGTq6Ic5CqgC5wT/pX7Q0Kh1xgWAWaVkELNg3vyTWflR9h1yYLN90BryY/3fxQrhngS9G5sPxx8Ysa3VpHTHCp3F6t8xJB2NhjGtDZNNPZnfX/KVMQXs/3+cL6W9eTr5YhU3yx4aUovcTHyPGHwrPso5ae2AJJEZZ+nYp83EjTJyKFrTuJRUT8xZ9hL/r7gM/VwaKM5FEG3HWQSFtPqbR92yu2jN5lo15eR3K2CH/BEsh3dZeX4LN7x1/lkAhNqVsvIPbFnwqMxaXo8j0wkNgIOhYuYrEKsD9mtA7ekWr1ReLCw6AQrNAaXR6eyIxCMuIfcxK5wbtuolS6odzC1cAIZzjgQjvJolMBvcE3fH6lMyyZLnt1/i+BCKl2rJHh0M9lLR5CmkP
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
     </div>
 
@@ -655,17 +658,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -822,22 +816,6 @@ var jiathis_config={
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#幸福"><span class="nav-number">1.</span> <span class="nav-text">幸福</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
 
@@ -882,7 +860,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共32.4k字</span>
+  <span class="post-count">博客全站共32k字</span>
 </div>
 
         

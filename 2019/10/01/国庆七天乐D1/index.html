@@ -154,18 +154,18 @@
   <meta name="keywords" content="ZROI,">
 
 
-<meta name="description" content="只有知道密码的人才能看呢">
+<meta name="description" content="password: zhengrui666版权原因,题面不公开w">
 <meta name="keywords" content="ZROI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="国庆七天乐D1">
 <meta property="og:url" content="http://krrrr.xyz/2019/10/01/国庆七天乐D1/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="只有知道密码的人才能看呢">
+<meta property="og:description" content="password: zhengrui666版权原因,题面不公开w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-01T07:09:03.661Z">
+<meta property="og:updated_time" content="2019-10-06T13:34:31.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国庆七天乐D1">
-<meta name="twitter:description" content="只有知道密码的人才能看呢">
+<meta name="twitter:description" content="password: zhengrui666版权原因,题面不公开w">
 
 
 
@@ -486,20 +486,17 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="你一定知道密码趴">
-    <label for="pass">你一定知道密码趴</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-U2FsdGVkX1+wdIBls1oDjx1s5lqqYHMuMslfCzRK0P85+w0iRSEyvdzWKAlbgrS4Ms613MnWsra2waSB2X5Is9kPnRneq4K0dTxQFlEx/VTb4S9ihR0vh9C+d5IJ20U+28aCN9Mj2P3K/JzUxEpaSdOsb0rZ0AlwRDszDv4D6bGrTMuuzMYMgHUNed8zA48itc21nXM35smrsqJs8ThS5oW+3sJrly3gyuZpsN5qybglmBwiuPaLYPTksEypwxP1I1qpUGcDktoH3V7qiNnk07bMnXxUgGbU4ZxzzgRhlhGmX3RkElT7Gw43kas5JATkbqcb5L61zCWbDn575kkNpcFrBv/+MaA0cRoj41/pF+PCHTsj6yGMp4/ZpFh4+Q+gtHIOn6K/db3o0L/UNOHLg6GvOcSiYq4RxRFWVUImXMPiGFN/izh6ymH2rHXqSTfkq+JuC2BCp8ksU7jZG1sGGdDCWw8tORPgFlm0rVTehisMXsnCpnVZLL9dUGSPJKJoMWg3BzkCPQUO+n5q4CupOu6XpqeMe0XWXzJvcYFyuC22sDjKusZGuUCQ5EsRtrvyQ6XX0bg/Suou83kL0XVaD8wdTGgcYheDfC457BBDA5EHfc46pRsoMl4F/rwopdSJ6MHcSkXfnrA3qxKIKQXzRnmu5jqL8ADb9vg/NJgaIvUsjtupzrAtW0GqQiwcUXR7NC9VkRTPvSHwO2SZWo2SGw==
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <p>password: zhengrui666<br>版权原因,题面不公开w<br><a id="more"></a></p>
+<h3 id="幸福"><a href="#幸福" class="headerlink" title="幸福"></a>幸福</h3><p>题目中要我们去求$\sum_{i=0}^n F_i$<br>我们发现直接去由$f$数组去递推$F$数组的话时间复杂度是$O(n^2)$的,显然过不了,所以我们要推一波式子.<br>由题意可知</p>
+<script type="math/tex; mode=display">F_i=\sum_{i=0}^n f_i\times f_{n-i}</script><p>我们发现$f_i=f_{i-1}+f_{i-2}$,那么我们把$f_0$和$f_1$单独拿出来之后,上边的式子就可以拆成 </p>
+<script type="math/tex; mode=display">F_i=\sum_{i=2}^n [(f_{i-1}+f_{i-2}) \times f_{n-i}]+f_0 \times f_n + f_1 \times f_{n-1}</script><p>再根据万能的加法结合律,我们把上式中的几个$\sum$拆分魔改之后得到</p>
+<script type="math/tex; mode=display">F_i=\sum_{i=0}^{n-1} f_i \times f_{n-i-1} + \sum_{i=0}^{n-2} f_i \times f_{n-i-2} + f_0 \times f_n - f_1 \times f_n + f_0 \times f_n</script><p>然后发现前边那两个$\sum$的式子分别是$F_{i-1}和F_{i-2}$,又因为$f_0=f_1=1$,带入这个式子之后我们可以得到: </p>
+<script type="math/tex; mode=display">F_i=F_{i-1}+F_{i-2}+f_i</script><p>然后就可以愉快的矩乘求出来了.<br>但是因为我比较菜,只会用矩阵快速幂求第$i$项,但是题目中要求你求$\sum_{i=0}^nF_i$,我们怎么办呢?<br>然后我们来考虑一下怎么用矩阵快速幂的过程中直接求出前缀和.</p>
+<p>我们想一下矩阵乘法的过程,因为我们的目标矩阵是由原来的矩阵和我们构造的矩阵相乘得到的,如果我们中间构造一个$01$矩阵的话,矩阵乘法就可以看成是矩阵中的元素不断的相加,所以原理上在矩阵快速幂的过程中是可以直接求出我们要求的数列的前缀和的.<br>我们以求斐波那契数列的前缀和为例子,因为我们知道,一个$n \times m$的矩阵与一个$m \times k$的矩阵相乘之后,我们得到的矩阵是一个$n \times k$的矩阵.<br>所以我们考虑在我们原来构造的矩阵中加上一位,这样的话矩阵就变成了{$f_i,f_{i+1},\sum_{j=1}^{i+1}f_j$}.相应的,在我们构造的矩阵中,我们可以通过使$f_i与f_{i+1}$都被加入我们新加的一维来达到更新前缀和的目的.<br>综上,我们可以在求$F_i$的矩阵中加一维表示前缀和,然后直接矩阵快速幂即可.<br>时间复杂度为$O(logn)$,可以通过本题</p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
       
     </div>
 
@@ -520,7 +517,7 @@ U2FsdGVkX1+wdIBls1oDjx1s5lqqYHMuMslfCzRK0P85+w0iRSEyvdzWKAlbgrS4Ms613MnWsra2waSB
   <p><span>本文标题:</span><a href="/2019/10/01/国庆七天乐D1/">国庆七天乐D1</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月01日 - 15:10</p>
-  <p><span>最后更新:</span>2019年10月01日 - 15:10</p>
+  <p><span>最后更新:</span>2019年10月06日 - 21:10</p>
   <p><span>原始链接:</span><a href="/2019/10/01/国庆七天乐D1/" title="国庆七天乐D1">http://krrrr.xyz/2019/10/01/国庆七天乐D1/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/01/国庆七天乐D1/" aria-label="复制成功！"></i></span>
   </p>
@@ -658,8 +655,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -816,6 +822,22 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#幸福"><span class="nav-number">1.</span> <span class="nav-text">幸福</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -860,7 +882,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.7k字</span>
+  <span class="post-count">博客全站共32.4k字</span>
 </div>
 
         

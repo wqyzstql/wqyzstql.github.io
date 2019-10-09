@@ -151,28 +151,28 @@
 </script>
 
   
-  <meta name="keywords" content="思维,数学,容斥原理,">
+  <meta name="keywords" content="图论,最短路,">
 
 
-<meta name="description" content="看了一眼之后完全就是一脸懵逼的题….">
-<meta name="keywords" content="思维,数学,容斥原理">
+<meta name="description" content="$ZROI$杂题选讲….">
+<meta name="keywords" content="图论,最短路">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qbxt D2T2 Code 题解">
-<meta property="og:url" content="http://krrrr.xyz/2018/11/04/题解/index.html">
+<meta property="og:title" content="CF416E">
+<meta property="og:url" content="http://krrrr.xyz/2019/10/09/CF416E/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="看了一眼之后完全就是一脸懵逼的题….">
+<meta property="og:description" content="$ZROI$杂题选讲….">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-18T02:36:11.712Z">
+<meta property="og:updated_time" content="2019-10-09T03:36:43.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qbxt D2T2 Code 题解">
-<meta name="twitter:description" content="看了一眼之后完全就是一脸懵逼的题….">
+<meta name="twitter:title" content="CF416E">
+<meta name="twitter:description" content="$ZROI$杂题选讲….">
 
 
 
 
 
 
-  <link rel="canonical" href="http://krrrr.xyz/2018/11/04/题解/">
+  <link rel="canonical" href="http://krrrr.xyz/2019/10/09/CF416E/">
 
 
 
@@ -181,7 +181,7 @@
     sidebar: "",
   };
 </script>
-  <title>qbxt D2T2 Code 题解 | KRrrrrrrrr_Blog</title>
+  <title>CF416E | KRrrrrrrrr_Blog</title>
   
 
 
@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2018/11/04/题解/">
+    <link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2019/10/09/CF416E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KRrrrrrrrr">
@@ -397,7 +397,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">qbxt D2T2 Code 题解</h1>
+          <h1 class="post-title" itemprop="name headline">CF416E</h1>
         
 
         <div class="post-meta">
@@ -410,7 +410,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-04T10:40:29+08:00">2018-11-04</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T11:33:02+08:00">2019-10-09</time>
             
 
             
@@ -446,8 +446,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/题解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/题解/" itemprop="commentCount"></span>
+                <a href="/2019/10/09/CF416E/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/CF416E/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -475,17 +475,10 @@
       
 
       
-        <p>看了一眼之后完全就是一脸懵逼的题….</p>
-<a id="more"></a>
-<p>首先先读题$qaq$…..<br>题目的大致意思就是给你一个矩阵，然后问你把这个矩阵横竖填成异或值为$1$的矩阵的方案数。  </p>
-<p>很明显，这道题没有什么枚举上界，所以你想直接枚举的话是不太可能的。<br>那么我们怎么办呢$?$</p>
-<h2 id="我也不知道"><a href="#我也不知道" class="headerlink" title="我也不知道  "></a><del>我也不知道</del>  </h2><p>既然枚举补星，那么我们就用一个比较常见的正难则反的思想。<br>对于这道题，我们可以容斥的去做  </p>
-<p>那么，首先，所有的方案是什么呢？</p>
-<script type="math/tex; mode=display">All = 2^{n*m}</script><p>为什么呢？<br>一共有n+m个校验码，我们按位数考虑，在只有1位的情况下，那么这一位可能是$0$或者$1$。<br>那么就是$(2^n)^m$的方案数了。</p>
-<p>然后我们考虑对于每一位删掉不合法的情况：<br>因为异或起来是$1$，那么对于没一行或者每一列，$1$的个数总是奇数。<br>那么我们就可以根据这个东西来进行删除不合法状态的操作了</p>
-<p>最后统计出来答案</p>
-<p>我们发现，因为有$k$位，而我们是按位考虑的。<br>所以我们最后要取答案的$k$次方。</p>
-<p>代码如下：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">505</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MOD = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[N][N];</span><br><span class="line"><span class="keyword">int</span> n , m , k , t , ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> s = <span class="number">0</span> , w = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> ch = getchar ();</span><br><span class="line">	<span class="keyword">while</span> ( ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span> ) &#123; <span class="keyword">if</span> ( ch == <span class="string">'-'</span> ) w = <span class="number">-1</span>; ch = getchar ();&#125;</span><br><span class="line">	<span class="keyword">while</span> ( ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span> ) &#123; s = s * <span class="number">10</span> + ch - <span class="string">'0'</span>; ch = getchar ();&#125;</span><br><span class="line">	<span class="keyword">return</span> s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Fast_Power</span> <span class="params">( <span class="keyword">int</span> x , <span class="keyword">int</span> y )</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> ( y ) &#123;</span><br><span class="line">		<span class="keyword">if</span> ( y &amp; <span class="number">1</span> ) </span><br><span class="line">			sum = sum * x % MOD;</span><br><span class="line">		x = x * x % MOD;</span><br><span class="line">		y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= <span class="number">500</span> ; i++ )</span><br><span class="line">	 	c[i][i] = c[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">2</span> ; i &lt;= <span class="number">500</span> ; i++ )</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">1</span> ; j &lt; i ; j++ )</span><br><span class="line">			c[i][j] = ( c[i - <span class="number">1</span>][j] + c[i - <span class="number">1</span>][j - <span class="number">1</span>] ) %MOD;</span><br><span class="line">	t = read();</span><br><span class="line">	<span class="keyword">while</span> ( t-- ) &#123;</span><br><span class="line">		n = read () , m = read() , k = read ();</span><br><span class="line">		<span class="keyword">int</span> ans = Fast_Power ( <span class="number">2</span> , n * m );</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= n ; i++ )</span><br><span class="line">			<span class="keyword">for</span> ( <span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= m ; j++ ) &#123;</span><br><span class="line">				<span class="keyword">if</span> ( i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span> )</span><br><span class="line">				 	<span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">if</span> ( ( i + j ) &amp; <span class="number">1</span> )</span><br><span class="line">					ans = ( ans + MOD - Fast_Power ( <span class="number">2</span> , ( n - i ) * ( m - j ) ) * c[n][i] % MOD * c[m][j] % MOD ) % MOD;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					ans = ( ans + Fast_Power ( <span class="number">2</span> , ( n - i ) * ( m - j ) ) * c[n][i] % MOD * c[m][j] % MOD ) % MOD;</span><br><span class="line">			&#125;</span><br><span class="line">		ans = Fast_Power ( ans , k );</span><br><span class="line">		<span class="built_in">printf</span> ( <span class="string">"%lld\n"</span> , ans );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>$ZROI$杂题选讲….<br><a id="more"></a></p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
 
       
     </div>
@@ -504,12 +497,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/11/04/题解/">qbxt D2T2 Code 题解</a></p>
+  <p><span>本文标题:</span><a href="/2019/10/09/CF416E/">CF416E</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
-  <p><span>发布时间:</span>2018年11月04日 - 10:11</p>
-  <p><span>最后更新:</span>2019年09月18日 - 10:09</p>
-  <p><span>原始链接:</span><a href="/2018/11/04/题解/" title="qbxt D2T2 Code 题解">http://krrrr.xyz/2018/11/04/题解/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2018/11/04/题解/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年10月09日 - 11:10</p>
+  <p><span>最后更新:</span>2019年10月09日 - 11:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/09/CF416E/" title="CF416E">http://krrrr.xyz/2019/10/09/CF416E/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/09/CF416E/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -539,11 +532,9 @@
       
         <div class="post-tags">
           
-            <a href="/标签/思维/" rel="tag"># 思维</a>
+            <a href="/标签/图论/" rel="tag"># 图论</a>
           
-            <a href="/标签/数学/" rel="tag"># 数学</a>
-          
-            <a href="/标签/容斥原理/" rel="tag"># 容斥原理</a>
+            <a href="/标签/最短路/" rel="tag"># 最短路</a>
           
         </div>
       
@@ -568,8 +559,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/02/换教室题解/" rel="next" title="[题解] Noip2016D1T3 换教室">
-                <i class="fa fa-chevron-left"></i> [题解] Noip2016D1T3 换教室
+              <a href="/2019/10/08/SNOI2017-礼物/" rel="next" title=" [GXOI/GZOI2019]旅行者">
+                <i class="fa fa-chevron-left"></i>  [GXOI/GZOI2019]旅行者
               </a>
             
           </div>
@@ -577,10 +568,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/05/i-t/" rel="prev" title="[SDOI2010] 所驼门王的宝藏">
-                [SDOI2010] 所驼门王的宝藏 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

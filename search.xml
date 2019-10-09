@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Kruskal重构树学习笔记]]></title>
+    <title><![CDATA[Kruscal重构树学习笔记]]></title>
     <url>%2F2019%2F10%2F09%2FKruskal%E9%87%8D%E6%9E%84%E6%A0%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[学不会啊…. 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[学不会啊…. 以上就是性质,讲完了 你们不要打我QAQ… 一道例题(货车运输)我们看一下第五条性质,哎妈呀这道题不是裸题吗.我们跑一遍$Kruscal$重构树,然后询问的时候每两个点的答案,就是这两个在重构树上$LCA$的点权.然后就没了. 另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢) 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
         <category>OI</category>
       </categories>

@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
 <meta property="og:description" content="又安排了队友一手…..">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-10T08:32:55.073Z">
+<meta property="og:updated_time" content="2019-10-11T02:21:14.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Educational Codeforces Round74题解">
 <meta name="twitter:description" content="又安排了队友一手…..">
@@ -217,9 +217,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -476,7 +476,10 @@
 
       
         <p>又安排了队友一手…..<br><a id="more"></a></p>
-<h3 id="Prime-Subtraction"><a href="#Prime-Subtraction" class="headerlink" title="Prime Subtraction"></a>Prime Subtraction</h3><blockquote>
+<h3 id="Prime-Subtraction"><a href="#Prime-Subtraction" class="headerlink" title="Prime Subtraction"></a>Prime Subtraction</h3><p>可以发现,如果只是用质数的话,那么除了$1$之外的数都是可以由质数凑出来的.<br>所以只需要判断一波是不是相差为$1$即可.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> a,b;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;T;</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		<span class="keyword">if</span>(a-b==<span class="number">1</span>)</span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">puts</span>(<span class="string">"YES"</span>); </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Kill-‘Em-All"><a href="#Kill-‘Em-All" class="headerlink" title="Kill ‘Em All"></a>Kill ‘Em All</h3><p>发现如果我们打了一个按照坐标排序之后中间的数,那么对于右边的数字来说一定是劣的.<br>所以我们发现,如果我们排序之后,从右往左开始打的话,那么对于答案的贡献一定不会更劣.<br>所以直接排序之后从右往左打然后判断即可.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> s=<span class="number">0</span>,w=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)w=<span class="number">-1</span>;ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)&#123;s=s*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">return</span> s*w;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,r;</span><br><span class="line"><span class="keyword">int</span> pos[N];</span><br><span class="line"><span class="keyword">bool</span> dis[N];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&gt;y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T=read();</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="built_in">memset</span>(dis,<span class="number">0</span>,<span class="keyword">sizeof</span>(dis)); </span><br><span class="line">		n=read(),r=read();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			pos[i]=read();</span><br><span class="line">		sort(pos+<span class="number">1</span>,pos+<span class="number">1</span>+n,cmp);</span><br><span class="line">		<span class="keyword">int</span> tag=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[pos[i]])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(pos[i]-tag*r&lt;=<span class="number">0</span>)</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			dis[pos[i]]=<span class="number">1</span>;</span><br><span class="line">			ans++;</span><br><span class="line">			tag++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Standard-Free2play"><a href="#Standard-Free2play" class="headerlink" title="Standard Free2play"></a>Standard Free2play</h3><blockquote>
 <p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
 </blockquote>
 
@@ -500,7 +503,7 @@
   <p><span>本文标题:</span><a href="/2019/10/10/Round74/">Educational Codeforces Round74题解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月10日 - 16:10</p>
-  <p><span>最后更新:</span>2019年10月10日 - 16:10</p>
+  <p><span>最后更新:</span>2019年10月11日 - 10:10</p>
   <p><span>原始链接:</span><a href="/2019/10/10/Round74/" title="Educational Codeforces Round74题解">http://krrrr.xyz/2019/10/10/Round74/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/10/Round74/" aria-label="复制成功！"></i></span>
   </p>
@@ -851,7 +854,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共36.2k字</span>
+  <span class="post-count">博客全站共36.6k字</span>
 </div>
 
         

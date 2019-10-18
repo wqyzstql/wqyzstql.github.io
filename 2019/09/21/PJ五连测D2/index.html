@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '6.0.5',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -154,20 +154,22 @@
   <meta name="keywords" content="ZROI,">
 
 
-<meta name="description" content="只有知道密码的人才能看呢">
+<meta name="description" content="版权原因,题面不公开">
 <meta name="keywords" content="ZROI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="普及五连测D2">
 <meta property="og:url" content="http://krrrr.xyz/2019/09/21/PJ五连测D2/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="只有知道密码的人才能看呢">
+<meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-24T10:57:28.446Z">
+<meta property="og:updated_time" content="2019-10-18T13:15:03.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普及五连测D2">
-<meta name="twitter:description" content="只有知道密码的人才能看呢">
+<meta name="twitter:description" content="版权原因,题面不公开">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="KRrrrrrrrr_Blog" type="application/atom+xml">
 
 
 
@@ -217,9 +219,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -269,37 +271,37 @@
         
         <li class="menu-item menu-item-主页">
           <a href="/" rel="section">
-            主页</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
         </li>
       
         
         <li class="menu-item menu-item-关于">
           <a href="/about/" rel="section">
-            关于</a>
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
         </li>
       
         
         <li class="menu-item menu-item-标签">
           <a href="/tags/" rel="section">
-            标签</a>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
         </li>
       
         
         <li class="menu-item menu-item-分类">
           <a href="/categories/" rel="section">
-            分类</a>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
         </li>
       
         
         <li class="menu-item menu-item-总览">
           <a href="/archives/" rel="section">
-            总览</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>总览</a>
         </li>
       
         
         <li class="menu-item menu-item-友链">
           <a href="/friends/" rel="section">
-            友链</a>
+            <i class="menu-item-icon fa fa-fw fa-users"></i> <br>友链</a>
         </li>
       
 
@@ -308,7 +310,8 @@
           
             <a href="javascript:;" class="popup-trigger">
           
-            搜索</a>
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
 
@@ -459,6 +462,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">1.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 mins.</span>
+              
+            </div>
+          
 
           
 
@@ -475,20 +506,19 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="你一定知道密码趴">
-    <label for="pass">你一定知道密码趴</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-U2FsdGVkX1+nD76QzsHfloHcsu0x/Ul+2iI6CnHpvAJWLiq5CIgPBDRGgUq2q+Xx0Z2yrgHm3eNbjXRQm/XMmtIKe1j7Hz+H9wFKVHwPWvAIP3x7gqffv5Fmkf1hLYwy3TE6SG031ODks/qmnp6OGjQwEVwx9vMTA1dj3BC6AWfvNY5W6L98GW2DZrF7jXNTlGNcblYCZS2r3r35uskC9OI3+Q9gC1bQyyoBv+mLZGl2JiODx2RkVNBhMBNTzKOp2TxvwzTUCYhVfUYP8+78gVuYlZsf7ylmvywOEKR1kASjObT1+ZPV8jAz6NesTUHp2dMIucwLspZKQ9ZWFUXuntrHlBnrUBDI69QLfiI4lttz1y1S+q91ziiwIRCPFhQC8qG64VJiKSAILwxBOQ0kEp25TLRXyQgAKpr2cH6P/EVPH2UWZOCAd31T0Y3cjwwSI8HoulEZQiwg+fbMN/HyOSDyBnTZfSee08Ws5yw45A+FLwQNx2SvzyKN0LwJHjCV+CYVs6krxqlFhjUOVgW9X3cfG8EkBWzYDoo2ncTDWhaf+QTOCCDuyMvB/+aTiu+B0yCR2fdDGhEPeYUreuo2N1fUeBPbfl6vHwI4cjb6jv77iK+Cczljf/vfuBmhl2N/yqSTgagAMe6gfC9b8itt814I0Bw9tcOq5IjwmMyGJdME/KinszpK4yQl886l6K0deLGpHMUIN1NVhbc3ooSAIumNSolJbn38iI51C6+EPoCfiepGWI0iXVCkzNMS1i4XZ/2snIYlQdPZNLjl2sKLCktvuCW0xc4GaLKopuWSn1IOi4r1zhjbRD6X1IVbKLTiEbsTMTXSlha9BTbhiBNLadtM+LIF35rtGcrnvaZpB6qDG3kwUK+gimDhzlZScjSihpHSnteeGZ82XY2delEat1c90Sj8zJtzfCIbTiBw0omOZbIpRah6SlbKyBPxJ8R9MftH5otTZlYhq+TqtAIrPO7pj8uJvELDHKoKMH0v5FEZPWwa4yJ/JFZ68PAcUtVo2gL9bMAwwbeDX/7TtiXMuaPCKKITlWp68vjmhB/3Y2QbxEYjz/5kw4j0bxEmwweCotnlJxcKwQuj0l10hvQip0i0E5DWHDgNyHCi5CXMDZuYeampwcIckzNaY31DFtbUPC5yl9ekpMgNDqG0rfvRNAo9zfvK4j62G8ws1DJLEF4o3UrTVNeDPAc5L4wvLH5tQlmOGecDfsR1xwoLXip4ED7pSsouJ11bKNCvxKAOzLD+q18HCuzUfmAThg3RUZYrwtbWmzPe3T909ZBEPEbt29UXX2IJ0bxYk80WHhhujxW927+ah0185zncuL9EJfksnRw/jit5H5NhF39/IU3TKjY3rl910ihlEcCW1MiWrTZwMWpdSr0wOPj8BcpCyshA9WcRWFfXn6o8D/nLyg4x7Hlfr3udSiwZLu+CAzC/sjxh6QzPjYOOMvDZ/12EmipP8v/kI3KaVz86uTkQ4hSD73wB9m7sYl9k67WhdPSIFDEALeEY+n876/0Nr9njz1N01bYu3dL2h8q1ueEduyxJ9n+GyDD0IYT6ti+Pvjl3xooCkayPU6zIbxlDfKl7IZOBuOxonbOBpd22/Lcf0A2gR2CeaYHau62opihN4Dg6RUxnyqL5DCNtWLbS+kLY7R2xjLV4BWP5ZFWEntKj/oJ5Y8z/jATHac5cGU58lN38o0ejUfVOdMeX8Lx4+fpgkhJriM4AYE7PHwNugZfVLaLHy+j4JyfqfLksHAJoFoEjyelNNPAGHjgUpXznMUIph5TYDvy83/amb5pnOfPJA7DaMG78JASthuCscoqc0Uszt97qYbtJEKLk3emPDDFSESKDYUbvDoBmoaHwgA2tZTZUXqIAB36l87QzWyG3JOxebsLEEv0QKRKvMfBB4XlkhkGWfFLsOzHzPzgG0gUYiUaZtdFpPF9y2KdroiNKYdHLjqYkHK9Fg8qfo1rZbgdGM1BuztKn/AUNRV4d2MsyWZGWjHJgk0ScnaZTGfFzaXOVi21j9K48pzUhDxw95MGNvT2gyKsL5ynUxQYIsKRFrsQ9P0lVCxVz5HmHmzraYQzFGSKknN17Hz5y3bZr4uNUsI7vWZsnpjJQVtIOmO//VmP5LI7G29S9KvD9woHf4tvidc8AJ9uB2jVhpF8cqXjluiDLPoQsE1ljGABsDsRdnHyX/eyqxamWXsmzWdK+5isl+WjBMxjGBSHyEF6jv3X3I84jULfH1JrrAN1jPUKh2Vz9IrQo2uXAuq7je4wqkxi3++xf5HgQSQvz5vFh9Gb0k+leHNu+BhoLvYC22fTbnVkaO4TdEdnNUZ+uYXyS/F3sEj0u+fqFqIxi2ykgFdmTgNZSXXydfvhEk6AvcFpklJ37QzyKzWLI0DtKpapH2+hNix/RefCA69hrwPd8eePzYbEHt/HMHfPRHzvJ8hZ0aSXdTuoe3xfK2X/C0HSWM4IIciO0vAAepomsIAJ+3Ecmex9L84nwWpU6KpALxet+8pRsR0U+db4K+FWnK+XYOrfbyZYHw9jyjR3gUulkz3GuMb6qDHiXN+w9TVL0NwtzOCszh6Mwrdn0xouCDbkNe4djTkLUV/rMz51jQG8wb3rT4gW2dOw1EIjpp5W78Br+TpoJjfAw3RNHKJDEAZ3XFY/T6ya3u5kacjnv+D/FC/JlBBZCt+/+SJJ2SBwrrnKvQrKurqR3R8hljQvnddbGHU1Yw7uJMRAZ5ssPXqQgF07Sept6g4Rrgs2zDQMNUCkjVsH3FKJAFMVCNtyN0eacsV0cwOfmt2oDqewvy/91+pbHRQEYSxfeM6MjNkjFZ3SVQVLzNrdl3A8GvA8c4MlsqIeuH3YeleK30Utq0kmbK1RyJsoRQ5DNlmWhdswT6TInPzNDw6vS7cYVuM2tvP+B2OjJofH29m2V26wvW/jLOJ/+OP83zNZyMcf+524INnKyq5FdsLt0pcxqMxB7gtm0AJk0fCQ4xcMw5F9LVTwUV/Z9JBe85a8kB41QzRvM7hgOwKQMPiZQz3N5ZjBapHy6KShp+lFevDGAkhnKmJQyfB1bcO3baIsZJEZjbQ/qeMi33spM7EHpHfvipMXee/yGCFYmQ7TKbIVok+XlOlISU7mqDiapPI8zHwL4EPRx6hi7TZNFYSkzAwPq8o6bbm6diiGnd8wJBBAqYNV5Wrlkli8XoJSy0JAvBvl9PS+WHJspZd7fLIDa/jRRUO+IkExkQVXc5C8oVdnCGT77TlnuqT3hWizTHXpaz7AtMR89o5aqYn2/BD705T3QXD76ZhPlBhG35hmyx9x4TffHDG6AOfeYh2Ikt/2G6DeTUScJ5n3CMqzsC38/dMtakk9JOIJsHZGKGKgbw+3STKAnRTID1g7KSaDYaB9TkOGfEjLkxAc35mt1tWf71S0UYbx81LmWB9YATvw4fjTa1y0vB52zjdpdP22v/uoNv8kECnTbUxVskm6qfyb42LIfSTyJLnWQOpcZy7FWZoSvxuTDHE9KMeELLTv6TCbby5iG5kGL7/iZBDk7uh2NtZeleyQMGy5ooIWkX/PVWIjjAmxdpwFoNhB5KB3pECuyaC+QW7OTDMWZoOl8oB4gtAfEyJCnUn/AuAK1iY6TN3ZW+nUOgHHM/9mWCxSqQOicvnGnu/zX2DLsZFM0lFrqz5gcwDSCBmMKLbaIFx+l4yJNmUs3ibTnV2AHOOmigtVT2dBennaXyctIETOxEOL5Wu6KHWlH+/3cAHrIZautaFHypUzkSv4ctFRaAykEO4BhxvBo7m7+3tQ1SXvtldIpFNOxWSinuM7tkLeX2a8dTsAQcjaCB+pMKocbimzD2EQig4l/iNYyGKn2TjJiLxxP3J8U8KkrIhckFWfXziFfmf7FMITefSu8ZZd1+1xCuRBp2Od68AeStVu1lRJx7dxnyAbAH9JG2dHH2JaWySpARrzS07KPAaFPH+SEJZU6Pp1pUVOIJYRJMIHoFX90jJVPSxT8zHj+ryaKmakLnOPLDObcLo3nwkz8qPM1gYkwRwTd0qOSaODkxSOzUtppUTkSBr78mab9Y6UHmeV/HxQgtjUFXRswRjXpN4raBmJWUneLM3uEsawcXW5F0quXJ03bmKPdZwD44QKQkrUXrLL6NtnQYjrY7PD5B9qvbauYGCLkf9SqXtYL++5kQ+t7vJBXdP97aZmb7dwF95Z5tdKpwk32OmIAQysaqwrgqkQHelFo4qbI34LGrZRcfM0UwoTq9hundqZAWnInf9rLdy9Bvq9Y0YrQcpNt4o0JrK52gfK7JFBto34Sdz+jy19qSeDRq+xG2OcVablkr49UwDRye4N6zskIABgLQK3TqWhKM/h2hEtDQTEBgtwEZOTH2KA8U1mssEieomKNR0B9n3fsKTSoecPRCyhG6PVmfOZOtw98pnY5ZYQu5KXIYIJN5ONozHTEgH0tkPHho7FdQH48xIJaI3hBEGYJr3oZeoAIImtcr7og7NtK90j8BWv0i3TaANoAruj/zOk7HrB4uSBKzjVMnph0jCVafcGMzLbvi9tEjHfVfT2chbjDIJYecOVKtLlpXgOA3dtC+foSE8Y125L4ZHqYh7cfMDtxZY/uK3vdHK70J4kTmJNcoX7ZkmtYLidXmoRdmDhF3rV0bUcZEF783s0ET1Z7oc0atK50bTGhEVR+mikX8tDZy9HwZ5PkGocWZUovJok8IQLDGE8e7sjDysXI8T8uV4g6d3S13wYRXznnV/C4XSkfOM2j8TBYOXmmTAMC7q7VphScKjUt9ey90F9oLa5LaOTkvEe9T4y3hGpBpbEKUvmZhD7C4wyu9EiRlyXBh56uh81cIm4bdJOKEU495A9wGsOtAvCGGhJoSeTdOz1kpFiqCU880YGqh/cvKr7F/pwZzPEhz+blmavdL06FhRqPZxLEUclx7sSnLL4vktnL45zoZs12Su97fNeuZUWYevTcRexn/vFVR/fFRX8XHJnClfkt5lTCd8vxpXCWWwMXNItFAE1wZDqTqSrtX02AG8KDxFxoRderesD1z+Qh7iEmMe6keQoCpwrhH1qvYoKaYdWeCRhbd2p8BlBz4/n+sXkF3VEBxDwuecvxKDx8dR4QjYFiycc5dzX4Fp8apsihzWSQ0r0myZxqEimRas6OzhH0k2X3pO/+viFO72AKZ5N0lYSMrVmQ/2A6ZGAXP8FeZfEkT23knvaG0fooeqZdn85meCL8PK/rg946vE5s0ql43buJPFo8SbicIqixp0LHPaqlcT2z+hiiGnd6bCiFiO7TXqMb6sMIiIkSXgH4zp21Gfmlhc/irXXfgqPMIWu/w6obNaW+ovA97eJoJUQQhCwrrI3rgbo78gSufofNR9Jh6mjQOItMPyIfq028aDiPz2B/gYxLyUpG1PDwSLZqumd2Aa7ZPZpz+31G1maWg3T1oxM13xDAXLrXgr6u96dbxwa1A5+Qg72IDNPl5OlL4U1kfAiFVzLrT2lYNLWj7FcRAUi34u+t/D85sK3b6D97djoNJ10lWjlzLXVEg5Gf+/nh0aA3Qi5FoHdOJUEf1Fw8PlsmSUnPeSxOfv0+YizwRVktiVdKD10QlTKRHik3OL87VhTNgPfKRhyl+I9yxntfjm+Xh88MZaPtOQWpmkeaaYGycFBzIMycBRykMnplIfVdBtySjYIr+m2aHm9Svl2CJb4d4jwjuJl3jiQU+C8mK9g8wKrN88231BierE8FkaiuAjDlCIOV6k8pWS7Ntk3MoT2xKQK6nIz+PZfDduOL341+b0dATv3GMHgM2pZmsfaOXlRs1kK9OHOVs1KYQ9wIIS4sVbuRjnbIn6+glX39wWhYCb2jYGkR9pARMJ5IeFqv5OPFNTbzBjiuTZY0iVIOdUbf5GsWi1ICZiofhmH7esN0iwGQiL/Qr1WcALOj9MQv6Ub2KzwzLDMxdOvPDEnlXya2txrROqluON7pz8gZ0USS6/4KxBANeQWaqE91tGIAr8bk0PneT42jv9hSjLoqCBdHekx5PExVGhEY+ZFQk0d+J30vxwrJuLcXSYRHaXLqrtQ7argYXFAk91hrgNwphC0pndWYvFNYxLBOlDfmH7OGeGJQmoC93jQxMUE+ZxqDRd7WZnbbSdgI5lz/3jL6Nph1ocUxeIboNcFW2EZL3IaBT2DNTWdnZhdMfIjqBVqRVobK+AwSEHyLPgRMQBuRfZbZ9XS1PI9WDN7b6oM4UN4RKYmN+j9DRaTZy2Ld33L4B15WXsVIudDrWpsN6Z+DLD72GaAD8rfeXj/rhlG1NDVoMss40NtBHbj6JaDBSFysVtX5oU/y1EV5U0iRC2Jv3qu9JVwhNoQKFT5GsEMiySh8qSco1Sx0XyEBtYN40dgS34c18AAKFglV3ByfXowPeVyyHrLjcRrpf2UBKPDvfOpbJTYReFV4tTEXX0St0ywesS80E0eP3ssjluB/QV0psc6bHGRc4D8Y0YXzez0ghaoabW40E+kftcj/lNoTUkGfRSdw+4QVwSdSmZO3Y5oU1POj7hyKd4kviuezsO+Epu9L0Zb1yUAqG4HbYFHUFa5zXC5QvXJLcptjLygv/1XmeCMPsWKVg7Q9STusKfvZrfskO2g2xJR9i9NhUQTzdAIi7tDH10X7iSvLhHps10xMy6gi2tqtB4vJptmRJxFao/ibI5II9AFC6J1syw7Gdlb52SvhlCMGQUbUH5C/9WUa+TJhb+UsGgXeTr7IUcuEQE5aep1cBDTweQ2r3CAakWz3t8CkxqwGJ5wZGKdEZK8QDuDWmAWDdpbrR0e4u66WixYwxbZhwtKoMssv1B9dsM3ukWa1jv6xtILdSoUWgLNmerwoYQVkKEmBPxnePpO+hP7DMO7GIesSX9w+LlAArxQeLJ/3VVzL473wogl8beRVhZaIdvCGlrNs7tdxwJ66sg+viQUhNWQUTLZX9O0dEqcL3xl/k+LJheBf8xhsrSQkisFE6+HfHD4LttX/zSWa72tPWbJfgB/+qczmA/h/w7rS7QBPw4FIpBux5UlNsttyasAHVB7QxoyzgO+CXpL5od+D5A+60DypjrlJIB9+vcEBCkcwW3GvN33YrEkMhJTABjRp3AWOhQ3JqPzYdBmUwyu7k3vq42P8AfiopoyqFXmm3Da3Lg+xMhlkV0yi9s2e/A23uQkSJ6wD6MWls/la3qRhLZ10uHhel9y5qUdf6c8l4KeIQp4NJDNPYO8yiqsg1ig9KmDkwVZP956CnKS9lI37QB2nXcFAcg6YfUy4KyyV0wYHS8eJGnflHMkYPLx2w0Dce2cL/Z+l/0PD+CUhX6vvDj8FZ7OmRa9XaNHlz/DiRPT4nnalV9H94wJSKmN4UgICvJKNLR/R8XGLTNIeLL0yeboHY1uB/VuGzoFUBvIx4F6E9uiAiLgzEdd9LVVk2MsfBwoqNDFizuJfK9+eA3w3LsTEj00SmI2rmq78srF1M/P3ww/KCdvYuSpRup1AxqDFvwkepzs+DzHOoSzbr5gEX8GCNCIOJHw00i99DdjJSgf2MBtuBQDB/BbX79FMGbQ8m4K/NISdeUT/KlBHAtzPxEDTWUVl35uOquTjaOT1PgNtyBb1SsMISbAAhhM2Fbt0LhahQxBbO1KHZmLVLNIwMWWcmXXO2fPg3GkmlZPvwuMat/HoveckzUBmdzMzUkpY98eo7dJykqbCbFbsvl7Le1bk9mTiy5udzCVOpJ4OU/4/wTXyxZBwuGAMtY16aVlW1hWI7FBryEamf/1wopnS+Nrqr6NG+nA12dfjdKEA/GYri5KurScYfrpVnSjZlxIp282ydw24gION32PTc5VdAEx2IwP3mhsKH/GUI1owN4PIMs05fmikuR53IWpDTCbDWqMLc2lDTst5FWLxdxC9++AI9kYOULsyX2t/a4Z1yFXhfKQdy0ZSuRtyk2oWLAsSvGM5wE6ZIpV5a5KRklCm+WPzFZvmSUMDs7O7a5Twr5myVPMo3MoNrWkdYECAo+C9zE/pExaWmP3I0if8KL64wsEl3X+yCaQ5/f3oVt5Wu+cqVCJMGS+CxLpOyxPZzGUj1yUJD3IFEsvUHFiJ4LCJ3D6yzk/lBWoct+lEN4H7sa2gfqPUKrIIqw3XSFTkOt+bRViYkWJebzhk2h+QmugWNZN45bBweEFCRnRWbO+AGR1GwFm09nbN21UY2w+Szd85DcNRqQJNNBJB78KafqJU+lagbtnkiikzppj7Z9Mmb2HeafM7q2zLr496IT61JhGe+gQaiyNcXVCfaNYVh6VoFcWyii9rDJdhGj8oL2cQTTBmD3iLKyQT5KekaZLRo0JAULg412l4sMZrj7iV1QjDmvgAW9F+YS3LGDzukl9vNyLCYQPaRBm2vupust7A6PLO73xS3T7rei1MolHHPqReLBNC6w83bBP3GGUe+8TSv3WMDMzWzs9UBVvzdle7Gryd/y5MvSbw7/9QClPmORxP+OUHXAP3cAQztqv5h60TPlnw4cMf3HBSiK8jfBDjr9C6LR4LAlnaolYiPbekRiLvbcJ2uLhYuyK9DOdyuJXGTgPh5XuI2oHnr3+Vdfdpmv4cUp/+HNeaIzMRP5od+3ryIDiz5jpX97gqY3tMRKfNy1EbzSok8nmc0iqt1O3lbNGguxZs6tRPAga0L2j6KS9Gw3i7pKi7NO7b8biyNi71GM2wzjddiv6JRVzs3dr9VOyyjHzksIYhZrsyFV+6cW2D6ExIMNWLIWxXB6cYvAz9yqMY2YO++rmc84fxDjWDDkG80sPv2TizDhjyYSL4axs53JzZAuwRDjphqHPlBIsdZG7zT6cM529DOq4+6ZZny0ry7nfI8vBLvvmpGu4vdyafM0AxUStED9Mboaovxn0tnFcj9jEWriEylklde5ljreKqVPT+WGNKfaIfBfGuE2dSHuZ1UEyk32vW5JogPYCf7f6DDoCfsL1S4oGBMIbXdQM4AxABuz+pt2HYh3nyvOvYh0N9megPe6MpETMECf1NMZEMEDzlbBIW9mfm6trHdPUlXPjgOOvI8Gyp4Ob8XLPpMYGvTKp8tBqlImsBAIM6zBoCcTJaXx1QIlEzzpG+aQB65Y1BnUatV7pKnXVJ5pseNYiAxj74JLhzEe17huTyBtmOvpN0W/4VyWnvKAo32ZRfcfLxtxQerWVlXkXk8Ed9guGBdWwHhcBS5oH6F/QLUhpYlu5lEr4JGdJy0yNV/0bmR7CFZexuj4skDJWN7ZqvCl2NhzLYU/vJ+wDWvC1SJLMRRJOR7rNcStUbq2bBaiLTbirYk339Go5jNgBt/SUnEBf9O/NqBRT7T9baZCpD2fHFDkDi2mRgzkyNJTqKfhaPQO8Q0BSUKpf3x0CpGGI3jcxGuLc4U6666mi8EsYF+/Rs3Cie3JBBxMBcjdFKyAamkJn2xBsHQjLUkdo+pUtl+RKIusvOI+qyGKbzBZK9XlZ29ydaJGsckeGm6zKN+MJ59bOBSGQMxElRPBk+YFFJFXYBeAdH3QgbeEAaNbH2Wc/zT5hHwEfsbbvGUrFgA8VBp+dIz4+seBqCDcrBhZ8mm6juaN1av3bRjAmDgVFoPx3rwnbqjUQsZSyUC1hjpqmJWnbhoxqQUr5kZL+htXOWmrDZDZsTdf3bVO3YhJkLgavR2a8vQjc6ouIl8O+f9Mca9SS+xuAKK+cywuYvBBUH2s+Vdx6xqlPqVeqooriAf10L6OXRy9ajGpZ6JW6Dji2747FzuPSIpxqGzlnAbj3OnftCY+n++u2QzaJF0/reKXxCltmulb+YcleZH+Zpm/CtjJV/MFaETBorOqHbE/7fSbi62QPPddfWOE8I2cLG0hXQrIqcQdJAiLmoDHXPlF71/OfrXusZ6IMIQ50EbQpAEkrxKkTPmCRpwzeqEeDZPvDO+zofR+esB/TzZmkoOuvRXX0oxJvFdY2ENTYGKEI95N/tKPEc9EM+SHsUJLTGtC3m+HPl2mevweKYgJE2kq9mrgzVxpeN67csXQidCcb3ELAukd58YlnuiStw80WbNppsS75P16EZywUnmVK8YQKmBEkHRHqV0aIgPoUEWaZqVBqaFbXqeX3rCofseKZ4U8rArgn5WI3yE5jkhqKX4tyHcaiv
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <p>版权原因,题面不公开<br><a id="more"></a></p>
+<h2 id="安排座位"><a href="#安排座位" class="headerlink" title="安排座位"></a>安排座位</h2><p>首先我们可以算出对于每一排,我们可以排出来多少座位,以及一共需要多少排才能把座位排完.<br>然后我们考虑插入走廊的事情<br>要使得尽量多的位置在走廊边上, 于是在 n 列中插入走廊的策略是显然的, 我们只要以两列为<br>单位, 在其中插入即可．<br>有一些边界情况需要考虑清楚．</p>
+<h2 id="加法问题"><a href="#加法问题" class="headerlink" title="加法问题"></a>加法问题</h2><p>我们考虑如果满足式子$a \times 10^x+b \times 10^y$=$c \times 10^z$,那么一定有$a,b,c$这三个数在乘方之后的位数最少是$len_c&gt;=len_{a,b}$<br>首先我们将$c$的末位数补齐,然后我们发现,$c$一定是由$a,b$相加进位之后得到的.  </p>
+<p>我们固定$a,b$为$len_c$位和$len_{c-1}$位,然后我们枚举$0$的个数之后判断.  </p>
+<p>这样的话貌似要写高精度,其实不用,我们知道$hash$就是以一个$base$进制来表示数的方式,如果我们的$hash$中的$base$设为$10$,那么一个原本的$10$进制数在$hash$之后,可以直接用哈希值加减来判断.</p>
+<h2 id="有趣的数"><a href="#有趣的数" class="headerlink" title="有趣的数"></a>有趣的数</h2><p>经过我们快乐的打表之后发现,对于$k$进制下的末尾有奇数个$0$的数,有$m=a \times k^p(p\equiv1\pmod{2},!a\equiv0\pmod{k})$.<br>有了这个结论,我们就可以快速的统计出在$[1,n]$的区间中,符合条件的数字的个数.<br>又因为两个数的相对大小关系不会因为进制而改变,所以我们可以二分区间上界来找到我们要找的第$n$个数.</p>
+<h2 id="与非门树"><a href="#与非门树" class="headerlink" title="与非门树"></a>与非门树</h2><p>我们发现,对于某一个节点,无论是否发生故障,那么它的状态一定只有$0$和$1$两种.<br>所以我们可以设$f_{i,0/1,0/1}$,表示现在是第$i$个点,理论状态为$0/1$,实际状态为$0/1$时的方案数.  </p>
+<p>乍一看貌似不怎么可转移,我们想,对于理论状态为$0$,实际状态也为$0$的状态一定是只能从子树为全$0$和全$1$的状态转移而来.<br>然后对于理论状态和实际状态相异或为$1$的状态,但是我们可以通过输入为$0$或者$1$的状态减去输入全$0$的状态快速得到．<br>然后对于$f_{i,1,1}$的这种状态,我们可以用所有的总状态减去其他的所有状态达到. </p>
+<p>总结:比较<strong>基础</strong>的树形$DP$+<strong>简单</strong>容斥即可.(气稽败坏.png)</p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
       
     </div>
 
@@ -509,7 +539,7 @@ U2FsdGVkX1+nD76QzsHfloHcsu0x/Ul+2iI6CnHpvAJWLiq5CIgPBDRGgUq2q+Xx0Z2yrgHm3eNbjXRQ
   <p><span>本文标题:</span><a href="/2019/09/21/PJ五连测D2/">普及五连测D2</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年09月21日 - 10:09</p>
-  <p><span>最后更新:</span>2019年09月24日 - 18:09</p>
+  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
   <p><span>原始链接:</span><a href="/2019/09/21/PJ五连测D2/" title="普及五连测D2">http://krrrr.xyz/2019/09/21/PJ五连测D2/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/09/21/PJ五连测D2/" aria-label="复制成功！"></i></span>
   </p>
@@ -547,18 +577,6 @@ U2FsdGVkX1+nD76QzsHfloHcsu0x/Ul+2iI6CnHpvAJWLiq5CIgPBDRGgUq2q+Xx0Z2yrgHm3eNbjXRQ
       
 
       
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-
-        
-        </div>
       
       
 
@@ -656,8 +674,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -773,6 +800,13 @@ var jiathis_config={
           
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
             <div class="links-of-author motion-element">
@@ -824,7 +858,30 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安排座位"><span class="nav-number">1.</span> <span class="nav-text">安排座位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加法问题"><span class="nav-number">2.</span> <span class="nav-text">加法问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有趣的数"><span class="nav-number">3.</span> <span class="nav-text">有趣的数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与非门树"><span class="nav-number">4.</span> <span class="nav-text">与非门树</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -860,11 +917,6 @@ var jiathis_config={
 
 
 
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共40.5k字</span>
-</div>
-
         
 
 
@@ -878,11 +930,6 @@ var jiathis_config={
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1394,23 +1441,6 @@ var jiathis_config={
 
   
   
-  <script type="text/javascript">
-  wpac_init = window.wpac_init || [];
-  wpac_init.push({widget: 'Rating', id: wqyzstql,
-    el: 'wpac-rating',
-    color: 'f79533'
-  });
-  (function() {
-    if ('WIDGETPACK_LOADED' in window) return;
-    WIDGETPACK_LOADED = true;
-    var mc = document.createElement('script');
-    mc.type = 'text/javascript';
-    mc.async = true;
-    mc.src = '//embed.widgetpack.com/widget.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();
-  </script>
-
 
   
 

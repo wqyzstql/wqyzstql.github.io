@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '6.0.5',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -154,20 +154,22 @@
   <meta name="keywords" content="ZROI,">
 
 
-<meta name="description" content="只有知道密码的人才能看呢">
+<meta name="description" content="版权原因,题面不公开">
 <meta name="keywords" content="ZROI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZROI普转提D4">
 <meta property="og:url" content="http://krrrr.xyz/2019/10/13/ZROI普转提D4/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="只有知道密码的人才能看呢">
+<meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T08:48:30.765Z">
+<meta property="og:updated_time" content="2019-10-18T13:14:29.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZROI普转提D4">
-<meta name="twitter:description" content="只有知道密码的人才能看呢">
+<meta name="twitter:description" content="版权原因,题面不公开">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="KRrrrrrrrr_Blog" type="application/atom+xml">
 
 
 
@@ -217,9 +219,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -269,37 +271,37 @@
         
         <li class="menu-item menu-item-主页">
           <a href="/" rel="section">
-            主页</a>
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
         </li>
       
         
         <li class="menu-item menu-item-关于">
           <a href="/about/" rel="section">
-            关于</a>
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
         </li>
       
         
         <li class="menu-item menu-item-标签">
           <a href="/tags/" rel="section">
-            标签</a>
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
         </li>
       
         
         <li class="menu-item menu-item-分类">
           <a href="/categories/" rel="section">
-            分类</a>
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
         </li>
       
         
         <li class="menu-item menu-item-总览">
           <a href="/archives/" rel="section">
-            总览</a>
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>总览</a>
         </li>
       
         
         <li class="menu-item menu-item-友链">
           <a href="/friends/" rel="section">
-            友链</a>
+            <i class="menu-item-icon fa fa-fw fa-users"></i> <br>友链</a>
         </li>
       
 
@@ -308,7 +310,8 @@
           
             <a href="javascript:;" class="popup-trigger">
           
-            搜索</a>
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
         </li>
       
 
@@ -459,6 +462,34 @@
           
 
           
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">2.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 mins.</span>
+              
+            </div>
+          
 
           
 
@@ -475,20 +506,22 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="你一定知道密码趴">
-    <label for="pass">你一定知道密码趴</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+        <p>版权原因,题面不公开<br><a id="more"></a></p>
+<h3 id="控制人偶"><a href="#控制人偶" class="headerlink" title="控制人偶"></a>控制人偶</h3><p>发现我们只要算出来在一个循环中,坐标的变化值$(\Delta x , \Delta y)$.<br>然后将变化值去乘循环时间的个数,最后多出来的暴力即可.</p>
+<h3 id="复杂度计算"><a href="#复杂度计算" class="headerlink" title="复杂度计算"></a>复杂度计算</h3><p>来我们开始一步一步的推公式(<br>题目中要我们求的时间复杂度,写成多项式的形式就是:  </p>
+<script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m\sum_{x=i}^k\sum_{y=j}^l 1</script><p>首先我们可以发现,最后的$x$和$y$的两维,因为是直接加起来的,所以可以直接变成$(l-j+1) \times (k-i+1)$,那么原来式就变成了  </p>
+<script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1)</script><p>然后我们发现,同样的$(l-j+1)$和$(k-i+1)$分别都是被统计了$(m-j+1)$次和$(n-i+1)$次,所以由乘法分配律可知</p>
+<script type="math/tex; mode=display">\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1) = \sum_{k=i}^n[\sum_{l=1}^{m-j+1} \times (k-i+1)]</script><p>发现$(k-i+1)$的系数可以直接等差数列求和,然后再将$\sum_{k=i}^n$拆开和等差数列求和公式之后就会得到  </p>
+<script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1) = \sum_{i=1}^n\sum_{j=1}^m\frac{(n-i+1) \times (n-i+2)}{2} \times \frac{(m-j+1) \times (m-j+2)}{2}</script><p>将分母提取出来之后,可以得到原式等价于</p>
+<script type="math/tex; mode=display">\frac{\sum_{i=1}^n\sum_{j=1}^m  (n-i+1) \times (n-i+2) \times (m-j+1) \times (m-j+2)}{4}</script><p>然后继续固定$i$,我们发现系数满足$A_i=i^2+i$,那么根据$\sum_{i=1}^n i^2=\frac{n \times (n+1) \times (2 \times n + 1)}{6}$有原式等价于<br>$[\frac{m \times ( m + 1 ) \times ( 2 \times m + 1) }{6} \times \frac{m \times (m+1)}{2}] \times [\frac{n \times (n+1) \times (2 \times n + 1 )}{6}+\frac{n \times ( n + 1 )}{2}] / 4$<br>预处理逆元之后可以直接$O(1)$求出</p>
+<h3 id="复印任务"><a href="#复印任务" class="headerlink" title="复印任务"></a>复印任务</h3><p>我们注意到$1&lt;=t_i&lt;=10^3$.所以我们可以在很少的时间内怼同类时间的复印机进行预处理.<br>由于我们知道每个复印机的启动时间,所以我们可以维护三个值.我们用$c_i$表示周期为$i$的复印机个数,$f_{t,p}$表示周期为$t$的复印机,且它的工作的起始时间对$t$取膜以后是$p$的个数(同时我们用$g$)表示$f$的后缀和.<br>同时我们记录$s_t$表示所有周期为$t$的时间的复印机进入打印状态所欲要的$t$的时间周期有多少个.<br>通过处理这三个数组,我们可以很快的计算同类周期的复读机在一段时间内的打印个数.</p>
+<p>所以我们可以选择二分一个时间$T$,假设我们现在枚举的复印机的时间周期为$t$,那么我们发现能产生的复印件个数为$c_t \times (T/t) - s_j - f_{j,Tmodt+1} $<br>然后我们把每个时间的加起来就是答案.</p>
+<h3 id="A-B-Problem"><a href="#A-B-Problem" class="headerlink" title="A+B Problem"></a>A+B Problem</h3><p>二维树状数组裸题….<br>直接安利我学习的博客了qwq..</p>
+<p><a href="https://www.cnblogs.com/rabbithu/p/bit.html" target="_blank" rel="noopener">写的挺好的一篇博客</a></p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
       
     </div>
 
@@ -509,7 +542,7 @@ U2FsdGVkX19i8EGKXxnzEaPZ8Pe0OfGHlAL6zF5Ke+GOpc6M423+NpaGbni/AFtu23xPeQrky7DhwgRZ
   <p><span>本文标题:</span><a href="/2019/10/13/ZROI普转提D4/">ZROI普转提D4</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月13日 - 15:10</p>
-  <p><span>最后更新:</span>2019年10月13日 - 16:10</p>
+  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
   <p><span>原始链接:</span><a href="/2019/10/13/ZROI普转提D4/" title="ZROI普转提D4">http://krrrr.xyz/2019/10/13/ZROI普转提D4/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/13/ZROI普转提D4/" aria-label="复制成功！"></i></span>
   </p>
@@ -547,18 +580,6 @@ U2FsdGVkX19i8EGKXxnzEaPZ8Pe0OfGHlAL6zF5Ke+GOpc6M423+NpaGbni/AFtu23xPeQrky7DhwgRZ
       
 
       
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-
-        
-        </div>
       
       
 
@@ -656,8 +677,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -773,6 +803,13 @@ var jiathis_config={
           
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
             <div class="links-of-author motion-element">
@@ -824,7 +861,30 @@ var jiathis_config={
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
 
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制人偶"><span class="nav-number">1.</span> <span class="nav-text">控制人偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂度计算"><span class="nav-number">2.</span> <span class="nav-text">复杂度计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复印任务"><span class="nav-number">3.</span> <span class="nav-text">复印任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-B-Problem"><span class="nav-number">4.</span> <span class="nav-text">A+B Problem</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -860,11 +920,6 @@ var jiathis_config={
 
 
 
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共40.5k字</span>
-</div>
-
         
 
 
@@ -878,11 +933,6 @@ var jiathis_config={
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1394,23 +1444,6 @@ var jiathis_config={
 
   
   
-  <script type="text/javascript">
-  wpac_init = window.wpac_init || [];
-  wpac_init.push({widget: 'Rating', id: wqyzstql,
-    el: 'wpac-rating',
-    color: 'f79533'
-  });
-  (function() {
-    if ('WIDGETPACK_LOADED' in window) return;
-    WIDGETPACK_LOADED = true;
-    var mc = document.createElement('script');
-    mc.type = 'text/javascript';
-    mc.async = true;
-    mc.src = '//embed.widgetpack.com/widget.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();
-  </script>
-
 
   
 

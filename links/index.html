@@ -154,18 +154,18 @@
   <meta name="keywords" content="Hexo, NexT">
 
 
-<meta name="description" content="沙雕复读机||没学上了">
+<meta name="description" content=".container {     width: 100%;   }    .links {     list-style: none;   }    .link {     margin: 25;     display: inline-block;   }    .card {     height: 74px;     width: 300px;     box-shadow: 0 1">
 <meta name="keywords" content="KR的Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="links">
+<meta property="og:title" content="KR的朋友们">
 <meta property="og:url" content="http://krrrr.xyz/links/index.html">
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
-<meta property="og:description" content="沙雕复读机||没学上了">
+<meta property="og:description" content=".container {     width: 100%;   }    .links {     list-style: none;   }    .link {     margin: 25;     display: inline-block;   }    .card {     height: 74px;     width: 300px;     box-shadow: 0 1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-26T12:08:22.688Z">
+<meta property="og:updated_time" content="2019-10-20T11:44:31.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="links">
-<meta name="twitter:description" content="沙雕复读机||没学上了">
+<meta name="twitter:title" content="KR的朋友们">
+<meta name="twitter:description" content=".container {     width: 100%;   }    .links {     list-style: none;   }    .link {     margin: 25;     display: inline-block;   }    .card {     height: 74px;     width: 300px;     box-shadow: 0 1">
 
 
 
@@ -183,7 +183,7 @@
     sidebar: "",
   };
 </script>
-  <title>links | KRrrrrrrrr_Blog</title>
+  <title>KR的朋友们 | KRrrrrrrrr_Blog</title>
   
 
 
@@ -281,6 +281,12 @@
         </li>
       
         
+        <li class="menu-item menu-item-友链">
+          <a href="/links/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-users"></i> <br>友链</a>
+        </li>
+      
+        
         <li class="menu-item menu-item-标签">
           <a href="/tags/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
@@ -296,12 +302,6 @@
         <li class="menu-item menu-item-总览">
           <a href="/archives/" rel="section">
             <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>总览</a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-友链">
-          <a href="/friends/" rel="section">
-            <i class="menu-item-icon fa fa-fw fa-users"></i> <br>友链</a>
         </li>
       
 
@@ -374,7 +374,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">links</h1>
+<h1 class="post-title" itemprop="name headline">KR的朋友们</h1>
 
 <div class="post-meta">
   
@@ -392,7 +392,147 @@
       <div class="post-body">
         
         
-          
+          <p><hr></p>
+<style>
+  .container {
+    width: 100%;
+  }
+
+  .links {
+    list-style: none;
+  }
+
+  .link {
+    margin: 25;
+    display: inline-block;
+  }
+
+  .card {
+    height: 74px;
+    width: 300px;
+    box-shadow: 0 1px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    transition: box-shadow .25s cubic-bezier(.4,0,.2,1);
+  }
+
+  .card:hover {
+    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);
+  }
+
+  .avatar {
+    float: left;
+    height: 100px;
+    width: 72px;
+  }
+
+  .titles {
+    overflow: hidden;
+    height: 72px;
+    width: 227px;
+    margin-left: 72px;
+  }
+
+  .title{
+    text-align: center;
+    height: 20px;
+    width: 100%;
+    margin: 0;
+    line-height: 20px;
+    margin-top: 14px;
+  }
+
+  .subtitle {
+    text-align: center;
+    height: 20px;
+    width: 100%;
+    margin: 0;
+    line-height: 20px;
+  }
+
+  small {
+    width: 100%;
+  }
+
+</style>
+
+<div div="container">
+  <ul class="links" id="links"></ul>
+</div>
+
+<script>
+var xhr = new XMLHttpRequest();
+var path = 'index/links.xml';
+
+xhr.open('GET', path, true);
+
+xhr.onload = function (e) {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // console.log(xhr.responseText);
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
+      // document.write(xmlDoc.getElementsByTagName('link')[0].textContent);
+      var ul = document.getElementById('links');
+
+      for (let i = 0; i < xmlDoc.getElementsByTagName('link').length; i++) {
+        var li = document.createElement('li');
+        // li.setAttribute('class', 'link');
+        li.className = 'link';
+        var a = document.createElement('a');
+        a.href = xmlDoc.getElementsByTagName('url')[i].innerHTML;
+        a.target = '_blank';
+        a.title = xmlDoc.getElementsByTagName('title')[i].innerHTML;
+        var card = document.createElement('div');
+        card.className = 'card';
+        var avatar = document.createElement('div');
+        avatar.className = 'avatar';
+        var image = document.createElement('img');
+        image.src = 'index/' + xmlDoc.getElementsByTagName('avatar')[i].innerHTML;
+        var titles = document.createElement('div');
+        titles.className = 'titles';
+        var title = document.createElement('p');
+        title.className = 'title';
+        title.innerText = xmlDoc.getElementsByTagName('title')[i].innerHTML;
+        var subtitle = document.createElement('p');
+        subtitle.className = 'subtitle';
+        var small = document.createElement('small');
+        small.innerText = xmlDoc.getElementsByTagName('subtitle')[i].innerHTML;
+
+        subtitle.appendChild(small);
+        titles.appendChild(title);
+        titles.appendChild(subtitle);
+
+        avatar.appendChild(image);
+
+        card.appendChild(avatar);
+        card.appendChild(titles);
+
+        a.appendChild(card);
+
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+    } else {
+      // console.error(xhr.statusText);
+    }
+  }
+};
+
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+
+xhr.send(null);
+</script>
+
+
+
+
+<p>为了我加友链方便,如果想加友链的话麻烦在评论区留言一下格式$qwq$</p>
+<pre><code>1. 名称
+2. 个性签名
+3. 头像的图床地址
+4. 博客地址.
+</code></pre>
         
       </div>
       
@@ -411,6 +551,13 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -1140,6 +1287,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[普转提D5题解]]></title>
+    <url>%2F2019%2F10%2F20%2F%E6%99%AE%E8%BD%AC%E6%8F%90D5%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[版权原因,题面不公开 Zbox loves keyboard首先考虑直接递推,但是由于$Backspace$操作的存在,使得出现了后效性,所以貌似无法直接递推.然后我们考虑一下先不考虑$Backspace$怎么做.我们引入图论模型,把$[1,10^6]$中的每个值都看做一个点.然后我们考虑前几个操作,那么 对于每个点$x$,由$x$向$x+1$连接一条边. 对于每个点$x$,我们从小到大枚举$k$使得从$x$到$x \times k &lt;= n$连接一条边. 然后我们只需要从$x$向$n$跑一遍最短路即可(目测会卡某死掉的算法).然后我们再来考虑一下有$Backspace$怎么做.我们发现,如果我们从某个点$i$超级加倍到了$2 \times i$,而$2 \times i$比$n$大好多好多,那么我们在一个一个$Backspace$的时候一定会遇到一个$j (n&lt;j&lt;i)$可以从$x$转移到.所以我们瞎猜看题解看出来了$Backspace$操作的上界$100$,然后我们对于每个$i$,都向$[max(1,i-100),i-1]$的区间的点连边就好了. 这样的话我们计算一下时间复杂度发现边的数量为调和级数为$nInn$的复杂度,而我们跑一遍$Heap$_$Dijkstra$是$O(nlog_2m)$的.所以总复杂度为$O(n{log^2_2n})$.注意到$n$其实挺大的,所以需要卡卡常数(比如用斐波那契堆跑$Heap$_$Dijkstra$什么的) 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>ZROI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[取石子(概率期望)]]></title>
     <url>%2F2019%2F10%2F16%2F%E6%A6%82%E7%8E%87%E6%9C%9F%E6%9C%9B%E5%85%A5%E9%97%A8%E5%8F%96%E7%9F%B3%E5%AD%90%2F</url>
     <content type="text"><![CDATA[我看我是完全不懂哦 题面:其中$1&lt;=n&lt;=10^5$,$1&lt;=a_i&lt;=10^9$ 首先我们推广一下,概率具有可加性(也叫线性性).用公式解释就是$E(XY)=E(X)+E(Y)$.然后具体推广到这道题的话,我们设$E(t)$表示答案,那么$E(t)=[\sum_{i=2}^{n}P_i]+1$.其中$P_i$表示$i$这堆在$1$号堆之前被拿的期望.然后假设我们每次在$1$号堆和$x$号堆之间选择一堆的话,那么选择$x$号堆还是选择$1$号堆之间的相对概率是不受其他堆石子影响的.即$P_i=\frac{a_i}{a_i+a_1}$.那么答案很显然就是$ans=[\sum_{i=2}^{n}\frac{a_i}{a_1+a_i}]+ 1$时间复杂度为$O(n)$123456789101112131415161718#include&lt;bits/stdc++.h&gt;#define int long longusing namespace std;const int N=1e5+10;int n;double a[N];signed main(void)&#123; ios::sync_with_stdio(false); cin.tie(0),cout.tie(0); cin&gt;&gt;n; for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i]; double ans=1.0; for(int i=2;i&lt;=n;i++) ans=ans+(a[i]/(a[1]+a[i])); cout&lt;&lt;ans&lt;&lt;endl; return 0;&#125; 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>

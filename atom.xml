@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-18T13:13:15.067Z</updated>
+  <updated>2019-10-20T08:02:43.849Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>普转提D5题解</title>
+    <link href="http://krrrr.xyz/2019/10/20/%E6%99%AE%E8%BD%AC%E6%8F%90D5%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.xyz/2019/10/20/普转提D5题解/</id>
+    <published>2019-10-20T06:23:30.000Z</published>
+    <updated>2019-10-20T08:02:43.849Z</updated>
+    
+    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h3 id="Zbox-loves-keyboard"><a href="#Zbox-loves-keyboard" class="headerlink" title="Zbox loves keyboard"></a>Zbox loves keyboard</h3><p>首先考虑直接递推,但是由于$Backspace$操作的存在,使得出现了后效性,所以貌似无法直接递推.<br>然后我们考虑一下先不考虑$Backspace$怎么做.我们引入图论模型,把$[1,10^6]$中的每个值都看做一个点.<br>然后我们考虑前几个操作,那么  </p><ol><li>对于每个点$x$,由$x$向$x+1$连接一条边.</li><li>对于每个点$x$,我们从小到大枚举$k$使得从$x$到$x \times k &lt;= n$连接一条边.</li></ol><p>然后我们只需要从$x$向$n$跑一遍最短路即可(目测会卡某死掉的算法).<br>然后我们再来考虑一下有$Backspace$怎么做.我们发现,如果我们从某个点$i$超级加倍到了$2 \times i$,而$2 \times i$比$n$大好多好多,那么我们在一个一个$Backspace$的时候一定会遇到一个$j (n&lt;j&lt;i)$可以从$x$转移到.<br>所以我们<del>瞎猜</del>看题解看出来了$Backspace$操作的上界$100$,然后我们对于每个$i$,都向$[max(1,i-100),i-1]$的区间的点连边就好了.</p><p>这样的话我们计算一下时间复杂度发现边的数量为调和级数为$nInn$的复杂度,而我们跑一遍$Heap$_$Dijkstra$是$O(nlog_2m)$的.所以总复杂度为$O(n{log^2_2n})$.<br>注意到$n$其实挺大的,所以需要卡卡常数(比如用斐波那契堆跑$Heap$_$Dijkstra$什么的)</p><blockquote><p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;版权原因,题面不公开&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+    
+  </entry>
   
   <entry>
     <title>取石子(概率期望)</title>
@@ -464,29 +487,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;del&gt;罗小黑真尼玛好看&lt;/del&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>普及五连测D2</title>
-    <link href="http://krrrr.xyz/2019/09/21/PJ%E4%BA%94%E8%BF%9E%E6%B5%8BD2/"/>
-    <id>http://krrrr.xyz/2019/09/21/PJ五连测D2/</id>
-    <published>2019-09-21T02:52:48.000Z</published>
-    <updated>2019-10-18T13:15:03.332Z</updated>
-    
-    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h2 id="安排座位"><a href="#安排座位" class="headerlink" title="安排座位"></a>安排座位</h2><p>首先我们可以算出对于每一排,我们可以排出来多少座位,以及一共需要多少排才能把座位排完.<br>然后我们考虑插入走廊的事情<br>要使得尽量多的位置在走廊边上, 于是在 n 列中插入走廊的策略是显然的, 我们只要以两列为<br>单位, 在其中插入即可．<br>有一些边界情况需要考虑清楚．</p><h2 id="加法问题"><a href="#加法问题" class="headerlink" title="加法问题"></a>加法问题</h2><p>我们考虑如果满足式子$a \times 10^x+b \times 10^y$=$c \times 10^z$,那么一定有$a,b,c$这三个数在乘方之后的位数最少是$len_c&gt;=len_{a,b}$<br>首先我们将$c$的末位数补齐,然后我们发现,$c$一定是由$a,b$相加进位之后得到的.  </p><p>我们固定$a,b$为$len_c$位和$len_{c-1}$位,然后我们枚举$0$的个数之后判断.  </p><p>这样的话貌似要写高精度,其实不用,我们知道$hash$就是以一个$base$进制来表示数的方式,如果我们的$hash$中的$base$设为$10$,那么一个原本的$10$进制数在$hash$之后,可以直接用哈希值加减来判断.</p><h2 id="有趣的数"><a href="#有趣的数" class="headerlink" title="有趣的数"></a>有趣的数</h2><p>经过我们快乐的打表之后发现,对于$k$进制下的末尾有奇数个$0$的数,有$m=a \times k^p(p\equiv1\pmod{2},!a\equiv0\pmod{k})$.<br>有了这个结论,我们就可以快速的统计出在$[1,n]$的区间中,符合条件的数字的个数.<br>又因为两个数的相对大小关系不会因为进制而改变,所以我们可以二分区间上界来找到我们要找的第$n$个数.</p><h2 id="与非门树"><a href="#与非门树" class="headerlink" title="与非门树"></a>与非门树</h2><p>我们发现,对于某一个节点,无论是否发生故障,那么它的状态一定只有$0$和$1$两种.<br>所以我们可以设$f_{i,0/1,0/1}$,表示现在是第$i$个点,理论状态为$0/1$,实际状态为$0/1$时的方案数.  </p><p>乍一看貌似不怎么可转移,我们想,对于理论状态为$0$,实际状态也为$0$的状态一定是只能从子树为全$0$和全$1$的状态转移而来.<br>然后对于理论状态和实际状态相异或为$1$的状态,但是我们可以通过输入为$0$或者$1$的状态减去输入全$0$的状态快速得到．<br>然后对于$f_{i,1,1}$的这种状态,我们可以用所有的总状态减去其他的所有状态达到. </p><p>总结:比较<strong>基础</strong>的树形$DP$+<strong>简单</strong>容斥即可.(气稽败坏.png)</p><blockquote><p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版权原因,题面不公开&lt;br&gt;
     
     </summary>
     

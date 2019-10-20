@@ -1,12 +1,1470 @@
-<!-- build time:Fri Oct 18 2019 21:45:58 GMT+0800 (GMT+08:00) --><!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="//fonts.googleapis.com/css?family=Fira Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css"><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css"><link href="/css/main.css?v=6.0.5" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.5"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.5"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.5"><link rel="mask-icon" href="/images/logo.svg?v=6.0.5" color="#222"><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Gemini",version:"6.0.5",sidebar:{position:"left",display:"post",offset:12,b2t:!0,scrollpercent:!0,onmobile:!1},fancybox:!1,fastclick:!1,lazyload:!1,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"我们莫得找到关于这东西的内容啊qwq: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet"><style>.pace .pace-progress{background:#1E92FB;height:3px}.pace .pace-progress-inner{box-shadow:0 0 10px #1E92FB,0 0 5px #1E92FB}.pace .pace-activity{border-top-color:#1E92FB;border-left-color:#1E92FB}</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-1925083057342311",enable_page_level_ads:!0})</script><meta name="keywords" content="学习笔记,图论,最小生成树,Kruscal重构树,"><meta name="description" content="学不会啊…."><meta name="keywords" content="学习笔记,图论,最小生成树,Kruscal重构树"><meta property="og:type" content="article"><meta property="og:title" content="Kruscal重构树学习笔记"><meta property="og:url" content="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/index.html"><meta property="og:site_name" content="KRrrrrrrrr_Blog"><meta property="og:description" content="学不会啊…."><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://krrrr.xyz/images/study/kru.png"><meta property="og:image" content="http://krrrr.xyz/images/study/krul2.png"><meta property="og:image" content="http://krrrr.xyz/images/study/krul3.png"><meta property="og:updated_time" content="2019-10-18T13:13:14.977Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Kruscal重构树学习笔记"><meta name="twitter:description" content="学不会啊…."><meta name="twitter:image" content="http://krrrr.xyz/images/study/kru.png"><link rel="alternate" href="/atom.xml" title="KRrrrrrrrr_Blog" type="application/atom+xml"><link rel="canonical" href="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/"><script type="text/javascript" id="page.configurations">CONFIG.page={sidebar:""}</script><title>Kruscal重构树学习笔记 | KRrrrrrrrr_Blog</title><noscript><style type="text/css">.sidebar-inner,.use-motion .brand,.use-motion .collection-title,.use-motion .comments,.use-motion .menu-item,.use-motion .motion-element,.use-motion .pagination,.use-motion .post-block,.use-motion .post-body,.use-motion .post-header{opacity:initial}.use-motion .logo,.use-motion .site-subtitle,.use-motion .site-title{opacity:initial;top:initial}</style></noscript><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><a href="https://github.com/wqyzstql"><img style="position:absolute;top:0;right:0;border:0" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">KRrrrrrrrr_Blog</span> <span class="logo-line-after"><i></i></span></a></div><p class="site-subtitle">以梦为马，不负年华</p></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-主页"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>主页</a></li><li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-总览"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>总览</a></li><li class="menu-item menu-item-友链"><a href="/friends/" rel="section"><i class="menu-item-icon fa fa-fw fa-users"></i><br>友链</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li><li class="menu-item menu-item-canvas-toggle"><a href="javascript:;" rel="section" id="stop-canvas" title="如果背景动画占用了您太多 CPU ，点击以隐藏"><i class="menu-item-icon fa fa-fw fa-stop"></i><br>隐藏背景动画 </a><a href="javascript:;" rel="section" id="play-canvas"><i class="menu-item-icon fa fa-fw fa-play"></i><br>显示背景动画</a></li></ul><div class="site-search"><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class="search-icon"><i class="fa fa-search"></i> </span><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span><div class="local-search-input-wrapper"><input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input"></div></div><div id="local-search-result"></div></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="KRrrrrrrrr"><meta itemprop="description" content><meta itemprop="image" content="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="KRrrrrrrrr_Blog"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Kruscal重构树学习笔记</h1><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T18:57:27+08:00">2019-10-09</time> </span><span class="post-category"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i> </span><span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/分类/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span> </span><span class="post-comments-count"><span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-comment-o"></i> </span><a href="/2019/10/09/Kruskal重构树学习笔记/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/Kruskal重构树学习笔记/" itemprop="commentCount"></span></a></span><div class="post-symbolscount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i> </span><span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">2k</span> <span class="post-meta-divider">|</span> <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">2 mins.</span></div></div></header><div class="post-body" itemprop="articleBody"><p>学不会啊….<br><a id="more"></a></p><p><img src="/images/study/kru.png" alt="重构树"><br><del>以上就是性质,讲完了</del></p><p>你们不要打我QAQ…</p><h3 id="一道例题-货车运输"><a href="#一道例题-货车运输" class="headerlink" title="一道例题(货车运输)"></a>一道例题(货车运输)</h3><p>我们看一下第五条性质,哎妈呀这道题不是裸题吗.<br>我们跑一遍$Kruscal$重构树,然后询问的时候每两个点的答案,就是这两个在重构树上$LCA$的点权.<br>然后就没了.</p><h3 id="另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><a href="#另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢" class="headerlink" title="另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)"></a>另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</h3><p><img src="/images/study/krul2.png" alt="例题2"></p><p>第一反应是考虑每条边在作为权值最小的边的时候的贡献,但是发现这样也并不好统计最终贡献.<br>所以根据这篇博客的标题,我们来考虑$Kruscal$重构树的做法.<br>我们发现$Kruscal$重构树满足大根堆的性质,那么我们考虑某一个边权节点,他有贡献的路径很显然是它连接的叶子节点的路径一直到某个不在它子树内而且父亲节点大于它的节点.<br>但是发现这样也并不好统计最终贡献.<br>发现,如果重构树满足小根堆的性质的话,那么我们发现两点间路径边权的最小值就是他们的$LCA$,这样就方便统计答案了.<br>所以我们考虑把所有的边权同乘$-1$,这样之后再建重构树.然后就可以统计答案了.</p><h3 id="还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><a href="#还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢" class="headerlink" title="还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)"></a>还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</h3><p><img src="/images/study/krul3.png" alt="例题3"><br>也是$Kruscal$重构树的套路题…<br>对于边权最大值的限制， 完全可以等价地转化到它们在最小瓶颈生成树上路径边权最大值的限制。<br>考虑$Kruskal$重构树上一个点在只允许走边权$&lt;=k$的边的情况下能够到的点的集合,发现它们是一棵子树,且根为$s$的某个祖先.具体来说,是$s$到根路径上深度最小的点权$&lt;=k$的祖先<br>我们可以倍增地找到这个祖先,接下来问题就转化为了经典问题:求一个子树当中的权值第k大.使用主席树可以轻松解决.</p><h3 id="最后一道例题-归程"><a href="#最后一道例题-归程" class="headerlink" title="最后一道例题(归程)"></a>最后一道例题(归程)</h3><p>题面就不放了….<br>因为每天开始的时候车的位置都会被重置一次,所以我们对于每次询问都可以在起点进行一次$bfs$,然后答案就是这些点中到$1$号点距离最小的点.<br>但是这样…显然过不了…发现每次进行询问的时候都去$bfs$一遍显然太慢了,而且这道题为强制在线,也不能按照这些询问的海拔排序.<br>那么我们怎么办呢?<br>根据标题,我们可以选择$Kruscal$重构树来解决掉这道题.<br>首先我们发现,$Kruscal$重构树满足大根堆的性质,那么满足海拔大于水位线的边组成的点一定是某一颗子树.<br>然后我们可以进行一次堆优化的$Dijkstra$进行预处理,然后把$1$号点到每个点的最短路的长度记为重构树上新的点的点权.<br>然后对于每次查询,我们的任务就变成了查询某颗子树中的叶子的权值最小值,而且是静态的.显然可以$log$的复杂度随便搞一搞.</p><blockquote><p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p></blockquote></div><div><div class="my_post_copyright"><script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script><script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script><script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script><p><span>本文标题:</span><a href="/2019/10/09/Kruskal重构树学习笔记/">Kruscal重构树学习笔记</a></p><p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p><p><span>发布时间:</span>2019年10月09日 - 18:10</p><p><span>最后更新:</span>2019年10月18日 - 21:10</p><p><span>原始链接:</span><a href="/2019/10/09/Kruskal重构树学习笔记/" title="Kruscal重构树学习笔记">http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/</a> <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/" aria-label="复制成功！"></i></span></p><p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p></div><script>var clipboard=new Clipboard(".fa-clipboard");$(".fa-clipboard").click(function(){clipboard.on("success",function(){swal({title:"",text:"复制成功",icon:"success",showConfirmButton:!0})})})</script></div><footer class="post-footer"><div class="post-tags"><a href="/标签/学习笔记/" rel="tag"># 学习笔记</a> <a href="/标签/图论/" rel="tag"># 图论</a> <a href="/标签/最小生成树/" rel="tag"># 最小生成树</a> <a href="/标签/Kruscal重构树/" rel="tag"># Kruscal重构树</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/2019/10/09/CF416E/" rel="next" title="CF416E"><i class="fa fa-chevron-left"></i> CF416E</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/2019/10/10/Round74/" rel="prev" title="Educational Codeforces Round74题解">Educational Codeforces Round74题解 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"><div class="jiathis_style"><span class="jiathis_txt">分享到：</span> <a class="jiathis_button_fav">收藏夹</a> <a class="jiathis_button_copy">复制网址</a> <a class="jiathis_button_email">邮件</a> <a class="jiathis_button_weixin">微信</a> <a class="jiathis_button_qzone">QQ空间</a> <a class="jiathis_button_tqq">腾讯微博</a> <a class="jiathis_button_douban">豆瓣</a> <a class="jiathis_button_share">一键分享</a> <a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a> <a class="jiathis_counter_style"></a></div><script type="text/javascript">var jiathis_config={data_track_clickback:!0,summary:"",shortUrl:!1,hideMore:!1}</script><script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg" alt="KRrrrrrrrr"><p class="site-author-name" itemprop="name">KRrrrrrrrr</p><p class="site-description motion-element" itemprop="description">沙雕复读机||没学上了</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives"><span class="site-state-item-count">50</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">3</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">29</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="feed-link motion-element"><a href="/atom.xml" rel="alternate"><i class="fa fa-rss"></i> RSS</a></div><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/wqyzstql" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="https://plus.google.com/wqyzstql" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a> </span><span class="links-of-author-item"><a href="https://twitter.com/wqyzstql" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a> </span><span class="links-of-author-item"><a href="https://www.facebook.com/AlicePedom" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a> </span><span class="links-of-author-item"><a href="https://www.youtube.com/channel/UC-49zlvr11mLgkByW0eC_dA/featured?view_as=subscriber" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a> </span><span class="links-of-author-item"><a href="skype:wqyzstql?call|chat" target="_blank" title="Skype"><i class="fa fa-fw fa-skype"></i>Skype</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一道例题-货车运输"><span class="nav-number">1.</span> <span class="nav-text">一道例题(货车运输)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><span class="nav-number">2.</span> <span class="nav-text">另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><span class="nav-number">3.</span> <span class="nav-text">还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后一道例题-归程"><span class="nav-number">4.</span> <span class="nav-text">最后一道例题(归程)</span></a></li></ol></div></div></section><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span> <span class="with-love"><i class="fa fa-user"></i> </span><span class="author" itemprop="copyrightHolder">KRrrrrrrrr</span></div></div></footer></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script><script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script><script type="text/javascript" src="/js/src/utils.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/motion.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/affix.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/post-details.js?v=6.0.5"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.5"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script type="text/javascript">var GUEST=["nick","mail","link"],guest="nick,mail";guest=guest.split(",").filter(function(e){return GUEST.indexOf(e)>-1}),new Valine({el:"#comments",verify:!1,notify:!1,appId:"7LbGzyreG34toWxhWgFdH6qO-MdYXbMMI",appKey:"JVvMjfCqdNbs8Y6L9t77ejjq",placeholder:"有什么要对蒟蒻说的嘛",avatar:"mm",guest_info:guest,pageSize:"10"})</script><script type="text/javascript">function proceedsearch(){$("body").append('<div class="search-popup-overlay local-search-pop-overlay"></div>').css("overflow","hidden"),$(".search-popup-overlay").click(onPopupClose),$(".popup").toggle();var t=$("#local-search-input");t.attr("autocapitalize","none"),t.attr("autocorrect","off"),t.focus()}var isfetched=!1,isXml=!0,search_path="search.xml";0===search_path.length?search_path="search.xml":/json$/i.test(search_path)&&(isXml=!1);var path="/"+search_path,onPopupClose=function(t){$(".popup").hide(),$("#local-search-input").val(""),$(".search-result-list").remove(),$("#no-result").remove(),$(".local-search-pop-overlay").remove(),$("body").css("overflow","")},searchFunc=function(t,e,o){"use strict";$("body").append('<div class="search-popup-overlay local-search-pop-overlay"><div id="search-loading-icon"><i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i></div></div>').css("overflow","hidden"),$("#search-loading-icon").css("margin","20% auto 0 auto").css("text-align","center"),$.ajax({url:t,dataType:isXml?"xml":"json",async:!0,success:function(t){isfetched=!0,$(".popup").detach().appendTo(".header-inner");var n=isXml?$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get():t,r=document.getElementById(e),s=document.getElementById(o),a=function(){var t=r.value.trim().toLowerCase(),e=t.split(/[\s\-]+/);e.length>1&&e.push(t);var o=[];if(t.length>0&&n.forEach(function(n){function r(e,o,n,r){for(var s=r[r.length-1],a=s.position,i=s.word,l=[],h=0;a+i.length<=n&&0!=r.length;){i===t&&h++,l.push({position:a,length:i.length});var p=a+i.length;for(r.pop();0!=r.length&&(s=r[r.length-1],a=s.position,i=s.word,p>a);)r.pop()}return c+=h,{hits:l,start:o,end:n,searchTextCount:h}}function s(t,e){var o="",n=e.start;return e.hits.forEach(function(e){o+=t.substring(n,e.position);var r=e.position+e.length;o+='<b class="search-keyword">'+t.substring(e.position,r)+"</b>",n=r}),o+=t.substring(n,e.end)}var a=!1,i=0,c=0,l=n.title.trim(),h=l.toLowerCase(),p=n.content.trim().replace(/<[^>]+>/g,""),u=p.toLowerCase(),f=decodeURIComponent(n.url),d=[],g=[];if(""!=l&&(e.forEach(function(t){function e(t,e,o){var n=t.length;if(0===n)return[];var r=0,s=[],a=[];for(o||(e=e.toLowerCase(),t=t.toLowerCase());(s=e.indexOf(t,r))>-1;)a.push({position:s,word:t}),r=s+n;return a}d=d.concat(e(t,h,!1)),g=g.concat(e(t,u,!1))}),(d.length>0||g.length>0)&&(a=!0,i=d.length+g.length)),a){[d,g].forEach(function(t){t.sort(function(t,e){return e.position!==t.position?e.position-t.position:t.word.length-e.word.length})});var v=[];0!=d.length&&v.push(r(l,0,l.length,d));for(var $=[];0!=g.length;){var C=g[g.length-1],m=C.position,x=C.word,w=m-20,y=m+80;0>w&&(w=0),y<m+x.length&&(y=m+x.length),y>p.length&&(y=p.length),$.push(r(p,w,y,g))}$.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hits.length!==e.hits.length?e.hits.length-t.hits.length:t.start-e.start});var T=parseInt("1");T>=0&&($=$.slice(0,T));var b="";b+=0!=v.length?"<li><a href='"+f+"' class='search-result-title'>"+s(l,v[0])+"</a>":"<li><a href='"+f+"' class='search-result-title'>"+l+"</a>",$.forEach(function(t){b+="<a href='"+f+'\'><p class="search-result">'+s(p,t)+"...</p></a>"}),b+="</li>",o.push({item:b,searchTextCount:c,hitCount:i,id:o.length})}}),1===e.length&&""===e[0])s.innerHTML='<div id="no-result"><i class="fa fa-search fa-5x" /></div>';else if(0===o.length)s.innerHTML='<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>';else{o.sort(function(t,e){return t.searchTextCount!==e.searchTextCount?e.searchTextCount-t.searchTextCount:t.hitCount!==e.hitCount?e.hitCount-t.hitCount:e.id-t.id});var a='<ul class="search-result-list">';o.forEach(function(t){a+=t.item}),a+="</ul>",s.innerHTML=a}};r.addEventListener("input",a),$(".local-search-pop-overlay").remove(),$("body").css("overflow",""),proceedsearch()}})};$(".popup-trigger").click(function(t){t.stopPropagation(),isfetched===!1?searchFunc(path,"local-search-input","local-search-result"):proceedsearch()}),$(".popup-btn-close").click(onPopupClose),$(".popup").click(function(t){t.stopPropagation()}),$(document).on("keyup",function(t){var e=27===t.which&&$(".search-popup").is(":visible");e&&onPopupClose()})</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Fira Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.0.5" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.0.5">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.0.5">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.0.5" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.0.5',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"我们莫得找到关于这东西的内容啊qwq: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1925083057342311",
+    enable_page_level_ads: true
+  });
+</script>
+
+  
+  <meta name="keywords" content="学习笔记,图论,最小生成树,Kruscal重构树,">
+
+
+<meta name="description" content="学不会啊….">
+<meta name="keywords" content="学习笔记,图论,最小生成树,Kruscal重构树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kruscal重构树学习笔记">
+<meta property="og:url" content="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/index.html">
+<meta property="og:site_name" content="KRrrrrrrrr_Blog">
+<meta property="og:description" content="学不会啊….">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://krrrr.xyz/images/study/kru.png">
+<meta property="og:image" content="http://krrrr.xyz/images/study/krul2.png">
+<meta property="og:image" content="http://krrrr.xyz/images/study/krul3.png">
+<meta property="og:updated_time" content="2019-10-18T13:13:14.977Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kruscal重构树学习笔记">
+<meta name="twitter:description" content="学不会啊….">
+<meta name="twitter:image" content="http://krrrr.xyz/images/study/kru.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="KRrrrrrrrr_Blog" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Kruscal重构树学习笔记 | KRrrrrrrrr_Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/wqyzstql">
+		<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+	</a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">KRrrrrrrrr_Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">以梦为马，不负年华</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br>主页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-总览">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>总览</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-友链">
+          <a href="/friends/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-users"></i> <br>友链</a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+
+      <li class="menu-item menu-item-canvas-toggle">
+  <a href="javascript:;" rel="section" id="stop-canvas" title="如果背景动画占用了您太多 CPU ，点击以隐藏">
+    <i class="menu-item-icon fa fa-fw fa-stop"></i> <br> 隐藏背景动画
+  </a>
+  <a href="javascript:;" rel="section" id="play-canvas">
+    <i class="menu-item-icon fa fa-fw fa-play"></i> <br> 显示背景动画
+  </a>
+</li>
+
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KRrrrrrrrr">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="KRrrrrrrrr_Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Kruscal重构树学习笔记</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-09T18:57:27+08:00">2019-10-09</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/分类/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/09/Kruskal重构树学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/09/Kruskal重构树学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">1.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>学不会啊….<br><a id="more"></a></p>
+<p><img src="/images/study/kru.png" alt="重构树"><br><del>以上就是性质,讲完了</del></p>
+<p>你们不要打我QAQ…</p>
+<h3 id="一道例题-货车运输"><a href="#一道例题-货车运输" class="headerlink" title="一道例题(货车运输)"></a>一道例题(货车运输)</h3><p>我们看一下第五条性质,哎妈呀这道题不是裸题吗.<br>我们跑一遍$Kruscal$重构树,然后询问的时候每两个点的答案,就是这两个在重构树上$LCA$的点权.<br>然后就没了.</p>
+<h3 id="另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><a href="#另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢" class="headerlink" title="另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)"></a>另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</h3><p><img src="/images/study/krul2.png" alt="例题2"></p>
+<p>第一反应是考虑每条边在作为权值最小的边的时候的贡献,但是发现这样也并不好统计最终贡献.<br>所以根据这篇博客的标题,我们来考虑$Kruscal$重构树的做法.<br>我们发现$Kruscal$重构树满足大根堆的性质,那么我们考虑某一个边权节点,他有贡献的路径很显然是它连接的叶子节点的路径一直到某个不在它子树内而且父亲节点大于它的节点.<br>但是发现这样也并不好统计最终贡献.<br>发现,如果重构树满足小根堆的性质的话,那么我们发现两点间路径边权的最小值就是他们的$LCA$,这样就方便统计答案了.<br>所以我们考虑把所有的边权同乘$-1$,这样之后再建重构树.然后就可以统计答案了.</p>
+<h3 id="还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><a href="#还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢" class="headerlink" title="还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)"></a>还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</h3><p><img src="/images/study/krul3.png" alt="例题3"><br>也是$Kruscal$重构树的套路题…<br>对于边权最大值的限制， 完全可以等价地转化到它们在最小瓶颈生成树上路径边权最大值的限制。<br>考虑$Kruskal$重构树上一个点在只允许走边权$&lt;=k$的边的情况下能够到的点的集合,发现它们是一棵子树,且根为$s$的某个祖先.具体来说,是$s$到根路径上深度最小的点权$&lt;=k$的祖先<br>我们可以倍增地找到这个祖先,接下来问题就转化为了经典问题:求一个子树当中的权值第k大.使用主席树可以轻松解决.</p>
+<h3 id="最后一道例题-归程"><a href="#最后一道例题-归程" class="headerlink" title="最后一道例题(归程)"></a>最后一道例题(归程)</h3><p>题面就不放了….<br>因为每天开始的时候车的位置都会被重置一次,所以我们对于每次询问都可以在起点进行一次$bfs$,然后答案就是这些点中到$1$号点距离最小的点.<br>但是这样…显然过不了…发现每次进行询问的时候都去$bfs$一遍显然太慢了,而且这道题为强制在线,也不能按照这些询问的海拔排序.<br>那么我们怎么办呢?<br>根据标题,我们可以选择$Kruscal$重构树来解决掉这道题.<br>首先我们发现,$Kruscal$重构树满足大根堆的性质,那么满足海拔大于水位线的边组成的点一定是某一颗子树.<br>然后我们可以进行一次堆优化的$Dijkstra$进行预处理,然后把$1$号点到每个点的最短路的长度记为重构树上新的点的点权.<br>然后对于每次查询,我们的任务就变成了查询某颗子树中的叶子的权值最小值,而且是静态的.显然可以$log$的复杂度随便搞一搞.</p>
+<blockquote>
+<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+	<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/10/09/Kruskal重构树学习笔记/">Kruscal重构树学习笔记</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
+  <p><span>发布时间:</span>2019年10月09日 - 18:10</p>
+  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
+  <p><span>原始链接:</span><a href="/2019/10/09/Kruskal重构树学习笔记/" title="Kruscal重构树学习笔记">http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/09/Kruskal重构树学习笔记/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+	</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/标签/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/标签/图论/" rel="tag"># 图论</a>
+          
+            <a href="/标签/最小生成树/" rel="tag"># 最小生成树</a>
+          
+            <a href="/标签/Kruscal重构树/" rel="tag"># Kruscal重构树</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/09/CF416E/" rel="next" title="CF416E">
+                <i class="fa fa-chevron-left"></i> CF416E
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/10/Round74/" rel="prev" title="Educational Codeforces Round74题解">
+                Educational Codeforces Round74题解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg" alt="KRrrrrrrrr">
+            
+              <p class="site-author-name" itemprop="name">KRrrrrrrrr</p>
+              <p class="site-description motion-element" itemprop="description">沙雕复读机||没学上了</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/wqyzstql" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/wqyzstql" target="_blank" title="Google"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/wqyzstql" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/AlicePedom" target="_blank" title="FB Page"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.youtube.com/channel/UC-49zlvr11mLgkByW0eC_dA/featured?view_as=subscriber" target="_blank" title="YouTube"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="skype:wqyzstql?call|chat" target="_blank" title="Skype"><i class="fa fa-fw fa-skype"></i>Skype</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一道例题-货车运输"><span class="nav-number">1.</span> <span class="nav-text">一道例题(货车运输)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#另一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><span class="nav-number">2.</span> <span class="nav-text">另一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还有一道例题-有没有大佬知道是哪个OJ上的题话告诉我谢谢"><span class="nav-number">3.</span> <span class="nav-text">还有一道例题(有没有大佬知道是哪个OJ上的题话告诉我谢谢)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后一道例题-归程"><span class="nav-number">4.</span> <span class="nav-text">最后一道例题(归程)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+
+        
+      </div>
+    </aside></div></main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KRrrrrrrrr</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.5"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.5"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.5"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.5"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.5"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.5"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.5"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '7LbGzyreG34toWxhWgFdH6qO-MdYXbMMI',
+        appKey: 'JVvMjfCqdNbs8Y6L9t77ejjq',
+        placeholder: '有什么要对蒟蒻说的嘛',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
       tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
       }
-    });</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
       var all = MathJax.Hub.getAllJax(), i;
         for (i=0; i < all.length; i += 1) {
           all[i].SourceElement().parentNode.className += ' has-jax';
         }
-    });</script><script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/javascript">$(document).ready(function(){$("a#play-canvas").hide(),$(".menu-item-canvas-toggle a").click(function(){$(".menu-item-canvas-toggle a").toggle(),$("body canvas").toggle()})})</script></body></html><!-- rebuild by neat -->
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript">
+$(document).ready(function() {
+  $("a#play-canvas").hide();
+  $(".menu-item-canvas-toggle a").click(function(){
+    $(".menu-item-canvas-toggle a").toggle();
+    $("body canvas").toggle();
+  });
+});
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  
+
+</body>
+</html>

@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KRrrrrrrrr_Blog">
 <meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-20T08:02:43.849Z">
+<meta property="og:updated_time" content="2019-10-20T08:07:30.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普转提D5题解">
 <meta name="twitter:description" content="版权原因,题面不公开">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">943</span>
+                <span title="字数统计">1.4k</span>
               
 
               
@@ -514,6 +514,9 @@
 </ol>
 <p>然后我们只需要从$x$向$n$跑一遍最短路即可(目测会卡某死掉的算法).<br>然后我们再来考虑一下有$Backspace$怎么做.我们发现,如果我们从某个点$i$超级加倍到了$2 \times i$,而$2 \times i$比$n$大好多好多,那么我们在一个一个$Backspace$的时候一定会遇到一个$j (n&lt;j&lt;i)$可以从$x$转移到.<br>所以我们<del>瞎猜</del>看题解看出来了$Backspace$操作的上界$100$,然后我们对于每个$i$,都向$[max(1,i-100),i-1]$的区间的点连边就好了.</p>
 <p>这样的话我们计算一下时间复杂度发现边的数量为调和级数为$nInn$的复杂度,而我们跑一遍$Heap$_$Dijkstra$是$O(nlog_2m)$的.所以总复杂度为$O(n{log^2_2n})$.<br>注意到$n$其实挺大的,所以需要卡卡常数(比如用斐波那契堆跑$Heap$_$Dijkstra$什么的)</p>
+<h3 id="Zbox-loves-graph"><a href="#Zbox-loves-graph" class="headerlink" title="Zbox loves graph"></a>Zbox loves graph</h3><p>听说正解是先$Tarjan$缩点出$DAG$然后对于每个连通块重编号对于每个连通块分别用用$bitset$优化暴力就过了,咱也不敢问</p>
+<h3 id="Zbox-loves-memory"><a href="#Zbox-loves-memory" class="headerlink" title="Zbox loves memory"></a>Zbox loves memory</h3><p>这个真的连正解是啥都不知道.</p>
+<h3 id="ISN"><a href="#ISN" class="headerlink" title="ISN"></a>ISN</h3><p>这道题听说树状数组优化下$DP$就过了,咱也不敢问.</p>
 <blockquote>
 <p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
 </blockquote>
@@ -862,7 +865,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zbox-loves-keyboard"><span class="nav-number">1.</span> <span class="nav-text">Zbox loves keyboard</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zbox-loves-keyboard"><span class="nav-number">1.</span> <span class="nav-text">Zbox loves keyboard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zbox-loves-graph"><span class="nav-number">2.</span> <span class="nav-text">Zbox loves graph</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zbox-loves-memory"><span class="nav-number">3.</span> <span class="nav-text">Zbox loves memory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ISN"><span class="nav-number">4.</span> <span class="nav-text">ISN</span></a></li></ol></div>
             
 
           </div>

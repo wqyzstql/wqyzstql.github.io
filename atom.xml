@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-21T11:46:30.122Z</updated>
+  <updated>2019-10-21T13:38:56.165Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>提高失联测D7</title>
+    <link href="http://krrrr.xyz/2019/10/21/%E6%8F%90%E9%AB%98%E5%A4%B1%E8%81%94%E6%B5%8BD7/"/>
+    <id>http://krrrr.xyz/2019/10/21/提高失联测D7/</id>
+    <published>2019-10-21T13:38:39.000Z</published>
+    <updated>2019-10-21T13:38:56.165Z</updated>
+    
+    <content type="html"><![CDATA[<p>版权原因,题面不公开.<br><a id="more"></a></p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;版权原因,题面不公开.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+    
+  </entry>
   
   <entry>
     <title>Codeforces Global Round 5题解</title>
@@ -472,29 +495,6 @@
       <category term="学习笔记" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="数论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%95%B0%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SCP-114514</title>
-    <link href="http://krrrr.xyz/2019/09/23/SCP1/"/>
-    <id>http://krrrr.xyz/2019/09/23/SCP1/</id>
-    <published>2019-09-23T03:26:04.000Z</published>
-    <updated>2019-10-18T13:13:15.002Z</updated>
-    
-    <content type="html"><![CDATA[<p>qwq</p><a id="more"></a><p>SCP-114514 研究社</p><p>等级: Keter</p><p>特殊收容措施: 目前SCP-114514无法被收容,目前基金会的目的是使SCP-114514保持不再发生变化. </p><p>项目描述: 已知SCP-114514曾经的名称有<del>信息学,OI,国际象棋,围棋,五子棋,羽毛球,篮球,OSU,植物大战僵尸,外卖</del>K歌研究社.已知项目会在随机的时间进行名称上的变化.<br>目前已经证实,在每次项目的名称发生改变时,项目内的人员(称之为$SCP-114514-1919810$)的兴趣爱好会随着研究社的名称发生变化.  </p><p>经过研究发现,SCP-114514内的人员爱好需要的物件似乎并不需要从外界获取,会有一个被称为$SCP-114514-1$的被称为$Z$主任的人形实体供给,而供给的物品似乎是从内部自然产生的.</p><p>在每次项目的名称发生改变时,会强制将项目周边距离不超过$10m$的人员强制转化为$SCP-114514-1919810$,已知这一影响不可逆.<br>而且在普通人员被强制转化后,会在[数据删除]的时间之内丧失对文化课学习的兴趣. </p><p>常人暴露在SCP-114514面前是致命的,所以对于SCP-114514的任何接触需要3名及以上四级权限者的允许,且实验者在实验后将被强制隔离$3$天,如果在隔离时间之内实验者表现了明显的兴趣爱好变化,那么实验者将会被处决.  </p><p>对于SCP-114514的进一步研究报告为致命媒介模因,需要得到O5议会的批准之后访问.</p><blockquote><p>您好,监督者,已取消对机动特遣队的派遣指令.  </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;qwq&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="吹水" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/%E5%90%B9%E6%B0%B4/"/>
-    
-    
-      <category term="SCP乱搞" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/SCP%E4%B9%B1%E6%90%9E/"/>
     
   </entry>
   

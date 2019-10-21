@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-20T08:07:30.815Z</updated>
+  <updated>2019-10-21T03:14:04.201Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://krrrr.xyz/2019/10/20/%E6%99%AE%E8%BD%AC%E6%8F%90D5%E9%A2%98%E8%A7%A3/"/>
     <id>http://krrrr.xyz/2019/10/20/普转提D5题解/</id>
     <published>2019-10-20T06:23:30.000Z</published>
-    <updated>2019-10-20T08:07:30.815Z</updated>
+    <updated>2019-10-21T03:14:04.201Z</updated>
     
-    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h3 id="Zbox-loves-keyboard"><a href="#Zbox-loves-keyboard" class="headerlink" title="Zbox loves keyboard"></a>Zbox loves keyboard</h3><p>首先考虑直接递推,但是由于$Backspace$操作的存在,使得出现了后效性,所以貌似无法直接递推.<br>然后我们考虑一下先不考虑$Backspace$怎么做.我们引入图论模型,把$[1,10^6]$中的每个值都看做一个点.<br>然后我们考虑前几个操作,那么  </p><ol><li>对于每个点$x$,由$x$向$x+1$连接一条边.</li><li>对于每个点$x$,我们从小到大枚举$k$使得从$x$到$x \times k &lt;= n$连接一条边.</li></ol><p>然后我们只需要从$x$向$n$跑一遍最短路即可(目测会卡某死掉的算法).<br>然后我们再来考虑一下有$Backspace$怎么做.我们发现,如果我们从某个点$i$超级加倍到了$2 \times i$,而$2 \times i$比$n$大好多好多,那么我们在一个一个$Backspace$的时候一定会遇到一个$j (n&lt;j&lt;i)$可以从$x$转移到.<br>所以我们<del>瞎猜</del>看题解看出来了$Backspace$操作的上界$100$,然后我们对于每个$i$,都向$[max(1,i-100),i-1]$的区间的点连边就好了.</p><p>这样的话我们计算一下时间复杂度发现边的数量为调和级数为$nInn$的复杂度,而我们跑一遍$Heap$_$Dijkstra$是$O(nlog_2m)$的.所以总复杂度为$O(n{log^2_2n})$.<br>注意到$n$其实挺大的,所以需要卡卡常数(比如用斐波那契堆跑$Heap$_$Dijkstra$什么的)</p><h3 id="Zbox-loves-graph"><a href="#Zbox-loves-graph" class="headerlink" title="Zbox loves graph"></a>Zbox loves graph</h3><p>听说正解是先$Tarjan$缩点出$DAG$然后对于每个连通块重编号对于每个连通块分别用用$bitset$优化暴力就过了,咱也不敢问</p><h3 id="Zbox-loves-memory"><a href="#Zbox-loves-memory" class="headerlink" title="Zbox loves memory"></a>Zbox loves memory</h3><p>这个真的连正解是啥都不知道.</p><h3 id="ISN"><a href="#ISN" class="headerlink" title="ISN"></a>ISN</h3><p>这道题听说树状数组优化下$DP$就过了,咱也不敢问.</p><blockquote><p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h3 id="Zbox-loves-keyboard"><a href="#Zbox-loves-keyboard" class="headerlink" title="Zbox loves keyboard"></a>Zbox loves keyboard</h3><p>首先考虑直接递推,但是由于$Backspace$操作的存在,使得出现了后效性,所以貌似无法直接递推.<br>然后我们考虑一下先不考虑$Backspace$怎么做.我们引入图论模型,把$[1,10^6]$中的每个值都看做一个点.<br>然后我们考虑前几个操作,那么  </p><ol><li>对于每个点$x$,由$x$向$x+1$连接一条边.</li><li>对于每个点$x$,我们从小到大枚举$k$使得从$x$到$x \times k &lt;= n$连接一条边.</li></ol><p>然后我们只需要从$x$向$n$跑一遍最短路即可(目测会卡某死掉的算法).<br>然后我们再来考虑一下有$Backspace$怎么做.我们发现,如果我们从某个点$i$超级加倍到了$2 \times i$,而$2 \times i$比$n$大好多好多,那么我们在一个一个$Backspace$的时候一定会遇到一个$j (n&lt;j&lt;i)$可以从$x$转移到.<br>所以我们<del>瞎猜</del>看题解看出来了$Backspace$操作的上界$100$,然后我们对于每个$i$,都向$[max(1,i-100),i-1]$的区间的点连边就好了.</p><p>这样的话我们计算一下时间复杂度发现边的数量为调和级数为$nInn$的复杂度,而我们跑一遍$Heap$_$Dijkstra$是$O(nlog_2m)$的.所以总复杂度为$O(n{log^2_2n})$.<br>注意到$n$其实挺大的,所以需要卡卡常数(比如用斐波那契堆跑$Heap$_$Dijkstra$什么的)</p><h3 id="Zbox-loves-graph"><a href="#Zbox-loves-graph" class="headerlink" title="Zbox loves graph"></a>Zbox loves graph</h3><p>这道题正解好像真的是暴力(<br>首先发现如果我们缩点缩出来一个$DAG$之后,对于每一个强连通分量我们可以开一个$bitset$来统计.<br>但是如果强连通分量很多的话不行?<br>发现一个题目中给定的一个重要的条件:<br><img src="https://krrrr.xyz/PicBed/201910211.png" alt="random"><br>因为这是一张随机图,所以强连通分量的个数一定不会太多,而且<strong>弱联通分量</strong>也不会太多.<br>既然是暴力,那么我们考虑一下怎么卡常.<br>首先$bitset$的常数小的一批.但是貌似直接做还是有点困难.<br>我们考虑把所有的弱联通分量分别拿出来对里边的点进行重标号之后再分别做出来,然后直接对$bitset$进行一次$or$操作这样可以省去很多时间.<br>剩下的….<del>不说了我继续去卡常了</del></p><h3 id="Zbox-loves-memory"><a href="#Zbox-loves-memory" class="headerlink" title="Zbox loves memory"></a>Zbox loves memory</h3><p><del>这个真的连正解是啥都不知道</del>块状链表套$tire$,嗯这很<strong>SCP</strong>.</p><h3 id="ISN"><a href="#ISN" class="headerlink" title="ISN"></a>ISN</h3><p>这道题听说树状数组优化下$DP$就过了,咱也不敢问.</p><blockquote><p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p></blockquote>]]></content>
     
     <summary type="html">
     

@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="罗小黑真尼玛好看">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-18T13:15:25.251Z">
+<meta property="og:updated_time" content="2019-10-21T03:42:46.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="提高失联测D4">
 <meta name="twitter:description" content="罗小黑真尼玛好看">
@@ -514,9 +514,7 @@
 <p>考虑每个质因子在每个区间中的贡献,假设我们现在枚举的质因子是$p$,那么对于位置$i$上的数字$num_i$如果存在质因子$p$,那么我们记$pre_{i,p}=1$,否则的话记录$pre_{i,p}=-1$.这样枚举区间的时候,我们可以直接从这个区间的区间和是否大于等于$0$来判断.<br>这样之后复杂度还是$O(n^2loglogT)$,还需要进一步优化.  </p>
 <p>我们还是先枚举每个质因子,然后我们令$p_1,p_2,……,p_k$为这个质因子第$1,2,3….k$次出现的位置.<br>在我们把$p$数组排序之后,我们发现,如果我们能找到一个$p_j-p_i+1&lt;=2\times(j-i+1){j&gt;i}$,那么我们就找到了一组$2\times(j-i+1)$的解.<br>我们把这个式子移项之后有$p_j-2\times j&lt;=p_i-2\times i+1$.显然,我们可以按照$p_i-2\times i$来排序.最后我们枚举$j$之后,<br>由于我们的排序方式,我们可以发现$p_j-2\times j&lt;=p_i-2\times i$一定是会被满足的,所以我们只需要找一个$max(j-i+1)$即可.<br>然后我们发现这个东西显然是可以二分或者双指针直接找的,总复杂度为$O(nloglogTlogn)$.</p>
 <h3 id="黑"><a href="#黑" class="headerlink" title="黑"></a>黑</h3><p>暂时先黑一会~</p>
-<blockquote>
-<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
-</blockquote>
+<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -538,7 +536,7 @@
   <p><span>本文标题:</span><a href="/2019/09/22/提高失联测D4/">提高失联测D4</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年09月22日 - 15:09</p>
-  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
+  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
   <p><span>原始链接:</span><a href="/2019/09/22/提高失联测D4/" title="提高失联测D4">http://krrrr.xyz/2019/09/22/提高失联测D4/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/09/22/提高失联测D4/" aria-label="复制成功！"></i></span>
   </p>

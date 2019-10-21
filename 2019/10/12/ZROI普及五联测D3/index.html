@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-18T13:14:34.212Z">
+<meta property="og:updated_time" content="2019-10-21T03:43:26.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZROI普及五联测D3">
 <meta name="twitter:description" content="版权原因,题面不公开.">
@@ -516,9 +516,7 @@
 <h3 id="假面饭店"><a href="#假面饭店" class="headerlink" title="假面饭店"></a>假面饭店</h3><p>首先第一反应就是枚举每个数字取还是不取,所以我们需要$2^{size}$枚举每个数,但是显然还得枚举每个数的顺序,复杂度明显过不了.<br>所以我们考虑枚举$i$来得到$i^2$.这样的话,发现我们最多是只需要枚举到$\sqrt{10 \times n}$即可.<br>枚举的时候注意一下剪枝,不然就会$T$掉.</p>
 <h3 id="疯狂外星人"><a href="#疯狂外星人" class="headerlink" title="疯狂外星人"></a>疯狂外星人</h3><p>发现我们可以枚举一下不能放入的物品是哪个.那么显然如果第$i$个物品不能放入的话,重量比$i$小的物品一定要都被放进去.<br>然后再来考虑一下重量比$i$大的物品.<br>发现我们可以用计数类的$01$背包来解决.<br>最后需要注意一点,如果全都能放进去的话,也需要算一种方案,所以我们要枚举到第$n+1$个物品.</p>
 <h3 id="流浪地球"><a href="#流浪地球" class="headerlink" title="流浪地球"></a>流浪地球</h3><p>发现维护连通块的消失的话,显然不怎么可做.<br>所以我们尝试离线,我们把询问按照从大到小排序,然后每次从一个询问过渡到另外一个询问的时候,会出现若干个新的”大陆”.<br>然后我们的任务就变成了这些新的大陆能不能和其他的连通块连起来.<br>对于这一个操作,显然我们可以维护一个并查集,每次判断+合并几个连通块即可.</p>
-<blockquote>
-<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
-</blockquote>
+<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -540,7 +538,7 @@
   <p><span>本文标题:</span><a href="/2019/10/12/ZROI普及五联测D3/">ZROI普及五联测D3</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月12日 - 10:10</p>
-  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
+  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
   <p><span>原始链接:</span><a href="/2019/10/12/ZROI普及五联测D3/" title="ZROI普及五联测D3">http://krrrr.xyz/2019/10/12/ZROI普及五联测D3/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/12/ZROI普及五联测D3/" aria-label="复制成功！"></i></span>
   </p>

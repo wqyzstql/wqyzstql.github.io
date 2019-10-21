@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-18T13:14:57.460Z">
+<meta property="og:updated_time" content="2019-10-21T03:43:15.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普转提七连测D3">
 <meta name="twitter:description" content="版权原因,题面不公开">
@@ -513,9 +513,7 @@
 <h3 id="汽水"><a href="#汽水" class="headerlink" title="汽水"></a>汽水</h3><p>乍一看并莫得啥思路.<br>然后我们想一下,如果我们把每个糖浆的浓度都减少$n$的话,那么我们的任务就变成了怎么凑出$0$浓度的任务.<br>然后我们建立一个图论模型:我们设$dis_i$表示凑到$i+n$这个浓度时最少用的糖浆是多少,显然可以使用$bfs$求最短路.  </p>
 <h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>我们发现,最优解一定是原来的某些连通块相互连接形成的,然后就没了qwq</p>
 <h3 id="DAG"><a href="#DAG" class="headerlink" title="DAG"></a>DAG</h3><p>首先推广一个结论:如果最长路是$x$,那么一定存在一个$x+1$的染色方案.<br>我们对于每一条边$(i-&gt;j)$,我们规定只能从颜色小的点走向颜色大的点.<br>然后考虑这样的话我们就划分成了一个分层图.<br>然后又因为我们要让最短路最长,说白了就是要让层数最少.<br>而我们又发现同层的点之间没有边,等价于一个独立集.<br>所以我们的任务就转化成了把这张图划分成最少的独立集个数,使得他们的并集为这一张图.<br>又因为我们发现数据范围很小,只有$17$,所以我们可以考虑状压$DP$来解决这个问题.<br>我们设$f_i$表示我们目前选择的点的总集为$i$的时候的最小的独立集个数.<br>我们预处理出从$0$到$(1&lt;&lt;n)-1$中的每个状态是否为独立集,然后我们在每次枚举状态$i$的时候,显然$i$这个状态只能从它的某个为独立集的子集转移过来.<br>转移很显然,$f_i=min(f_j+1)$$(j$为$i$的子集且$j$这个集合为独立集).</p>
-<blockquote>
-<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
-</blockquote>
+<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -537,7 +535,7 @@
   <p><span>本文标题:</span><a href="/2019/09/22/P转TD3/">普转提七连测D3</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年09月22日 - 15:09</p>
-  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
+  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
   <p><span>原始链接:</span><a href="/2019/09/22/P转TD3/" title="普转提七连测D3">http://krrrr.xyz/2019/09/22/P转TD3/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/09/22/P转TD3/" aria-label="复制成功！"></i></span>
   </p>

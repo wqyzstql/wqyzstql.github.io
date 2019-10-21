@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-18T13:14:09.795Z">
+<meta property="og:updated_time" content="2019-10-21T03:43:42.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="国庆七天乐D1">
 <meta name="twitter:description" content="版权原因,题面不公开w">
@@ -515,9 +515,7 @@
 <p>我们想一下矩阵乘法的过程,因为我们的目标矩阵是由原来的矩阵和我们构造的矩阵相乘得到的,如果我们中间构造一个$01$矩阵的话,矩阵乘法就可以看成是矩阵中的元素不断的相加,所以原理上在矩阵快速幂的过程中是可以直接求出我们要求的数列的前缀和的.<br>我们以求斐波那契数列的前缀和为例子,因为我们知道,一个$n \times m$的矩阵与一个$m \times k$的矩阵相乘之后,我们得到的矩阵是一个$n \times k$的矩阵.<br>所以我们考虑在我们原来构造的矩阵中加上一位,这样的话矩阵就变成了{$f_i,f_{i+1},\sum_{j=1}^{i+1}f_j$}.相应的,在我们构造的矩阵中,我们可以通过使$f_i与f_{i+1}$都被加入我们新加的一维来达到更新前缀和的目的.<br>综上,我们可以在求$F_i$的矩阵中加一维表示前缀和,然后直接矩阵快速幂即可.<br>时间复杂度为$O(logn)$,可以通过本题</p>
 <h3 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h3><p>先考虑暴力怎么写.<br>我们发现如果根节点被确定了的话,我们提前用树上差分统计出每个点被经过了多少次之后,可以直接贪心的去找答案.<br>所以这样的话我们必须要枚举根节点.这样的话复杂度也是显然过不了.<br>我们先钦定一个节点作为根节点,然后我们考虑每个节点作为根节点的情况.<br>显然发现某个点的在原树上的儿子节点是不受影响的,所以我们可以预先进行一次$dfs$来确定<br>我们发现,如果某个节点$i$与我们当前的这个即将要成为根的节点不相邻的话,那么这个点$i$是很显然不会受到影响的(该怎么走还得怎么走)<br>我们考虑从上往下的顺序进行$DFS$，然后每次求出当前节点作为根时的最小代价。显然，与当前节点不相邻的边不受这个节点的影响，因此我们可以直接求出.<br>又因为孩子方向的在第一次$DFS$中预处理了，而父亲方向的在刚刚$DFS$的过程中求出。然后求出与当前节点相邻的边中，最大的以及次大的，根据$DFS$的孩子选择是去掉最大的还是次大的即可。</p>
 <h3 id="小E和小F-strikes-again"><a href="#小E和小F-strikes-again" class="headerlink" title="小E和小F strikes again"></a>小E和小F strikes again</h3><p>这道题是不可能补的,这辈子都不可能补的</p>
-<blockquote>
-<p>因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</p>
-</blockquote>
+<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -539,7 +537,7 @@
   <p><span>本文标题:</span><a href="/2019/10/01/国庆七天乐D1/">国庆七天乐D1</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月01日 - 15:10</p>
-  <p><span>最后更新:</span>2019年10月18日 - 21:10</p>
+  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
   <p><span>原始链接:</span><a href="/2019/10/01/国庆七天乐D1/" title="国庆七天乐D1">http://krrrr.xyz/2019/10/01/国庆七天乐D1/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/01/国庆七天乐D1/" aria-label="复制成功！"></i></span>
   </p>

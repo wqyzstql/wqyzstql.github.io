@@ -163,7 +163,7 @@
 <meta property="og:description" content="其实这本来是$QBXT$的$T2$，但是由于毒瘤$zhw$跑得快（雾），导致我们发现这是某$poi$原题。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2018/11/02/5bdbba9d5c6e9.jpg">
-<meta property="og:updated_time" content="2019-09-18T02:32:30.728Z">
+<meta property="og:updated_time" content="2019-10-21T03:47:49.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[POI2015]WIL-Wilcze题解">
 <meta name="twitter:description" content="其实这本来是$QBXT$的$T2$，但是由于毒瘤$zhw$跑得快（雾），导致我们发现这是某$poi$原题。">
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">7.1k</span>
+                <span title="字数统计">7.2k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 mins.</span>
+                <span title="阅读时长">7 mins.</span>
               
             </div>
           
@@ -519,6 +519,7 @@
 <p>最后怒斥一波出原题的出题人$qaq$….<del>(虽然$zhw$很帅)</del></p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">deque</span>;</span><br><span class="line"><span class="keyword">const</span> ll N=<span class="number">2000010</span>;</span><br><span class="line">ll n,p,d;</span><br><span class="line">ll a[N];</span><br><span class="line">ll sum[N];</span><br><span class="line">ll hea[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    ll pos,val;</span><br><span class="line">    Node(ll pos,ll val):pos(pos),val(val)&#123;&#125;</span><br><span class="line">    Node()&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(ll &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll s=<span class="number">0</span>,w=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> ch=getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)w=<span class="number">-1</span>;ch=getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span>(ch&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>)&#123;s=s*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</span><br><span class="line">	x=s*w;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">deque</span>&lt;Node&gt;q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    read(n);read(p);read(d);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)read(a[i]),sum[i]=sum[i<span class="number">-1</span>]+a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n-d;i++)</span><br><span class="line">		hea[i]=sum[i+d]-sum[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n-d+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		hea[i]=sum[n]-sum[i];</span><br><span class="line">    ll ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=d+<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!q.empty()&amp;&amp;q.back().val&lt;hea[i-d])q.pop_back();</span><br><span class="line">        	q.push_back(Node(i-d,hea[i-d]));</span><br><span class="line">        <span class="keyword">while</span>(l&lt;i-d&amp;&amp;sum[i]-sum[l]-q.front().val&gt;p)    </span><br><span class="line">        &#123;</span><br><span class="line">            l++;</span><br><span class="line">            <span class="keyword">while</span>(l&gt;q.front().pos)q.pop_front();</span><br><span class="line">        &#125;</span><br><span class="line">        ans=<span class="built_in">std</span>::max(ans,(ll)i-l);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>,ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
       
     </div>
 
@@ -539,7 +540,7 @@
   <p><span>本文标题:</span><a href="/2018/11/02/POI2015-WIL-Wilcze题解/">[POI2015]WIL-Wilcze题解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2018年11月02日 - 10:11</p>
-  <p><span>最后更新:</span>2019年09月18日 - 10:09</p>
+  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
   <p><span>原始链接:</span><a href="/2018/11/02/POI2015-WIL-Wilcze题解/" title="[POI2015]WIL-Wilcze题解">http://krrrr.xyz/2018/11/02/POI2015-WIL-Wilcze题解/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2018/11/02/POI2015-WIL-Wilcze题解/" aria-label="复制成功！"></i></span>
   </p>

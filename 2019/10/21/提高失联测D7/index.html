@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T13:38:56.165Z">
+<meta property="og:updated_time" content="2019-10-22T00:36:43.453Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="提高失联测D7">
 <meta name="twitter:description" content="版权原因,题面不公开.">
@@ -219,9 +219,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">129</span>
+                <span title="字数统计">650</span>
               
 
               
@@ -507,7 +507,8 @@
 
       
         <p>版权原因,题面不公开.<br><a id="more"></a></p>
-<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+<h3 id="dls的生日礼物"><a href="#dls的生日礼物" class="headerlink" title="dls的生日礼物"></a>dls的生日礼物</h3><p>还是首先考虑无解的话会是什么情况,无解的话,一定是某一段长度大于$1$的区间被覆盖了两次以上,这个显然可以离散化来统计.<br>然后我们再来想有解的情况,我们考虑,这道题让你把原来的区间分成两个集合,而相交的区间必须颜色不同.所以我们考虑到二分图模型.<br>如果两个区间相交的话,那么这两个区间是要有边相连的.而因为我们已经排除了无解的情况,所以有解的情况一定会是一张二分图.即所有的连通块都是二分图.<br>但是我们发现,如果暴力枚举区间连边的话是$O(n^2)$的,需要考虑怎么优化.<br>我们又发现在某个连通块中,因为连通块中的点都是区间看成的点,所以一个连通块也就代表了一个区间,我们只需要考虑一下互不相交的连通块的个数$x$然后答案就是$2^x$.</p>
+<h3 id="dls的生日宴会"><a href="#dls的生日宴会" class="headerlink" title="dls的生日宴会"></a>dls的生日宴会</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -529,7 +530,7 @@
   <p><span>本文标题:</span><a href="/2019/10/21/提高失联测D7/">提高失联测D7</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月21日 - 21:10</p>
-  <p><span>最后更新:</span>2019年10月21日 - 21:10</p>
+  <p><span>最后更新:</span>2019年10月22日 - 08:10</p>
   <p><span>原始链接:</span><a href="/2019/10/21/提高失联测D7/" title="提高失联测D7">http://krrrr.xyz/2019/10/21/提高失联测D7/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/21/提高失联测D7/" aria-label="复制成功！"></i></span>
   </p>
@@ -660,8 +661,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -838,6 +848,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#dls的生日礼物"><span class="nav-number">1.</span> <span class="nav-text">dls的生日礼物</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dls的生日宴会"><span class="nav-number">2.</span> <span class="nav-text">dls的生日宴会</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

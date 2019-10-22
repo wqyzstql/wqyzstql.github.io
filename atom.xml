@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-21T13:38:56.165Z</updated>
+  <updated>2019-10-22T00:36:43.453Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://krrrr.xyz/2019/10/21/%E6%8F%90%E9%AB%98%E5%A4%B1%E8%81%94%E6%B5%8BD7/"/>
     <id>http://krrrr.xyz/2019/10/21/提高失联测D7/</id>
     <published>2019-10-21T13:38:39.000Z</published>
-    <updated>2019-10-21T13:38:56.165Z</updated>
+    <updated>2019-10-22T00:36:43.453Z</updated>
     
-    <content type="html"><![CDATA[<p>版权原因,题面不公开.<br><a id="more"></a></p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    <content type="html"><![CDATA[<p>版权原因,题面不公开.<br><a id="more"></a></p><h3 id="dls的生日礼物"><a href="#dls的生日礼物" class="headerlink" title="dls的生日礼物"></a>dls的生日礼物</h3><p>还是首先考虑无解的话会是什么情况,无解的话,一定是某一段长度大于$1$的区间被覆盖了两次以上,这个显然可以离散化来统计.<br>然后我们再来想有解的情况,我们考虑,这道题让你把原来的区间分成两个集合,而相交的区间必须颜色不同.所以我们考虑到二分图模型.<br>如果两个区间相交的话,那么这两个区间是要有边相连的.而因为我们已经排除了无解的情况,所以有解的情况一定会是一张二分图.即所有的连通块都是二分图.<br>但是我们发现,如果暴力枚举区间连边的话是$O(n^2)$的,需要考虑怎么优化.<br>我们又发现在某个连通块中,因为连通块中的点都是区间看成的点,所以一个连通块也就代表了一个区间,我们只需要考虑一下互不相交的连通块的个数$x$然后答案就是$2^x$.</p><h3 id="dls的生日宴会"><a href="#dls的生日宴会" class="headerlink" title="dls的生日宴会"></a>dls的生日宴会</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
     
     <summary type="html">
     

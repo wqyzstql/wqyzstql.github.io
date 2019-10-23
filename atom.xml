@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-23T06:36:07.484Z</updated>
+  <updated>2019-10-23T06:41:13.358Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://krrrr.xyz/2019/10/23/Round595/"/>
     <id>http://krrrr.xyz/2019/10/23/Round595/</id>
     <published>2019-10-23T02:40:01.000Z</published>
-    <updated>2019-10-23T06:36:07.484Z</updated>
+    <updated>2019-10-23T06:41:13.358Z</updated>
     
     <content type="html"><![CDATA[<p>降智题真的可以为所欲为.<br><a id="more"></a></p><h3 id="Yet-Another-Dividing-into-Teams"><a href="#Yet-Another-Dividing-into-Teams" class="headerlink" title="Yet Another Dividing into Teams"></a>Yet Another Dividing into Teams</h3><h3 id="Books-Exchange"><a href="#Books-Exchange" class="headerlink" title="Books Exchange"></a>Books Exchange</h3><h3 id="Good-Numbers-easy-version"><a href="#Good-Numbers-easy-version" class="headerlink" title="Good Numbers (easy version)"></a>Good Numbers (easy version)</h3><h3 id="Good-Numbers-hard-version"><a href="#Good-Numbers-hard-version" class="headerlink" title="Good Numbers (hard version)"></a>Good Numbers (hard version)</h3><h3 id="Too-Many-Segments-easy-version"><a href="#Too-Many-Segments-easy-version" class="headerlink" title="Too Many Segments (easy version)"></a>Too Many Segments (easy version)</h3><h3 id="Too-Many-Segments-hard-version"><a href="#Too-Many-Segments-hard-version" class="headerlink" title="Too Many Segments (hard version)"></a>Too Many Segments (hard version)</h3><h3 id="By-Elevator-or-Stairs"><a href="#By-Elevator-or-Stairs" class="headerlink" title="By Elevator or Stairs?"></a>By Elevator or Stairs?</h3><h3 id="Maximum-Weight-Subset"><a href="#Maximum-Weight-Subset" class="headerlink" title="Maximum Weight Subset"></a>Maximum Weight Subset</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
     
@@ -35,7 +35,7 @@
       <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="Codeforces题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/Codeforces%E9%A2%98%E8%A7%A3/"/>
+      <category term="CodeForces题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   

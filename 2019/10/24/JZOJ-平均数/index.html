@@ -163,7 +163,7 @@
 <meta property="og:description" content="有没有大佬给我个纪中$OJ$的号啊😭">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/wqyzstql/PicBed/blob/master/201910241.png?raw=true">
-<meta property="og:updated_time" content="2019-10-24T06:36:00.541Z">
+<meta property="og:updated_time" content="2019-10-24T06:47:14.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[JZOJ]平均数">
 <meta name="twitter:description" content="有没有大佬给我个纪中$OJ$的号啊😭">
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">323</span>
+                <span title="字数统计">790</span>
               
 
               
@@ -510,7 +510,8 @@
       
         <p>有没有大佬给我个纪中$OJ$的号啊😭<br><a id="more"></a></p>
 <p><img src="https://github.com/wqyzstql/PicBed/blob/master/201910241.png?raw=true" alt="题面"></p>
-<p>考虑二分平均值mid，设当前平均值小于等于mid的个数为$f(mid)$。当$f(mid)&gt;k$，则缩小$mid$。<br>然后剩下的问题就变成了怎么求出</p>
+<p>考虑二分平均值mid，设当前平均值小于等于mid的个数为$f(mid)$。当$f(mid)&gt;k$，则缩小$mid$。然后剩下的问题就变成了怎么求出这个$f$了.<br>我们设𝑎数组前缀和为$sum_i$,那么区间$[𝑗+1,𝑖]$的平均值为$\frac{𝑠𝑢𝑚[𝑖]−𝑠𝑢𝑚[𝑗]}{𝑖−𝑗}$.<br>然后观察对于一对$(𝑖,𝑗)$：</p>
+<script type="math/tex; mode=display">\frac{𝑠𝑢𝑚_i−𝑠𝑢𝑚_j}{𝑖−𝑗}≤𝑚𝑖𝑑</script><script type="math/tex; mode=display">⇔𝑠𝑢𝑚_i−𝑠𝑢𝑚_j≤𝑚𝑖𝑑∗(𝑖−𝑗)</script><script type="math/tex; mode=display">⇔𝑠𝑢𝑚_i−𝑚𝑖𝑑∗𝑖≤𝑠𝑢𝑚_j−𝑚𝑖𝑑∗𝑗</script><p>显然,如果我们定义$v_i$表示$sum_i-mid \times i$的话,那么$f(mid)$即为$v$数组的逆序对.<br>所以我们要做的就是求出逆序对的个数即可,可以用树状数组或者归并排序轻松解决.</p>
 <blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       

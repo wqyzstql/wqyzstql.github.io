@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-24T02:02:35.018Z</updated>
+  <updated>2019-10-24T06:36:00.541Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[JZOJ]平均数</title>
+    <link href="http://krrrr.xyz/2019/10/24/JZOJ-%E5%B9%B3%E5%9D%87%E6%95%B0/"/>
+    <id>http://krrrr.xyz/2019/10/24/JZOJ-平均数/</id>
+    <published>2019-10-24T06:26:20.000Z</published>
+    <updated>2019-10-24T06:36:00.541Z</updated>
+    
+    <content type="html"><![CDATA[<p>有没有大佬给我个纪中$OJ$的号啊😭<br><a id="more"></a></p><p><img src="https://github.com/wqyzstql/PicBed/blob/master/201910241.png?raw=true" alt="题面"></p><p>考虑二分平均值mid，设当前平均值小于等于mid的个数为$f(mid)$。当$f(mid)&gt;k$，则缩小$mid$。<br>然后剩下的问题就变成了怎么求出</p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有没有大佬给我个纪中$OJ$的号啊😭&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="二分" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E4%BA%8C%E5%88%86/"/>
+    
+      <category term="分治" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%88%86%E6%B2%BB/"/>
+    
+      <category term="树状数组" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>[51Nod]P1686 第K大区间</title>
@@ -338,9 +365,9 @@
       <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="学习笔记" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
       <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="学习笔记" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
       <category term="最小生成树" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
@@ -462,29 +489,6 @@
     <summary type="html">
     
       &lt;p&gt;版权原因,题面不公开&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>国庆七天乐D1</title>
-    <link href="http://krrrr.xyz/2019/10/01/%E5%9B%BD%E5%BA%86%E4%B8%83%E5%A4%A9%E4%B9%90D1/"/>
-    <id>http://krrrr.xyz/2019/10/01/国庆七天乐D1/</id>
-    <published>2019-10-01T07:05:17.000Z</published>
-    <updated>2019-10-21T03:43:42.828Z</updated>
-    
-    <content type="html"><![CDATA[<p>版权原因,题面不公开w<br><a id="more"></a></p><h3 id="幸福"><a href="#幸福" class="headerlink" title="幸福"></a>幸福</h3><p>题目中要我们去求$\sum_{i=0}^n F_i$<br>我们发现直接去由$f$数组去递推$F$数组的话时间复杂度是$O(n^2)$的,显然过不了,所以我们要推一波式子.<br>由题意可知</p><script type="math/tex; mode=display">F_i=\sum_{i=0}^n f_i\times f_{n-i}</script><p>我们发现$f_i=f_{i-1}+f_{i-2}$,那么我们把$f_0$和$f_1$单独拿出来之后,上边的式子就可以拆成 </p><script type="math/tex; mode=display">F_i=\sum_{i=2}^n [(f_{i-1}+f_{i-2}) \times f_{n-i}]+f_0 \times f_n + f_1 \times f_{n-1}</script><p>再根据万能的加法结合律,我们把上式中的几个$\sum$拆分魔改之后得到</p><script type="math/tex; mode=display">F_i=\sum_{i=0}^{n-1} f_i \times f_{n-i-1} + \sum_{i=0}^{n-2} f_i \times f_{n-i-2} + f_0 \times f_n - f_1 \times f_n + f_0 \times f_n</script><p>然后发现前边那两个$\sum$的式子分别是$F_{i-1}和F_{i-2}$,又因为$f_0=f_1=1$,带入这个式子之后我们可以得到: </p><script type="math/tex; mode=display">F_i=F_{i-1}+F_{i-2}+f_i</script><p>然后就可以愉快的矩乘求出来了.<br>但是因为我比较菜,只会用矩阵快速幂求第$i$项,但是题目中要求你求$\sum_{i=0}^nF_i$,我们怎么办呢?<br>然后我们来考虑一下怎么用矩阵快速幂的过程中直接求出前缀和.</p><p>我们想一下矩阵乘法的过程,因为我们的目标矩阵是由原来的矩阵和我们构造的矩阵相乘得到的,如果我们中间构造一个$01$矩阵的话,矩阵乘法就可以看成是矩阵中的元素不断的相加,所以原理上在矩阵快速幂的过程中是可以直接求出我们要求的数列的前缀和的.<br>我们以求斐波那契数列的前缀和为例子,因为我们知道,一个$n \times m$的矩阵与一个$m \times k$的矩阵相乘之后,我们得到的矩阵是一个$n \times k$的矩阵.<br>所以我们考虑在我们原来构造的矩阵中加上一位,这样的话矩阵就变成了{$f_i,f_{i+1},\sum_{j=1}^{i+1}f_j$}.相应的,在我们构造的矩阵中,我们可以通过使$f_i与f_{i+1}$都被加入我们新加的一维来达到更新前缀和的目的.<br>综上,我们可以在求$F_i$的矩阵中加一维表示前缀和,然后直接矩阵快速幂即可.<br>时间复杂度为$O(logn)$,可以通过本题</p><h3 id="树链剖分"><a href="#树链剖分" class="headerlink" title="树链剖分"></a>树链剖分</h3><p>先考虑暴力怎么写.<br>我们发现如果根节点被确定了的话,我们提前用树上差分统计出每个点被经过了多少次之后,可以直接贪心的去找答案.<br>所以这样的话我们必须要枚举根节点.这样的话复杂度也是显然过不了.<br>我们先钦定一个节点作为根节点,然后我们考虑每个节点作为根节点的情况.<br>显然发现某个点的在原树上的儿子节点是不受影响的,所以我们可以预先进行一次$dfs$来确定<br>我们发现,如果某个节点$i$与我们当前的这个即将要成为根的节点不相邻的话,那么这个点$i$是很显然不会受到影响的(该怎么走还得怎么走)<br>我们考虑从上往下的顺序进行$DFS$，然后每次求出当前节点作为根时的最小代价。显然，与当前节点不相邻的边不受这个节点的影响，因此我们可以直接求出.<br>又因为孩子方向的在第一次$DFS$中预处理了，而父亲方向的在刚刚$DFS$的过程中求出。然后求出与当前节点相邻的边中，最大的以及次大的，根据$DFS$的孩子选择是去掉最大的还是次大的即可。</p><h3 id="小E和小F-strikes-again"><a href="#小E和小F-strikes-again" class="headerlink" title="小E和小F strikes again"></a>小E和小F strikes again</h3><p>这道题是不可能补的,这辈子都不可能补的</p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版权原因,题面不公开w&lt;br&gt;
     
     </summary>
     

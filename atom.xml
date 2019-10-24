@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-24T06:50:48.813Z</updated>
+  <updated>2019-10-24T12:48:41.395Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[51NodP1682] 中位数计数</title>
+    <link href="http://krrrr.xyz/2019/10/24/51Nod-P1682%E4%B8%AD%E4%BD%8D%E6%95%B0%E8%AE%A1%E6%95%B0/"/>
+    <id>http://krrrr.xyz/2019/10/24/51Nod-P1682中位数计数/</id>
+    <published>2019-10-24T12:38:31.000Z</published>
+    <updated>2019-10-24T12:48:41.395Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.51nod.com/Challenge/Problem.html#problemId=1682" target="_blank" rel="noopener">传送门</a><br><a id="more"></a></p><p>发现题目中的数据范围说明我们需要一个时间复杂度为$O(n^2)$的算法.<br>发现我们可以考虑每个数字的贡献,我们发现,对于某个位置上的数字而言,包含这个位置的区间的数量是$n$级别的.<br>所以我们可以尝试对于每个位置的数字,枚举包含这个位置的区间然后统计答案.<br>所以问题就转化成了怎么统计答案.由于权值的范围很大,所以我们考虑设$sum_{n+j}$表示排序后,与$i$这个位置的数字还需要移动正负$j$个单位才能到中位数的位置.<br>然后我们枚举完所有区间之后直接统计就好了.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">8e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> num[N], sum[N &lt;&lt; <span class="number">1</span>], ans[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">ios :: sync_with_stdio ( <span class="literal">false</span> );</span><br><span class="line"><span class="built_in">cin</span>.tie ( <span class="number">0</span> ) , <span class="built_in">cout</span>.tie ( <span class="number">0</span> );</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="keyword">sizeof</span>(sum));</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= <span class="number">0</span>; j--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &gt; num[i])</span><br><span class="line">cnt++;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &lt; num[i])</span><br><span class="line">cnt--;</span><br><span class="line">            sum[<span class="number">8000</span>+cnt]++;</span><br><span class="line">        &#125;</span><br><span class="line">        cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &gt; num[i])</span><br><span class="line">cnt++;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &lt; num[i])</span><br><span class="line">cnt--;</span><br><span class="line">            ans[i] += sum[<span class="number">8000</span>-cnt];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans[i];</span><br><span class="line">        <span class="keyword">if</span> (i != n<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.51nod.com/Challenge/Problem.html#problemId=1682&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="思维" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%80%9D%E7%BB%B4/"/>
+    
+  </entry>
   
   <entry>
     <title>[JZOJ]平均数</title>
@@ -365,9 +388,9 @@
       <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
-    
       <category term="学习笔记" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
     
       <category term="最小生成树" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
     
@@ -474,29 +497,6 @@
       <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
     
       <category term="最短路" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ZROI国庆七天乐D5</title>
-    <link href="http://krrrr.xyz/2019/10/07/ZROI%E5%9B%BD%E5%BA%86%E4%B8%83%E5%A4%A9%E4%B9%90D5/"/>
-    <id>http://krrrr.xyz/2019/10/07/ZROI国庆七天乐D5/</id>
-    <published>2019-10-07T03:14:47.000Z</published>
-    <updated>2019-10-21T03:43:21.629Z</updated>
-    
-    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a><br><del>要是CSP的D1这么考我估计我今年又凉了</del></p><h3 id="添"><a href="#添" class="headerlink" title="添"></a>添</h3><p>经过观察之后发现,在没有任意三线共点的情况下,答案只可能是$1,2,3$当中的一个.<br>然后发现答案吧为$1$的情况只有在所有直线都相互平行或者$n$小于$2$的情况下会成立.<br>然后考虑答案为$2$的情况,发现只有两组平行线集合,而且总线段的个数大于$2$的情况时,会发现答案为$2$.<br>剩下的情况就是答案为$3$的情况.</p><h3 id="罐装"><a href="#罐装" class="headerlink" title="罐装"></a>罐装</h3><p>首先按照国王游戏的套路来推一波贪心的式子.<br>然后发现得到了$p_i \times t_j &gt; p_j \times t_i$<br>移项之后就有$\frac{p_i}{t_i}&gt;\frac{p_j}{t_j}$.<br>然后我们按照这个东西排序,每次修改的时候都暴力做一遍,总复杂度为$O(m\times nlogn)$,就可以拿到$70$分的好成绩.<br>然后我们又发现,每次修改时只会修改一个点,这样的话每次修改的时候都重新做一遍,感觉非常的浪费.<br>我们考虑一下,我们修改一个点的时候,对其他点的贡献的影响.<br>我们发现如果我们修改的那个位置,在排完序之后在原来序列中的位置为$pos$的话,我们如果把这个点先去掉的话,那么从$pos+1$到$n$的位置的数的贡献都会增加$t_{pos} \times \sum_{i=pos+1}^np_i$<br>然后我们考虑一下修改的过程,等价于我们把一个位置删去,然后再在这个区间中插入我们要修改的数值,这个过程中要进行两次区间$sum$.</p><p>所以用权值线段树或者平衡树等数据结构维护即可.</p><h3 id="三千米"><a href="#三千米" class="headerlink" title="三千米"></a>三千米</h3><p>这道题是不可能补的,这辈子都不可能补的</p><p>总结:难度差不多$noip$的$d1$难度吧(甚至还要低)….但是我这个得分就….算了我太菜了/kk</p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版权原因,题面不公开&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   

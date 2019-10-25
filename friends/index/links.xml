@@ -91,11 +91,18 @@
 		<url>https://www.luogu.org/blog/Doveqise/</url>
 	</link>	
 	
-		<link>
+	<link>
 		<title>Juan_Feng</title>
 		<subtitle>分块不是数据结构~</subtitle>
 		<avatar>hz.png</avatar>
 		<url>https://www.luogu.org/blog/Juan-feng/</url>
+	</link>	
+	
+	<link>
+		<title>小跳蛙</title>
+		<subtitle>我是一只一天到晚自闭的小菜蛙</subtitle>
+		<avatar>小跳蛙.jpg</avatar>
+		<url>https://xtwnirui.github.io</url>
 	</link>	
 	
 </links>

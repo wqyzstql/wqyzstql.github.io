@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Educational Codeforces Round 75题解]]></title>
+    <url>%2F2019%2F10%2F25%2FEdu75%2F</url>
+    <content type="text"><![CDATA[意外感觉还挺友善的? 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>CodeForces题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[51NodP1682] 中位数计数]]></title>
     <url>%2F2019%2F10%2F24%2F51Nod-P1682%E4%B8%AD%E4%BD%8D%E6%95%B0%E8%AE%A1%E6%95%B0%2F</url>
     <content type="text"><![CDATA[传送门 发现题目中的数据范围说明我们需要一个时间复杂度为$O(n^2)$的算法.发现我们可以考虑每个数字的贡献,我们发现,对于某个位置上的数字而言,包含这个位置的区间的数量是$n$级别的.所以我们可以尝试对于每个位置的数字,枚举包含这个位置的区间然后统计答案.所以问题就转化成了怎么统计答案.由于权值的范围很大,所以我们考虑设$sum_{n+j}$表示排序后,与$i$这个位置的数字还需要移动正负$j$个单位才能到中位数的位置.然后我们枚举完所有区间之后直接统计就好了. 12345678910111213141516171819202122232425262728293031323334353637383940#include&lt;bits/stdc++.h&gt;using namespace std;const int N = 8e3 + 5;const int INF = 0x3f3f3f3f;int n;int num[N], sum[N &lt;&lt; 1], ans[N];int main ( void ) &#123; ios :: sync_with_stdio ( false ); cin.tie ( 0 ) , cout.tie ( 0 ); cin &gt;&gt; n; for (int i = 0; i &lt; n; i++) cin &gt;&gt; num[i]; for (int i = 0; i &lt; n; i++)&#123; memset(sum, 0, sizeof(sum)); int cnt = 0; for (int j = i; j &gt;= 0; j--)&#123; if (num[j] &gt; num[i]) cnt++; if (num[j] &lt; num[i]) cnt--; sum[8000+cnt]++; &#125; cnt = 0; for (int j = i; j &lt; n; j++)&#123; if (num[j] &gt; num[i]) cnt++; if (num[j] &lt; num[i]) cnt--; ans[i] += sum[8000-cnt]; &#125; &#125; for (int i = 0; i &lt; n; i++)&#123; cout &lt;&lt; ans[i]; if (i != n-1) cout &lt;&lt; " "; else cout &lt;&lt; endl; &#125; return 0;&#125; 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>

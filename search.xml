@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[普及五联测D4]]></title>
+    <url>%2F2019%2F10%2F26%2F%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD4%2F</url>
+    <content type="text"><![CDATA[版权原因,题面不公开. 刷题王者回到原点快乐矩阵梦中的位运算因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>ZROI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Educational Codeforces Round 75题解]]></title>
     <url>%2F2019%2F10%2F25%2FEdu75%2F</url>
     <content type="text"><![CDATA[意外感觉还挺友善的? Broken Keyboard思路考虑一段字符连续出现的次数是奇数次还是偶数次,如果有某种字符连续出现了奇数次那么就是一定存在的. 代码12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123; ios::sync_with_stdio(false); cin.tie(0),cout.tie(0); int T; cin &gt;&gt; T; while ( T-- ) &#123; string s; cin &gt;&gt; s; int len = s.size (); map &lt; char , bool &gt; ans; char las = '.'; int num = 0; for ( int i = 0 ; i &lt;= len ; i++ )&#123; if ( las != s[i] ) &#123; if ( num % 2 == 1 ) ans[las] = 1; las = s[i]; num = 1; &#125; else num++; &#125; for ( int i = ( int ) 'a' ; i &lt;= ( int ) 'z' ; i++ ) if ( ans[(char)i] == 1 ) cout &lt;&lt; ( char ) i; cout &lt;&lt; endl; &#125; return 0;&#125;// Binary Palindromes思路发现如果可以根据题目中给的条件来交换的话,那么原问题可以等价为给你若干个$1$和$0$,然后能对于某些给定的长度,最多能拼出多少回文串.发现如果我们要构造串的话,那么在前$len/i$(向下取整)个位置,我们不用考虑什么其他的条件,只需要每次选择一个剩余数量大的然后$-2$即可.然后我们发现如果我们要构造的串的长度为奇数的话,中间的那个用什么是个问题,我们考虑一下,因为我们在构造过程的第一步中要拿出两个来构造,那么如果剩余数量是奇数一定会比剩余数量是偶数更劣.而奇数$-1=$偶数,所以如果有剩余个数是奇数的话,我们拿出一个奇数的来$-1$,否则选择一个剩余数量多的构造. 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#include &lt;bits/stdc++.h&gt;using namespace std;int len[55];int main()&#123; ios :: sync_with_stdio(false); cin.tie(0),cout.tie(0); int T; cin &gt;&gt; T; while ( T-- ) &#123; memset ( len , 0 , sizeof ( len ) ); int NumZ = 0 , NumO = 0; int n; cin &gt;&gt; n; for ( int i = 1 ; i &lt;= n ; i++ ) &#123; string s; cin&gt;&gt;s; len[i] = s.size(); for ( int j = 0 ; j &lt; len[i] ; j++ ) if ( s[j] == '0' ) NumZ++; else NumO++; &#125; sort ( len + 1 , len + 1 + n ); int ans = 0; for ( int i = 1 ; i &lt;= n ; i++ ) &#123; for ( int j = 1 ; j &lt;= len[i] / 2 ; j++ ) &#123; if ( NumO &gt; NumZ ) NumO -= 2; else NumZ -= 2; &#125; if ( len[i] % 2 == 1 ) if ( NumO &gt;= 1 &amp;&amp; NumO % 2 == 1 ) NumO--; else if ( NumZ &gt;= 1 &amp;&amp; NumZ % 2 == 1 ) NumZ--; else &#123; if ( NumO &gt; NumZ ) NumO -= 1; else NumZ -= 1; &#125; if ( NumZ &gt;= 0 &amp;&amp; NumO &gt;= 0 ) ans++; &#125; cout &lt;&lt; ans &lt;&lt; endl; &#125; return 0;&#125; Minimize The Integer思路发现这样一个结论,如果可以交换任意不同相邻奇偶数的话,那么原来奇数和偶数相对于自己的奇偶性的数的相对位置是不会改变的.所以我们可以分别把奇数和偶数存储起来.然后开两个队列,分别对比奇数和偶数队列的队头大小并且贪心的选择一个小的输出即可. 代码123456789101112131415161718192021222324252627282930313233#include&lt;bits/stdc++.h&gt;using namespace std;string s;int main ( void ) &#123; ios :: sync_with_stdio(false); cin.tie(0),cout.tie(0); int T; cin &gt;&gt; T; while ( T-- ) &#123; cin &gt;&gt; s; int len = s.size (); queue &lt; int &gt; qu[2]; for ( int i = 0 ; i &lt; len ; i++ ) if ( ( ( int ) s[i] - '0' ) % 2 == 0 ) qu[0].push ( ( int ) s[i] - '0' ); else qu[1].push ( ( int ) s[i] - '0' ); qu[0].push ( 11 ); qu[1].push ( 11 ); for ( int i = 1 ; i &lt;= len ; i++ ) &#123; if ( qu[0].front () &lt; qu[1].front () ) &#123; cout &lt;&lt; qu[0].front (); qu[0].pop (); &#125; else if ( qu[0].front () &gt; qu[1].front () ) &#123; cout &lt;&lt; qu[1].front (); qu[1].pop (); &#125; &#125; cout &lt;&lt; endl; &#125; return 0;&#125; Salary Changing思路发现可以二分这个$mid$,然后我们考虑怎么$check$.对于某个区间$[l,r]$,如果$r&gt;=mid$,那么说明在这个区间中我们可以取到$mid$.然后我们把能取到$mid$的区间全部取到$mid$,发现如果大于$mid$的区间刚好为$(n+1)/2$个,那么说明这个取值是可行的. 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include &lt;algorithm&gt;#include &lt;cassert&gt;#include &lt;iostream&gt;#include &lt;vector&gt;using namespace std; const int INF = 1e9 + 5; struct Node &#123; int L, R; bool operator&lt;(const Node &amp;other) const &#123; return L &lt; other.L; &#125;&#125;; int N, H;long long S;vector&lt;Node&gt; v; bool possible(int median) &#123; long long sum = 0; for (Node &amp;s : v) sum += s.L; int count = 0; for (int i = N - 1; i &gt;= 0 &amp;&amp; count &lt; H; i--) if (v[i].R &gt;= median) &#123; sum += max(median - v[i].L, 0); count++; &#125; return count == H &amp;&amp; sum &lt;= S;&#125; int main() &#123; ios::sync_with_stdio(false); cin.tie(0),cout.tie(0); int T; cin &gt;&gt; T; while (T--) &#123; cin &gt;&gt; N &gt;&gt; S; H = (N + 1) / 2; v.resize(N); for ( Node &amp;s : v ) cin &gt;&gt; s.L &gt;&gt; s.R; sort ( v.begin() , v.end () ); int l = 0, r = INF , ans; while ( l &lt;= r ) &#123; int mid = ( l + r ) / 2; if ( possible ( mid ) ) &#123; ans = mid; l = mid + 1; &#125; else r = mid - 1; &#125; cout &lt;&lt; ans &lt;&lt; '\n'; &#125; return 0;&#125; 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
@@ -188,8 +199,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>学习笔记</tag>
         <tag>图论</tag>
+        <tag>学习笔记</tag>
         <tag>最小生成树</tag>
         <tag>Kruscal重构树</tag>
       </tags>

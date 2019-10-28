@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[普转提D6]]></title>
+    <url>%2F2019%2F10%2F28%2F%E6%99%AE%E8%BD%AC%E6%8F%90D6%2F</url>
+    <content type="text"><![CDATA[版权原因,题面不公开 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>ZROI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[普及五联测D4]]></title>
     <url>%2F2019%2F10%2F26%2F%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD4%2F</url>
     <content type="text"><![CDATA[版权原因,题面不公开. 刷题王者思路直接开$map$统计即可. 代码12345678910111213141516171819202122#include &lt;bits/stdc++.h&gt;using namespace std;int n;bool mp[10005];int main ( void ) &#123; scanf ( "%d" , &amp;n ); for ( int i = 1 ; i &lt;= n ; i++ ) &#123; int num; scanf ( "%d" , &amp;num ); while ( num-- ) &#123; int x; scanf ( "%d" , &amp;x ); mp[x] = 1; &#125; &#125; int ans = 0; for ( int i = 1000 ; i &lt;= 9999 ; i++ ) if ( mp[i] ) ans++; printf ( "%d\n" , ans ); return 0;&#125; 回到原点思路考虑我们按照原来的字符串进行移动之后的位置$(x,y)$.发现对原来字符串进行操作的话,如果我们把某个向上的和向下的操作变成向左或向右的,那么每次可以从$(x,y)$向左上/下,右上/下移动.所以我们每次可以对于$x$和$y$的绝对值$+1$或者$-1$.所以答案就是$min(abs(x),abs(y)) + max ( abs ( x ) - min ( abs ( x ) , abs ( y ) ) , abs ( y ) - min ( abs ( x ) , abs ( y ) ) ) / 2$. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243#include &lt;bits/stdc++.h&gt;using namespace std;const int N = 1005;int len , x , y;char s[N];int main ( void ) &#123; scanf ( "%s" , s + 1 ); len = strlen ( s + 1 ); if ( len &amp; 1 ) &#123; puts ( "-1" ); return 0; &#125; for ( int i = 1 ; i &lt;= len ; i++ ) &#123; if ( s[i] == 'U' ) y++; if ( s[i] == 'D' ) y--; if ( s[i] == 'L' ) x--; if ( s[i] == 'R' ) x++; &#125; int ans = 0; ans += min ( abs ( x ) , abs ( y ) ); if ( x &gt;= 0 ) x -= ans; else if ( x &lt; 0 ) x += ans; if ( y &gt;= 0 ) y -= ans; else if ( y &lt; 0 ) y += ans; if ( x != 0 ) ans += abs ( x / 2 ); else if ( y != 0 ) ans += abs ( y / 2 ); printf ( "%d\n" , ans ); return 0;&#125; 快乐矩阵思路发现原来某些点的贡献可以压缩到一个点,所以我们对每一行求一个前缀差,然后再对这最后一列的前缀差求一个前缀差,判断一下是否为$0$即可. 代码12345678910111213141516171819202122232425262728293031#include &lt;bits/stdc++.h&gt;#define int long longusing namespace std;int mp[505][505];int n , m;int num[505];signed main ( void ) &#123;// freopen ( "C.in" , "r" , stdin ); ios :: sync_with_stdio ( false ); cin.tie ( 0 ) , cout.tie ( 0 ); cin &gt;&gt; n &gt;&gt; m; for ( int i = 1 ; i &lt;= n ; i++ ) for ( int j = 1 ; j &lt;= m ; j++ ) cin &gt;&gt; mp[i][j]; for ( int i = 1 ; i &lt;= n ; i++ ) &#123; int sum = 0; for ( int j = 1 ; j &lt; m ; j++ ) mp[i][j + 1] -= mp[i][j]; num[i] = mp[i][m]; // cout &lt;&lt; num[i] &lt;&lt; endl; &#125; int now = 0; for ( int i = 1 ; i &lt; n ; i++ ) num[i + 1] -= num[i]; now = num[n]; if ( abs ( now ) == 0 ) puts ( "Yes" ); else puts ( "No" ); return 0;&#125; 梦中的位运算思路发现进行操作一定比不操作更优秀,所以我们要求的就是操作到不能再操作了的时候这个序列的平方和.又因为这个操作的本质就是把$1$都放到某一个数字上,所以我们直接统计一下二进制下某一位出现了多少次然后贪心统计即可. 代码12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;bits/stdc++.h&gt;using namespace std;inline int read () &#123; int s = 0 , w = 1; char ch = getchar (); while ( ch &gt; '9' || ch &lt; '0' ) &#123; if ( ch == '-' ) w = -1; ch = getchar ();&#125; while ( ch &gt;= '0' &amp;&amp; ch &lt;= '9' ) &#123; s = s * 10 + ch - '0'; ch = getchar ();&#125; return s * w; &#125;inline void print ( __int128 x ) &#123; if ( !x ) return ; print ( x / 10 ); putchar ( x % 10 + '0' ); return;&#125;int n;int num[35];__int128 ans;int main ( void ) &#123; n = read (); for ( int i = 1 ; i &lt;= n ; i++ ) &#123; int x = read (); for ( int j = 0 ; j &lt;= 30 ; j++ ) if ( x &amp; ( 1 &lt;&lt; j ) ) num[j]++; &#125; for ( int i = 1 ; i &lt;= n ; i++ ) &#123; __int128 re = 0; for ( int j = 0 ; j &lt;= 30 ; j++ ) if ( num[j] &gt;= i ) re |= (1ll &lt;&lt; j); ans += re * re; &#125; print ( ans ); return 0;&#125; 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
@@ -199,8 +210,8 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>图论</tag>
         <tag>学习笔记</tag>
+        <tag>图论</tag>
         <tag>最小生成树</tag>
         <tag>Kruscal重构树</tag>
       </tags>

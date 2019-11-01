@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-10-31T12:57:57.344Z</updated>
+  <updated>2019-11-01T08:36:40.330Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[SDOI2019]Elaxia的路线</title>
+    <link href="http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia%E7%9A%84%E8%B7%AF%E7%BA%BF/"/>
+    <id>http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia的路线/</id>
+    <published>2019-11-01T08:35:41.000Z</published>
+    <updated>2019-11-01T08:36:40.330Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.org/problem/P2149" target="_blank" rel="noopener">传送门</a><br><a id="more"></a></p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.luogu.org/problem/P2149&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="最短路" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>校内ACM赛题解选讲</title>
@@ -452,29 +477,6 @@
     <summary type="html">
     
       &lt;p&gt;版权原因,题面不公开&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ZROI普及五联测D3</title>
-    <link href="http://krrrr.xyz/2019/10/12/ZROI%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD3/"/>
-    <id>http://krrrr.xyz/2019/10/12/ZROI普及五联测D3/</id>
-    <published>2019-10-12T02:43:10.000Z</published>
-    <updated>2019-10-21T03:43:26.461Z</updated>
-    
-    <content type="html"><![CDATA[<p>版权原因,题面不公开.<br><a id="more"></a></p><h3 id="旋风回旋曲"><a href="#旋风回旋曲" class="headerlink" title="旋风回旋曲"></a>旋风回旋曲</h3><p>由于可能的情况非常的小,所以我们只需要判断一下的几种情况:</p><ol><li>从$x$直接走到$y$.</li><li>从$x$走到$a$,再从$b$走到$y$.  </li><li>从$x$走到$b$,再从$a$走到$y$.<br>由于只有三种情况,直接$3$个$if$判断一下即可.</li></ol><h3 id="假面饭店"><a href="#假面饭店" class="headerlink" title="假面饭店"></a>假面饭店</h3><p>首先第一反应就是枚举每个数字取还是不取,所以我们需要$2^{size}$枚举每个数,但是显然还得枚举每个数的顺序,复杂度明显过不了.<br>所以我们考虑枚举$i$来得到$i^2$.这样的话,发现我们最多是只需要枚举到$\sqrt{10 \times n}$即可.<br>枚举的时候注意一下剪枝,不然就会$T$掉.</p><h3 id="疯狂外星人"><a href="#疯狂外星人" class="headerlink" title="疯狂外星人"></a>疯狂外星人</h3><p>发现我们可以枚举一下不能放入的物品是哪个.那么显然如果第$i$个物品不能放入的话,重量比$i$小的物品一定要都被放进去.<br>然后再来考虑一下重量比$i$大的物品.<br>发现我们可以用计数类的$01$背包来解决.<br>最后需要注意一点,如果全都能放进去的话,也需要算一种方案,所以我们要枚举到第$n+1$个物品.</p><h3 id="流浪地球"><a href="#流浪地球" class="headerlink" title="流浪地球"></a>流浪地球</h3><p>发现维护连通块的消失的话,显然不怎么可做.<br>所以我们尝试离线,我们把询问按照从大到小排序,然后每次从一个询问过渡到另外一个询问的时候,会出现若干个新的”大陆”.<br>然后我们的任务就变成了这些新的大陆能不能和其他的连通块连起来.<br>对于这一个操作,显然我们可以维护一个并查集,每次判断+合并几个连通块即可.</p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版权原因,题面不公开.&lt;br&gt;
     
     </summary>
     

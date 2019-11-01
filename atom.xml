@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-11-01T08:36:40.330Z</updated>
+  <updated>2019-11-01T08:42:00.798Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia%E7%9A%84%E8%B7%AF%E7%BA%BF/"/>
     <id>http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia的路线/</id>
     <published>2019-11-01T08:35:41.000Z</published>
-    <updated>2019-11-01T08:36:40.330Z</updated>
+    <updated>2019-11-01T08:42:00.798Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://www.luogu.org/problem/P2149" target="_blank" rel="noopener">传送门</a><br><a id="more"></a></p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.org/problem/P2149" target="_blank" rel="noopener">传送门</a><br><a id="more"></a></p><p>首先我们可以知道如果把所有最短路上的边挑出来，再按照最短路中$dis$数组的递推关系给它加上方向的话这就是一个有向无环图。<br>而如果把所有两个最短路的公共边挑出来的话，这个有向无环图中的最长链就是答案。<br>并且判断一条边在最短路上的方式就是$dis[s→u]+w(u,v)+dis[u→t]=dis[s→t]dis[s→u]+w(u,v)+dis[u→t]=dis[s→t]$。<br>并且因为这是无向图，所以求任意一个点到终点的距离只需要以终点为起点再跑一遍最短路就可以了。<br>需要注意的问题就是公共路径从不同的方向经过也是可以的，所以需要把一对起点和终点倒过来再做一遍。</p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
     
     <summary type="html">
     

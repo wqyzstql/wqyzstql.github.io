@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[普转提撒花]]></title>
+    <url>%2F2019%2F11%2F03%2F%E6%99%AE%E8%BD%AC%E6%8F%90%E6%92%92%E8%8A%B1%2F</url>
+    <content type="text"><![CDATA[版权原因,题面不公开 嘴强王者数组曼哈顿抉择开关灯因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>ZROI</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[SDOI2019]Elaxia的路线]]></title>
     <url>%2F2019%2F11%2F01%2FSDOI2019-Elaxia%E7%9A%84%E8%B7%AF%E7%BA%BF%2F</url>
     <content type="text"><![CDATA[传送门 首先我们可以知道如果把所有最短路上的边挑出来，再按照最短路中$dis$数组的递推关系给它加上方向的话这就是一个有向无环图。而如果把所有两个最短路的公共边挑出来的话，这个有向无环图中的最长链就是答案。并且判断一条边在最短路上的方式就是$dis[s→u]+w(u,v)+dis[u→t]=dis[s→t]dis[s→u]+w(u,v)+dis[u→t]=dis[s→t]$。并且因为这是无向图，所以求任意一个点到终点的距离只需要以终点为起点再跑一遍最短路就可以了。需要注意的问题就是公共路径从不同的方向经过也是可以的，所以需要把一对起点和终点倒过来再做一遍。 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
@@ -522,9 +533,9 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>二分</tag>
         <tag>图论</tag>
         <tag>最短路</tag>
+        <tag>二分</tag>
       </tags>
   </entry>
   <entry>

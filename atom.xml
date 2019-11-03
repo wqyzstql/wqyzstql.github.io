@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.xyz/"/>
-  <updated>2019-11-01T08:42:00.798Z</updated>
+  <updated>2019-11-03T08:13:42.766Z</updated>
   <id>http://krrrr.xyz/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>普转提撒花</title>
+    <link href="http://krrrr.xyz/2019/11/03/%E6%99%AE%E8%BD%AC%E6%8F%90%E6%92%92%E8%8A%B1/"/>
+    <id>http://krrrr.xyz/2019/11/03/普转提撒花/</id>
+    <published>2019-11-03T08:11:27.000Z</published>
+    <updated>2019-11-03T08:13:42.766Z</updated>
+    
+    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h3 id="嘴强王者"><a href="#嘴强王者" class="headerlink" title="嘴强王者"></a>嘴强王者</h3><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="曼哈顿抉择"><a href="#曼哈顿抉择" class="headerlink" title="曼哈顿抉择"></a>曼哈顿抉择</h3><h3 id="开关灯"><a href="#开关灯" class="headerlink" title="开关灯"></a>开关灯</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;版权原因,题面不公开&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+    
+  </entry>
   
   <entry>
     <title>[SDOI2019]Elaxia的路线</title>
@@ -462,29 +485,6 @@
     
     
       <category term="CodeForces题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ZROI普转提D4</title>
-    <link href="http://krrrr.xyz/2019/10/13/ZROI%E6%99%AE%E8%BD%AC%E6%8F%90D4/"/>
-    <id>http://krrrr.xyz/2019/10/13/ZROI普转提D4/</id>
-    <published>2019-10-13T07:50:56.000Z</published>
-    <updated>2019-10-21T03:43:31.116Z</updated>
-    
-    <content type="html"><![CDATA[<p>版权原因,题面不公开<br><a id="more"></a></p><h3 id="控制人偶"><a href="#控制人偶" class="headerlink" title="控制人偶"></a>控制人偶</h3><p>发现我们只要算出来在一个循环中,坐标的变化值$(\Delta x , \Delta y)$.<br>然后将变化值去乘循环时间的个数,最后多出来的暴力即可.</p><h3 id="复杂度计算"><a href="#复杂度计算" class="headerlink" title="复杂度计算"></a>复杂度计算</h3><p>来我们开始一步一步的推公式(<br>题目中要我们求的时间复杂度,写成多项式的形式就是:  </p><script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m\sum_{x=i}^k\sum_{y=j}^l 1</script><p>首先我们可以发现,最后的$x$和$y$的两维,因为是直接加起来的,所以可以直接变成$(l-j+1) \times (k-i+1)$,那么原来式就变成了  </p><script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1)</script><p>然后我们发现,同样的$(l-j+1)$和$(k-i+1)$分别都是被统计了$(m-j+1)$次和$(n-i+1)$次,所以由乘法分配律可知</p><script type="math/tex; mode=display">\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1) = \sum_{k=i}^n[\sum_{l=1}^{m-j+1} \times (k-i+1)]</script><p>发现$(k-i+1)$的系数可以直接等差数列求和,然后再将$\sum_{k=i}^n$拆开和等差数列求和公式之后就会得到  </p><script type="math/tex; mode=display">\sum_{i=1}^n\sum_{j=1}^m\sum_{k=i}^n\sum_{l=j}^m(l-j+1) \times (k-i+1) = \sum_{i=1}^n\sum_{j=1}^m\frac{(n-i+1) \times (n-i+2)}{2} \times \frac{(m-j+1) \times (m-j+2)}{2}</script><p>将分母提取出来之后,可以得到原式等价于</p><script type="math/tex; mode=display">\frac{\sum_{i=1}^n\sum_{j=1}^m  (n-i+1) \times (n-i+2) \times (m-j+1) \times (m-j+2)}{4}</script><p>然后继续固定$i$,我们发现系数满足$A_i=i^2+i$,那么根据$\sum_{i=1}^n i^2=\frac{n \times (n+1) \times (2 \times n + 1)}{6}$有原式等价于<br>$[\frac{m \times ( m + 1 ) \times ( 2 \times m + 1) }{6} \times \frac{m \times (m+1)}{2}] \times [\frac{n \times (n+1) \times (2 \times n + 1 )}{6}+\frac{n \times ( n + 1 )}{2}] / 4$<br>预处理逆元之后可以直接$O(1)$求出</p><h3 id="复印任务"><a href="#复印任务" class="headerlink" title="复印任务"></a>复印任务</h3><p>我们注意到$1&lt;=t_i&lt;=10^3$.所以我们可以在很少的时间内怼同类时间的复印机进行预处理.<br>由于我们知道每个复印机的启动时间,所以我们可以维护三个值.我们用$c_i$表示周期为$i$的复印机个数,$f_{t,p}$表示周期为$t$的复印机,且它的工作的起始时间对$t$取膜以后是$p$的个数(同时我们用$g$)表示$f$的后缀和.<br>同时我们记录$s_t$表示所有周期为$t$的时间的复印机进入打印状态所欲要的$t$的时间周期有多少个.<br>通过处理这三个数组,我们可以很快的计算同类周期的复读机在一段时间内的打印个数.</p><p>所以我们可以选择二分一个时间$T$,假设我们现在枚举的复印机的时间周期为$t$,那么我们发现能产生的复印件个数为$c_t \times (T/t) - s_j - f_{j,Tmodt+1} $<br>然后我们把每个时间的加起来就是答案.</p><h3 id="A-B-Problem"><a href="#A-B-Problem" class="headerlink" title="A+B Problem"></a>A+B Problem</h3><p>二维树状数组裸题….<br>直接安利我学习的博客了qwq..</p><p><a href="https://www.cnblogs.com/rabbithu/p/bit.html" target="_blank" rel="noopener">写的挺好的一篇博客</a></p><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;版权原因,题面不公开&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   

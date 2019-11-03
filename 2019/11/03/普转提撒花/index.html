@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-03T08:13:42.766Z">
+<meta property="og:updated_time" content="2019-11-03T08:56:02.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普转提撒花">
 <meta name="twitter:description" content="版权原因,题面不公开">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">420</span>
+                <span title="字数统计">1.1k</span>
               
 
               
@@ -507,7 +507,10 @@
 
       
         <p>版权原因,题面不公开<br><a id="more"></a></p>
-<h3 id="嘴强王者"><a href="#嘴强王者" class="headerlink" title="嘴强王者"></a>嘴强王者</h3><h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><h3 id="曼哈顿抉择"><a href="#曼哈顿抉择" class="headerlink" title="曼哈顿抉择"></a>曼哈顿抉择</h3><h3 id="开关灯"><a href="#开关灯" class="headerlink" title="开关灯"></a>开关灯</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+<h3 id="嘴强王者"><a href="#嘴强王者" class="headerlink" title="嘴强王者"></a>嘴强王者</h3><p>首先可以设一个$k=\frac{n}{m}$表示每一组的人数.<br>然后我们把所有队伍按照队长的能力值从小到大排序(即根据队长的排名从大到小排序).然后我们考虑能力值排名最大的队长怎么取.<br>发现显然只能去取排名比$a_i$靠后的,方案为 $\dbinom{n-a_i}{k-1}$<br>然后我们再去考虑能力值排名第二大的队伍,发现不仅只能去取排名比$a_i$靠后的,而且也不能去取已经被排名第一大的队伍取过的人,那么方案为$\dbinom{n-a_i-k}{k-1}$<br>同样的,以此类推,最后的答案就是$\prod\limits_{i=1}^n\dbinom{n-a_i-k \times (i - 1) }{k-1}$</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>发现题目中有一个突破点就是只有$1$和$2$两种数字.<br>然后我们发现如下一个结论:我们找到某一个$1$,然后设它的位置为$i$,那么$[1,sum_n-sum_{i-1}]$范围内的数字都一定可以被取到.所以我们可以从左到右再从右到左分别找到第一个$1$,然后把可以到达的数标记起来.<br>然后我们再找到之前没有被$1$之后的数字标记过的$2$的数量$num$,那么所有能到达的数的并集就是</p>
+<script type="math/tex; mode=display">[1,max(sum_n-sum_{i-1})(a_i=1)]∪max(sum_n-sum_{i-1})(a_i=1)+2 \times k (k<=num)</script><p>又因为权值很小,所以我们可以预处理之后直接$O(1)$统计答案.</p>
+<h3 id="曼哈顿抉择"><a href="#曼哈顿抉择" class="headerlink" title="曼哈顿抉择"></a>曼哈顿抉择</h3><h3 id="开关灯"><a href="#开关灯" class="headerlink" title="开关灯"></a>开关灯</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>

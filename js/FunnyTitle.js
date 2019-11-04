@@ -1,3 +1,3 @@
-// build time:Fri Nov 01 2019 16:37:09 GMT+0800 (GMT+08:00)
+// build time:Mon Nov 04 2019 09:32:11 GMT+0800 (GMT+08:00)
 var OriginTitle=document.title;var titleTime;document.addEventListener("visibilitychange",function(){if(document.hidden){$('[rel="icon"]').attr("href","/img/trhx2.png");document.title="你再看一下嘛qwq";clearTimeout(titleTime)}else{$('[rel="icon"]').attr("href","/img/trhx2.png");document.title="ヾ(Ő∀Ő3)ノ"+OriginTitle;titleTime=setTimeout(function(){document.title=OriginTitle},2e3)}});
 //rebuild by neat 

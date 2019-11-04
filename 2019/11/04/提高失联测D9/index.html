@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-04T01:31:53.381Z">
+<meta property="og:updated_time" content="2019-11-04T03:08:29.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="提高失联测D9">
 <meta name="twitter:description" content="版权原因,题面不公开">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">349</span>
+                <span title="字数统计">903</span>
               
 
               
@@ -507,7 +507,8 @@
 
       
         <p>版权原因,题面不公开<br><a id="more"></a></p>
-<h3 id="蔡老板"><a href="#蔡老板" class="headerlink" title="蔡老板"></a>蔡老板</h3><h3 id="唯一睿酱"><a href="#唯一睿酱" class="headerlink" title="唯一睿酱"></a>唯一睿酱</h3><h3 id="波波🐮"><a href="#波波🐮" class="headerlink" title="波波🐮"></a>波波🐮</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+<h3 id="蔡老板"><a href="#蔡老板" class="headerlink" title="蔡老板"></a>蔡老板</h3><p>这道题题解里的二分的$check$到底是怎么想出来的啊….<br>我们考虑到对于某个数$i$,在它的二进制表示下,对于某个确定的$2^i$的物品,你取还是不取是不影响$2^j(j&lt;i)$的物品拿还是不拿的.<br>然后发现显然钱数这个东西是满足单调性的<del>所以显然可以爬山</del>所以我们可以二分钱数然后$check$.<br>但是发现这个东西貌似不怎么好$check$.我们想一下我们之前说的性质,可以发现对于每一位,如果在二进制表示下是$1$,那么如果不拿就一定亏了(确信).<br>但是拿的话只拿这个价格的东西显然不会更优.我们想一下,对于这一位之前的某一维,我们选之后(或者根本没选)剩下的,如果直接扔掉显然会浪费掉.<br>然后我们又会发现,因为每个东西的价格都是用二的幂次方表示的,而两个价格为$2^i$的物品可以合并为一个$2^{i+1}$的物品.而这个操作显然需要我们按照钱数从小到大进行.<br>那么我们的贪心思路就比较明显了,我们对于每一个二分出来的钱数$mid$,我们从低到高考虑这个钱数的每一位,如果是$1$的话,那么我们就选择当前维护的最大的一个值.然后把其他的从大到小两两合并成一个新的.<br>而对于二进制考虑下是$0$的情况,我们直接合并即可.</p>
+<h3 id="唯一睿酱"><a href="#唯一睿酱" class="headerlink" title="唯一睿酱"></a>唯一睿酱</h3><h3 id="波波🐮"><a href="#波波🐮" class="headerlink" title="波波🐮"></a>波波🐮</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -529,7 +530,7 @@
   <p><span>本文标题:</span><a href="/2019/11/04/提高失联测D9/">提高失联测D9</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年11月04日 - 08:11</p>
-  <p><span>最后更新:</span>2019年11月04日 - 09:11</p>
+  <p><span>最后更新:</span>2019年11月04日 - 11:11</p>
   <p><span>原始链接:</span><a href="/2019/11/04/提高失联测D9/" title="提高失联测D9">http://krrrr.xyz/2019/11/04/提高失联测D9/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/11/04/提高失联测D9/" aria-label="复制成功！"></i></span>
   </p>

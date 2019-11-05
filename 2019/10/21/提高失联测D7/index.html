@@ -162,12 +162,12 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://krrrr.xyz/PicBed/201910221.png">
-<meta property="og:updated_time" content="2019-10-22T07:52:24.038Z">
+<meta property="og:image" content="http://krrrr.xyz/img/201910221.png">
+<meta property="og:updated_time" content="2019-11-05T01:04:32.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="提高失联测D7">
 <meta name="twitter:description" content="版权原因,题面不公开.">
-<meta name="twitter:image" content="https://krrrr.xyz/PicBed/201910221.png">
+<meta name="twitter:image" content="http://krrrr.xyz/img/201910221.png">
 
 
 
@@ -390,7 +390,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KRrrrrrrrr">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg">
+      <meta itemprop="image" content="/images/avtor.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -512,7 +512,7 @@
 <h3 id="dls的生日礼物"><a href="#dls的生日礼物" class="headerlink" title="dls的生日礼物"></a>dls的生日礼物</h3><p>还是首先考虑无解的话会是什么情况,无解的话,一定是某一段长度大于$1$的区间被覆盖了两次以上,这个显然可以离散化来统计.<br>然后我们再来想有解的情况,我们考虑,这道题让你把原来的区间分成两个集合,而相交的区间必须颜色不同.所以我们考虑到二分图模型.<br>如果两个区间相交的话,那么这两个区间是要有边相连的.而因为我们已经排除了无解的情况,所以有解的情况一定会是一张二分图.即所有的连通块都是二分图.<br>但是我们发现,如果暴力枚举区间连边的话是$O(n^2)$的,需要考虑怎么优化.<br>我们又发现在某个连通块中,因为连通块中的点都是区间看成的点,所以一个连通块也就代表了一个区间,我们只需要考虑一下互不相交的连通块的个数$x$然后答案就是$2^x$.</p>
 <h3 id="dls的生日宴会"><a href="#dls的生日宴会" class="headerlink" title="dls的生日宴会"></a>dls的生日宴会</h3><p>首先我们发现,如果我们按照$k=\frac{n}{2} , \frac{n}{4} , \frac{n}{8}$不断选取$k$的值的话,那么轮数为$logn$轮,即轮数最多为$logn$(向上取整)轮.<br>我们假设我们一共操作了$m$轮,第$i$轮我们选择的$k$的值为$k_i$,那么如果满足能找到$dls$的话,需要满足</p>
 <script type="math/tex; mode=display">m<=\Pi_{i=1}^m k_i</script><p>所以我们就需要找到一组满足这个条件的$k_i$并且最小化$\sum_{i=1}^mk_i$.<br>然后我们可以枚举$m$,同时考虑枚举$\sum_{i=1}^mk_i$,显然$\sum_{i=1}^mk_i$越大,$\Pi_{i=1}^mk_i$越大.所以可以考虑二分$\sum_{i=1}^mk_i$.<br>然后我们的问题就只有怎么$check$一组$k_i$是不是合法.我们发现,如果在确定的$\sum_{i=1}^mk_i$中,要使得$\Pi_{i=1}^mk_i$最大,那么由<strong>均值不等式</strong>显然有任意$i,j|k_i-k_j|&lt;=1$.<br>即对于一组确定的$\sum$,只有唯一的一个$\Pi$与之对应,然后直接统计答案即可.</p>
-<h3 id="dls的生日派对"><a href="#dls的生日派对" class="headerlink" title="dls的生日派对"></a>dls的生日派对</h3><p><img src="https://krrrr.xyz/PicBed/201910221.png" alt="qwq"></p>
+<h3 id="dls的生日派对"><a href="#dls的生日派对" class="headerlink" title="dls的生日派对"></a>dls的生日派对</h3><p><img src="/img/201910221.png" alt="qwq"></p>
 <p><del>众所周知超哥线段树是NOIP考点</del></p>
 <blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
@@ -536,7 +536,7 @@
   <p><span>本文标题:</span><a href="/2019/10/21/提高失联测D7/">提高失联测D7</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年10月21日 - 21:10</p>
-  <p><span>最后更新:</span>2019年10月22日 - 15:10</p>
+  <p><span>最后更新:</span>2019年11月05日 - 09:11</p>
   <p><span>原始链接:</span><a href="/2019/10/21/提高失联测D7/" title="提高失联测D7">http://krrrr.xyz/2019/10/21/提高失联测D7/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/10/21/提高失联测D7/" aria-label="复制成功！"></i></span>
   </p>
@@ -685,7 +685,7 @@ var jiathis_config={
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg" alt="KRrrrrrrrr">
+              <img class="site-author-image" itemprop="image" src="/images/avtor.jpg" alt="KRrrrrrrrr">
             
               <p class="site-author-name" itemprop="name">KRrrrrrrrr</p>
               <p class="site-description motion-element" itemprop="description">沙雕复读机||没学上了</p>
@@ -698,7 +698,7 @@ var jiathis_config={
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

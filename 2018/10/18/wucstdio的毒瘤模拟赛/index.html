@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="$wucstdio$大爷的Flag还是没有倒….">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T03:48:21.725Z">
+<meta property="og:updated_time" content="2019-11-05T01:01:41.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wucstdio的毒瘤模拟赛">
 <meta name="twitter:description" content="$wucstdio$大爷的Flag还是没有倒….">
@@ -388,7 +388,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KRrrrrrrrr">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg">
+      <meta itemprop="image" content="/images/avtor.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -508,11 +508,10 @@
       
         <p>$wucstdio$大爷的Flag还是没有倒….</p>
 <a id="more"></a>
-<p>T1: 反正我刚开始对这道题是完全没有什么信心的qaq（才不会告诉你我直接去看的$T2$）<br>   考虑$50$分的情况：一条链。所以就是一个等差数列了qwq<br>   考虑剩余的正解，我们可以把每一步的期望值当成这棵树的权值，然后因为从上向下和从下向上的期望值可能不太一样，所以我们需要两个函数来表示：（相当于两条边）。<br>    我们设$f(x)   g(x)$分别表示从下向上和从上向下的情况，所以我们考虑求出$f(x)$时，我们要考虑以下情况：<br>         直接走到这个节点的父节点，所以这种情况下，对这个节点对答案的贡献就是$\frac {1}{d[x]}了$<br>         还有一种情况就是这个节点先跳到他的儿子，再跳回这个节点，再跳过去。这个时候，因为我们需要一步来跳过去，所以这种情况对答案的贡献就是:$\sum_{j=son} \frac {1}{d[x]}[1  + f(x) + f(j) ]$<br>   我们综合考虑一下这两种情况对答案的贡献值，将这两个式子加起来，我们就会得到下边的这个式子：</p>
+<p>T1: 反正我刚开始对这道题是完全没有什么信心的qaq（才不会告诉你我直接去看的$T2$）<br>考虑$50$分的情况：一条链。所以就是一个等差数列了qwq<br>考虑剩余的正解，我们可以把每一步的期望值当成这棵树的权值，然后因为从上向下和从下向上的期望值可能不太一样，所以我们需要两个函数来表示：（相当于两条边）。<br>我们设$f(x)   g(x)$分别表示从下向上和从上向下的情况，所以我们考虑求出$f(x)$时，我们要考虑以下情况：<br>直接走到这个节点的父节点，所以这种情况下，对这个节点对答案的贡献就是$\frac {1}{d[x]}了$<br>还有一种情况就是这个节点先跳到他的儿子，再跳回这个节点，再跳过去。这个时候，因为我们需要一步来跳过去，所以这种情况对答案的贡献就是:$\sum_{j=son} \frac {1}{d[x]}[1  + f(x) + f(j) ]$<br>我们综合考虑一下这两种情况对答案的贡献值，将这两个式子加起来，我们就会得到下边的这个式子：</p>
 <script type="math/tex; mode=display">f(x) = \frac{1}{d} + \sum_{j=son}\frac{1}{d}\times[1 +f(x)  + f ( j )]</script><p>我们安置我们做期望的一贯思路（好像我做过多少期望一样QwQ），因为$num[son]=p-1$，所以我们可以得到这样一个式子：</p>
 <script type="math/tex; mode=display">d\times f(x)=1+d-1+(d-1)f(x)+\sum_{j}f(j)</script><p>化简一下之后有：</p>
-<script type="math/tex; mode=display">f(x)=d+\sum_{j}f(j)</script><p>然后我们来考虑一下$g(x)$这个东西怎么求，当我们经过观察之后，我们可以发现这个式子有三种情况：<br>       他的父亲直接跳到他这里，这种情况对答案的贡献就是$\frac{1}{d[father]}$<br>      他的父亲先跳到他的爷爷，然后再跳回来，这种情况下，对答案的贡献就是：$\frac{1}{d[father]}\times (1 + g(p) +g(x) )$<br>      他的父亲跳到他的兄弟然后再跳到他自己。  </p>
-<p>我们把这三种情况加起来，就会有：</p>
+<script type="math/tex; mode=display">f(x)=d+\sum_{j}f(j)</script><p>然后我们来考虑一下$g(x)$这个东西怎么求，当我们经过观察之后，我们可以发现这个式子有三种情况：<br>他的父亲直接跳到他这里，这种情况对答案的贡献就是$\frac{1}{d[father]}$<br>他的父亲先跳到他的爷爷，然后再跳回来，这种情况下，对答案的贡献就是：$\frac{1}{d[father]}\times (1 + g(p) +g(x) )$<br>他的父亲跳到他的兄弟然后再跳到他自己。<br>我们把这三种情况加起来，就会有：</p>
 <script type="math/tex; mode=display">g(x)=\dfrac {1}{d[father]} \times(1+g(p)+g(x))+\dfrac {1}{d[father]}+\sum_{pa_j=pa_x\&\&j\not=x}\dfrac {1}{d[father]} (1+f(j)+g(x))</script><p>继续化简有：</p>
 <script type="math/tex; mode=display">g(x)=g(p)+f(p)-f(x)</script><p>通过这种方式，我们就可以把$g(x) f(x)$算出来，相当于边长。</p>
 <p>算出边长后，这个问题就转化成了：给你一颗树，求树的直径。我选择了DP求直径，就很简单了。</p>
@@ -540,7 +539,7 @@
   <p><span>本文标题:</span><a href="/2018/10/18/wucstdio的毒瘤模拟赛/">wucstdio的毒瘤模拟赛</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2018年10月18日 - 17:10</p>
-  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
+  <p><span>最后更新:</span>2019年11月05日 - 09:11</p>
   <p><span>原始链接:</span><a href="/2018/10/18/wucstdio的毒瘤模拟赛/" title="wucstdio的毒瘤模拟赛">http://krrrr.xyz/2018/10/18/wucstdio的毒瘤模拟赛/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2018/10/18/wucstdio的毒瘤模拟赛/" aria-label="复制成功！"></i></span>
   </p>
@@ -680,7 +679,7 @@ var jiathis_config={
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/wqyzstql/PicBed/master/121.jpg" alt="KRrrrrrrrr">
+              <img class="site-author-image" itemprop="image" src="/images/avtor.jpg" alt="KRrrrrrrrr">
             
               <p class="site-author-name" itemprop="name">KRrrrrrrrr</p>
               <p class="site-description motion-element" itemprop="description">沙雕复读机||没学上了</p>
@@ -693,7 +692,7 @@ var jiathis_config={
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

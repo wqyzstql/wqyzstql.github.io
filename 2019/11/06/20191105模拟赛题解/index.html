@@ -151,21 +151,21 @@
 </script>
 
   
-  <meta name="keywords" content="CodeForces题解,">
+  <meta name="keywords" content="模拟赛题解,">
 
 
-<meta name="description" content="lyt我对不起你啊/ll">
-<meta name="keywords" content="CodeForces题解">
+<meta name="description" content="🐮🍻🐮">
+<meta name="keywords" content="模拟赛题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces Round #588 (Div. 2)题解">
-<meta property="og:url" content="http://krrrr.xyz/2019/09/27/CF588题解/index.html">
+<meta property="og:title" content="20191105模拟赛题解">
+<meta property="og:url" content="http://krrrr.xyz/2019/11/06/20191105模拟赛题解/index.html">
 <meta property="og:site_name" content="KR&#39;s Blog">
-<meta property="og:description" content="lyt我对不起你啊/ll">
+<meta property="og:description" content="🐮🍻🐮">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T03:45:18.316Z">
+<meta property="og:updated_time" content="2019-11-06T00:46:00.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces Round #588 (Div. 2)题解">
-<meta name="twitter:description" content="lyt我对不起你啊/ll">
+<meta name="twitter:title" content="20191105模拟赛题解">
+<meta name="twitter:description" content="🐮🍻🐮">
 
 
 
@@ -174,7 +174,7 @@
 
 
 
-  <link rel="canonical" href="http://krrrr.xyz/2019/09/27/CF588题解/">
+  <link rel="canonical" href="http://krrrr.xyz/2019/11/06/20191105模拟赛题解/">
 
 
 
@@ -183,7 +183,7 @@
     sidebar: "",
   };
 </script>
-  <title>Codeforces Round #588 (Div. 2)题解 | KR's Blog</title>
+  <title>20191105模拟赛题解 | KR's Blog</title>
   
 
 
@@ -383,7 +383,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2019/09/27/CF588题解/">
+    <link itemprop="mainEntityOfPage" href="http://krrrr.xyz/2019/11/06/20191105模拟赛题解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KRrrrrrrrr">
@@ -400,7 +400,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Codeforces Round #588 (Div. 2)题解</h1>
+          <h1 class="post-title" itemprop="name headline">20191105模拟赛题解</h1>
         
 
         <div class="post-meta">
@@ -413,7 +413,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-27T21:02:25+08:00">2019-09-27</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-06T08:45:09+08:00">2019-11-06</time>
             
 
             
@@ -449,8 +449,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/27/CF588题解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/CF588题解/" itemprop="commentCount"></span>
+                <a href="/2019/11/06/20191105模拟赛题解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/06/20191105模拟赛题解/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">8.8k</span>
+                <span title="字数统计">343</span>
               
 
               
@@ -486,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 mins.</span>
+                <span title="阅读时长">1 mins.</span>
               
             </div>
           
@@ -506,12 +506,9 @@
       
 
       
-        <p>lyt我对不起你啊/ll<br><a id="more"></a></p>
-<h3 id="Dawid-and-Bags-of-Candies"><a href="#Dawid-and-Bags-of-Candies" class="headerlink" title="Dawid and Bags of Candies"></a>Dawid and Bags of Candies</h3><p>其实我们按照大小排序了之后,我们发现可能的答案只有第$1,4$组成或者第$4$个单独组成,判断一下即可.<br>注意精度,不然直接除$2$的时候可能会被卡. </p>
-<h3 id="Ania-and-Minimizing"><a href="#Ania-and-Minimizing" class="headerlink" title="Ania and Minimizing"></a>Ania and Minimizing</h3><p>发现如果把高位变小了之后,那么答案一定会变得更优.<br>所以我们直接从高位向低位贪心即可.注意判断$k$为$0$的情况.</p>
-<h3 id="Anadi-and-Domino"><a href="#Anadi-and-Domino" class="headerlink" title="Anadi and Domino"></a>Anadi and Domino</h3><p>$emmmmm….$<br>看题面就非常高大上<del>然后我们认真读了读题发现真的很高大上</del>.<br>看一眼数据范围,$n&lt;=7$,所以我们考虑一下枚举与每个点相连的边的颜色.<br>然后我们直接暴力$check$即可.<del>对不起数据范围小真的可以为所欲为</del><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> G[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> col[<span class="number">8</span>],ans;</span><br><span class="line"><span class="keyword">bool</span> used[<span class="number">7</span>],uc[<span class="number">7</span>][<span class="number">7</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Prep</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(uc,<span class="literal">false</span>,<span class="keyword">sizeof</span>(uc));</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">check</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Prep();</span><br><span class="line">	<span class="keyword">int</span> tmp=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(col[i]==<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(!G[i][j]||!col[j])</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">if</span>(!uc[col[i]][col[j]])&#123;</span><br><span class="line">				uc[col[i]][col[j]]=<span class="number">1</span>;</span><br><span class="line">				uc[col[j]][col[i]]=<span class="number">1</span>;</span><br><span class="line">				tmp++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	ans=max(ans,tmp);</span><br><span class="line"><span class="comment">//	if(tmp==21)&#123;</span></span><br><span class="line"><span class="comment">//		for(int i=1;i&lt;=n;i++)</span></span><br><span class="line"><span class="comment">//			cout&lt;&lt;col[i]&lt;&lt;" ";</span></span><br><span class="line"><span class="comment">//		exit(0); </span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x==n+<span class="number">1</span>)&#123;</span><br><span class="line">		check();</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">6</span>;i++)&#123; </span><br><span class="line">		col[x]=i;</span><br><span class="line">		dfs(x+<span class="number">1</span>); </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> x,y;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">		G[x][y]=<span class="number">1</span>;</span><br><span class="line">		G[y][x]=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(col,<span class="number">-1</span>,<span class="keyword">sizeof</span>(col));</span><br><span class="line">	dfs(<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Main Code</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="Marcin-and-Training-Camp"><a href="#Marcin-and-Training-Camp" class="headerlink" title="Marcin and Training Camp"></a>Marcin and Training Camp</h3><p>我们考虑到,如果一个人$i$和另一个人$j$能看顺眼的话,只有$j$是$i$的子集才可以.<br>然后如果在某个分组里,$j$已经是某个$i$人的子集了,那么$j$一定是可以被选出的.<br>所以我们的任务就变成了找到所有的$a_k$只出现过一次或者不是其他出现过两次或多次的$a_i$的子集合的$k$.<br>然后从$sum$中将这些不合法的状态删去即可.</p>
-<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+        <p>🐮🍻🐮 </p>
+<a id="more"></a>
+<h3 id="Work"><a href="#Work" class="headerlink" title="Work"></a>Work</h3><h3 id="Seq"><a href="#Seq" class="headerlink" title="Seq"></a>Seq</h3><h3 id="Jump"><a href="#Jump" class="headerlink" title="Jump"></a>Jump</h3><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -530,12 +527,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/09/27/CF588题解/">Codeforces Round #588 (Div. 2)题解</a></p>
+  <p><span>本文标题:</span><a href="/2019/11/06/20191105模拟赛题解/">20191105模拟赛题解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
-  <p><span>发布时间:</span>2019年09月27日 - 21:09</p>
-  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
-  <p><span>原始链接:</span><a href="/2019/09/27/CF588题解/" title="Codeforces Round #588 (Div. 2)题解">http://krrrr.xyz/2019/09/27/CF588题解/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/09/27/CF588题解/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年11月06日 - 08:11</p>
+  <p><span>最后更新:</span>2019年11月06日 - 08:11</p>
+  <p><span>原始链接:</span><a href="/2019/11/06/20191105模拟赛题解/" title="20191105模拟赛题解">http://krrrr.xyz/2019/11/06/20191105模拟赛题解/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/11/06/20191105模拟赛题解/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -565,7 +562,7 @@
       
         <div class="post-tags">
           
-            <a href="/标签/CodeForces题解/" rel="tag"><i class="fa fa-tag"></i> CodeForces题解</a>
+            <a href="/标签/模拟赛题解/" rel="tag"><i class="fa fa-tag"></i> 模拟赛题解</a>
           
         </div>
       
@@ -578,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/25/数论学习笔记/" rel="next" title="数论学习笔记">
-                <i class="fa fa-chevron-left"></i> 数论学习笔记
+              <a href="/2019/11/05/20191104模拟赛题解/" rel="next" title="20191104模拟赛题解">
+                <i class="fa fa-chevron-left"></i> 20191104模拟赛题解
               </a>
             
           </div>
@@ -587,10 +584,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/01/国庆七天乐D1/" rel="prev" title="国庆七天乐D1">
-                国庆七天乐D1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -871,7 +864,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dawid-and-Bags-of-Candies"><span class="nav-number">1.</span> <span class="nav-text">Dawid and Bags of Candies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ania-and-Minimizing"><span class="nav-number">2.</span> <span class="nav-text">Ania and Minimizing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anadi-and-Domino"><span class="nav-number">3.</span> <span class="nav-text">Anadi and Domino</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Marcin-and-Training-Camp"><span class="nav-number">4.</span> <span class="nav-text">Marcin and Training Camp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Work"><span class="nav-number">1.</span> <span class="nav-text">Work</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Seq"><span class="nav-number">2.</span> <span class="nav-text">Seq</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jump"><span class="nav-number">3.</span> <span class="nav-text">Jump</span></a></li></ol></div>
             
 
           </div>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[20191107模拟赛题解]]></title>
+    <url>%2F2019%2F11%2F08%2F20191107%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[德州扑克真好玩.jpg 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>模拟赛题解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[20191106模拟赛]]></title>
     <url>%2F2019%2F11%2F07%2F20191106%E6%A8%A1%E6%8B%9F%E8%B5%9B%2F</url>
     <content type="text"><![CDATA[给我也整一个这样的评测环境 A思路考虑两个人的答案,发现如果这对于某个特定的问题,如果这两个人的答案相同的话,那么他们可以将分数同时$+1$或者无变化.而若两个人的答案不同的话,显然我们选择分数相对较少的人加分更优.但是需要注意一个问题,我们需要先判断两个人答案相同的情况,因为若先判断答案不同的情况的话,发现可能会出现一个人已经到达了目标分数,而另一个人没到,这时候再判断答案一样的话显然两个人都不能再加分了. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include &lt;bits/stdc++.h&gt;inline int read () &#123; int s = 0 , w = 1; char ch = getchar (); while ( ch &gt; '9' || ch &lt; '0' ) &#123; if ( ch == '-' ) w = -1; ch = getchar ();&#125; while ( ch &gt;= '0' &amp;&amp; ch &lt;= '9' ) &#123; s = s * 10 + ch - '0'; ch = getchar ();&#125; return s * w;&#125;using namespace std; const int N = 1e5 + 10;int n , x , y;char A[N] , B[N]; int main ( void ) &#123; freopen ( "A.in" , "r" , stdin ); freopen ( "A.out" , "w" , stdout ); int T = read (); while ( T-- ) &#123; n = read () , x = read () , y = read (); scanf ( "%s%s" , A + 1 , B + 1 ); int tmp = 0; for ( int i = 1 ; i &lt;= n ; i++ ) &#123; if ( A[i] == B[i] ) tmp++; &#125; int NowScoreA = 0 , NowScoreB = 0; NowScoreA = min ( tmp , min ( x , y ) ); NowScoreB = min ( tmp , min ( x , y ) ); for ( int i = 1 ; i &lt;= n ; i++ ) &#123; if ( NowScoreB == y &amp;&amp; NowScoreA == x ) break; if ( A[i] != B[i] ) &#123; if ( NowScoreB &lt; NowScoreA ) &#123; if ( NowScoreB &lt; y ) NowScoreB++; else if ( NowScoreA &lt; x ) NowScoreA++; &#125; else if ( NowScoreA &lt;= NowScoreB ) &#123; if ( NowScoreA &lt; x ) NowScoreA++; else if ( NowScoreB &lt; y ) NowScoreB++; &#125; &#125; &#125; //printf ( "%d %d %d %d\n" , x , y , NowScoreA , NowScoreB ); if ( NowScoreA == x &amp;&amp; NowScoreB == y ) puts ( "Yes" ); else puts ( "No" ); &#125; return 0; &#125; B思路首先,我们可以发现,大多数的数字一定为$1$.我们假设现在数列里只有$1,2$这两种数字的话,那么为了满足题目中要求的条件,那么非一的数字的个数一定是最多的.我们设 2^k]]></content>

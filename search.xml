@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[树形DP小结]]></title>
+    <url>%2F2019%2F11%2F10%2F%E6%A0%91%E5%BD%A2DP%E5%B0%8F%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[我真的菜死了啊/(ㄒoㄒ)/~~ 没有上司的舞会传送门首先一个显然的状态就是一个节点和他的父亲节点不能同时被选中,又因为我们进行树形$DP$的时候合并是以每个点为根的子树合并,所以只能从下向上合并.所以我们设$f_{i,j}$表示以$i$为根的节点,其中$j$代表这个节点的子节点选了/没选时,最多的欢乐值是多少.那么转移的时候,我们枚举每个非叶节点的子节点$k$,然后转移比较显然.12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &lt;bits/stdc++.h&gt;#define ll long long#define MP make_pair#define max(a,b) (a&gt;b)?a:b#define F(i,a,b) for(int i=a;i&lt;=b;i++)#define D(i,a,b) for(int i=a;i&gt;=b;i--)#define PB push_backinline int read () &#123; int s = 0 , w = 1; char ch = getchar (); while ( ch &gt; '9' || ch &lt; '0' ) &#123; if ( ch == '-' ) w = -1; ch = getchar ();&#125; while ( ch &gt;= '0' &amp;&amp; ch &lt;= '9' ) &#123; s = s * 10 + ch - '0'; ch = getchar ();&#125; return s * w;&#125;const int N = 6005;int n , t , root;int val[N] , degree[N] , head[N];int f[N][2];struct Edge &#123; int to; int next;&#125;e[N &lt;&lt; 2];inline void add ( int x , int y ) &#123; e[++t].to = y; e[t].next = head[x]; head[x] = t; return;&#125;void dfs ( int x , int fa ) &#123; f[x][0] = 0; f[x][1] = val[x]; for ( int i = head[x] ; i ; i = e[i].next ) &#123; int y = e[i].to; if ( y == fa ) continue; dfs ( y , x ); f[x][0] += max ( f[y][0] , f[y][1] ); f[x][1] += f[y][0]; &#125; return;&#125;int main ( void ) &#123; n = read (); F ( i , 1 , n ) val[i] = read (); int x = read () , y = read (); while ( x &amp;&amp; y ) &#123; add ( y , x ); degree[x]++; x = read () , y = read (); &#125; F ( i , 1 , n ) if ( !degree[i] ) &#123; root = i; break; &#125; dfs ( root , 0 ); printf ( "%d\n" , max ( f[root][0] , f[root][1] ) ); return 0;&#125; 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+        <tag>树形DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[普及五联测附加赛]]></title>
     <url>%2F2019%2F11%2F09%2F%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8B%E9%99%84%E5%8A%A0%E8%B5%9B%2F</url>
     <content type="text"><![CDATA[版权原因,题面不公开. 摆花首先一眼看到这道题你会怀疑这是不是普及组$t1$…然后考虑每个区间,你发现对于某两个区间,他们的关系可能是包含/相交/不相交.而对于这三种情况分别验证之后会发现你每次的答案最优的情况下总是最短的区间长度$+1$.然后考虑怎么证明这个东西,你发现它和暴力过拍了就对了.显然,你对于每个区间,我们设这个区间的长度为$i$的话,那么这个区间的$mex$值显然最大就是$i$.而又因为有许多区间.如果我们选择了某个长度较大的区间来放$0…..i-1$的话,那么对于其他的长度小于它的不相交区间显然答案会更小一些.而对于区间包含的情况,可以发现,长度更大的区间的$mex$一定会大于等于长度小的区间的$mex$,而又因为我们要求最小的$mex$最大,所以就要使这个最小的区间的$mex$最大即可.而对于剩下的两个区间相交的情况,发现和不相交的情况没有啥区别. 打饭首先考虑一个贪心,我们把区间按照$mod$ $k$的值分类,然后发现只有同一类的数才会互相有贡献,所以我们把数字从小到大的顺序扔到区间中统计答案.这样会错因为那些数字相对较少的区间不一定会丢进哪些数.而并不是那些最大的数丢进去就更优.而又因为你往一个组里丢的数字,如果排序之后他们的$pos$连续的话,答案会更小,这点是可以贪心的.所以我们考虑$DP$,我们发现,对于两种区间,我们都有一定的数量,而且每一种物品都有一种权值.所以我们显然可以用类似背包的东西来转移,我们设$f_{i,j}$表示两种区间,第一种用了$i$种,第二种用了$j$种时的最小的花费,转移时枚举是把这连续的几个数放到第一个区间内还是第二个区间内即可. 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>

@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="KR&#39;s Blog">
 <meta property="og:description" content="版权原因,题面不公开">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-21T03:44:10.684Z">
+<meta property="og:updated_time" content="2019-11-11T07:24:24.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普及五联测D1">
 <meta name="twitter:description" content="版权原因,题面不公开">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">868</span>
+                <span title="字数统计">959</span>
               
 
               
@@ -507,10 +507,10 @@
 
       
         <p>版权原因,题面不公开<br><a id="more"></a></p>
-<h3 id="T1"><a href="#T1" class="headerlink" title="T1."></a>T1.</h3><p>根据某些大佬说可以直接把所有的数加起来就是答案,但是因为我这个人比较弱所以就只会$DP$了<br>我们设$f[i][0/1]$表示前$i$个数字中,在从第$i-1$次到第$i$次的转移时用了加/异或的最大值,转移显然.</p>
-<h3 id="T2"><a href="#T2" class="headerlink" title="T2."></a>T2.</h3><p>我们可以发现每个数字,从他现在的位置开始,到他下一次出现的地方为止就是这个数字有贡献的区间,然后我们按照区间个数统计答案就好了</p>
-<h3 id="T3"><a href="#T3" class="headerlink" title="T3:"></a>T3:</h3><p>我们发现如果按照题解从小到大排序之后,那么能被放下的一定是$[1,(n+1)/2]$这个区间里的数.<br>然后我们可以双指针扫一下,遇到能装的就装一定更优.</p>
-<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p>我们发现,一个性质,如果一条链的两个顶点的$LCA$在第三条链上,那么这两条链一定会有交点.<br>所以我们可以用树上差分统计一下每个点被经过了多少次,然后我们考虑一下去重.<br>我们发现,如果一个点被多条链的$LCA$同时经过了一个点的话,那么在这个点上,答案会被重复统计多次,<br>所以我们只需要统计一下每个点上$LCA$出现的次数然后组合数学去重即可.  </p>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><p>根据某些大佬说可以直接把所有的数加起来就是答案,但是因为我这个人比较弱所以就只会$DP$了<br>我们设$f[i][0/1]$表示前$i$个数字中,在从第$i-1$次到第$i$次的转移时用了加/异或的最大值,转移显然.<br>update:其实异或可以看作不进位加法,那么一坨数异或起来的答案一定不会大于这一坨数加起来的值(因为二进制下某两位的异或不会对下一位造成影响,而加法会).所以最后的答案显然就是所有的数加起来.</p>
+<h3 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h3><p>我们可以发现每个数字,从他现在的位置开始,到他下一次出现的地方为止就是这个数字有贡献的区间,然后我们按照区间个数统计答案就好了</p>
+<h3 id="袋鼠"><a href="#袋鼠" class="headerlink" title="袋鼠"></a>袋鼠</h3><p>我们发现如果按照题解从小到大排序之后,那么能被放下的一定是$[1,(n+1)/2]$这个区间里的数.<br>然后我们可以双指针扫一下,遇到能装的就装一定更优.</p>
+<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>我们发现,一个性质,如果一条链的两个顶点的$LCA$在第三条链上,那么这两条链一定会有交点.<br>所以我们可以用树上差分统计一下每个点被经过了多少次,然后我们考虑一下去重.<br>我们发现,如果一个点被多条链的$LCA$同时经过了一个点的话,那么在这个点上,答案会被重复统计多次,<br>所以我们只需要统计一下每个点上$LCA$出现的次数然后组合数学去重即可.  </p>
 <blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
@@ -533,7 +533,7 @@
   <p><span>本文标题:</span><a href="/2019/09/14/普及五联测D1/">普及五联测D1</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 KRrrrrrrrr 的个人博客">KRrrrrrrrr</a></p>
   <p><span>发布时间:</span>2019年09月14日 - 14:09</p>
-  <p><span>最后更新:</span>2019年10月21日 - 11:10</p>
+  <p><span>最后更新:</span>2019年11月11日 - 15:11</p>
   <p><span>原始链接:</span><a href="/2019/09/14/普及五联测D1/" title="普及五联测D1">http://krrrr.xyz/2019/09/14/普及五联测D1/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.xyz/2019/09/14/普及五联测D1/" aria-label="复制成功！"></i></span>
   </p>
@@ -871,7 +871,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1"><span class="nav-number">1.</span> <span class="nav-text">T1.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2"><span class="nav-number">2.</span> <span class="nav-text">T2.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3"><span class="nav-number">3.</span> <span class="nav-text">T3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T4"><span class="nav-number">4.</span> <span class="nav-text">T4</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#运算"><span class="nav-number">1.</span> <span class="nav-text">运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#颜色"><span class="nav-number">2.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#袋鼠"><span class="nav-number">3.</span> <span class="nav-text">袋鼠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">4.</span> <span class="nav-text">树</span></a></li></ol></div>
             
 
           </div>

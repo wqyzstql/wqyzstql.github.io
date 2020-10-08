@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>KR&#39;s Blog</title>
+  <title>XiShui&#39;s Blog</title>
   
   <subtitle>以梦为马，不负年华</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://krrrr.xyz/"/>
+  <link href="http://krrrr.top/"/>
   <updated>2019-11-11T03:07:03.159Z</updated>
-  <id>http://krrrr.xyz/</id>
+  <id>http://krrrr.top/</id>
   
   <author>
-    <name>KRrrrrrrrr</name>
+    <name>兮水XiShui丶</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>209191110模拟赛题解</title>
-    <link href="http://krrrr.xyz/2019/11/11/209191110%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/11/11/209191110模拟赛题解/</id>
+    <link href="http://krrrr.top/2019/11/11/209191110%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/11/11/209191110模拟赛题解/</id>
     <published>2019-11-10T23:33:11.000Z</published>
     <updated>2019-11-11T03:07:03.159Z</updated>
     
@@ -32,17 +32,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="模拟赛题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+      <category term="模拟赛题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>树形DP小结</title>
-    <link href="http://krrrr.xyz/2019/11/10/%E6%A0%91%E5%BD%A2DP%E5%B0%8F%E7%BB%93/"/>
-    <id>http://krrrr.xyz/2019/11/10/树形DP小结/</id>
+    <link href="http://krrrr.top/2019/11/10/%E6%A0%91%E5%BD%A2DP%E5%B0%8F%E7%BB%93/"/>
+    <id>http://krrrr.top/2019/11/10/树形DP小结/</id>
     <published>2019-11-10T02:29:35.000Z</published>
     <updated>2019-11-11T02:45:01.190Z</updated>
     
@@ -55,19 +55,19 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="DP" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/DP/"/>
+      <category term="DP" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/DP/"/>
     
-      <category term="树形DP" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A0%91%E5%BD%A2DP/"/>
+      <category term="树形DP" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A0%91%E5%BD%A2DP/"/>
     
   </entry>
   
   <entry>
     <title>普及五联测附加赛</title>
-    <link href="http://krrrr.xyz/2019/11/09/%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8B%E9%99%84%E5%8A%A0%E8%B5%9B/"/>
-    <id>http://krrrr.xyz/2019/11/09/普及五联测附加赛/</id>
+    <link href="http://krrrr.top/2019/11/09/%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8B%E9%99%84%E5%8A%A0%E8%B5%9B/"/>
+    <id>http://krrrr.top/2019/11/09/普及五联测附加赛/</id>
     <published>2019-11-09T00:49:26.000Z</published>
     <updated>2019-11-09T01:30:18.712Z</updated>
     
@@ -80,17 +80,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>20191107模拟赛题解</title>
-    <link href="http://krrrr.xyz/2019/11/08/20191107%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/11/08/20191107模拟赛题解/</id>
+    <link href="http://krrrr.top/2019/11/08/20191107%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/11/08/20191107模拟赛题解/</id>
     <published>2019-11-08T00:25:20.000Z</published>
     <updated>2019-11-09T00:49:47.912Z</updated>
     
@@ -103,17 +103,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="模拟赛题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+      <category term="模拟赛题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>20191106模拟赛</title>
-    <link href="http://krrrr.xyz/2019/11/07/20191106%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
-    <id>http://krrrr.xyz/2019/11/07/20191106模拟赛/</id>
+    <link href="http://krrrr.top/2019/11/07/20191106%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
+    <id>http://krrrr.top/2019/11/07/20191106模拟赛/</id>
     <published>2019-11-07T01:13:28.000Z</published>
     <updated>2019-11-07T02:50:13.559Z</updated>
     
@@ -127,17 +127,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>20191105模拟赛题解</title>
-    <link href="http://krrrr.xyz/2019/11/06/20191105%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/11/06/20191105模拟赛题解/</id>
+    <link href="http://krrrr.top/2019/11/06/20191105%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/11/06/20191105模拟赛题解/</id>
     <published>2019-11-06T00:45:09.000Z</published>
     <updated>2019-11-07T01:19:10.469Z</updated>
     
@@ -150,17 +150,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="模拟赛题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+      <category term="模拟赛题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>20191104模拟赛题解</title>
-    <link href="http://krrrr.xyz/2019/11/05/20191104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/11/05/20191104模拟赛题解/</id>
+    <link href="http://krrrr.top/2019/11/05/20191104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/11/05/20191104模拟赛题解/</id>
     <published>2019-11-05T01:38:33.000Z</published>
     <updated>2019-11-05T02:23:44.721Z</updated>
     
@@ -173,17 +173,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="模拟赛题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+      <category term="模拟赛题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>提高失联测D9</title>
-    <link href="http://krrrr.xyz/2019/11/04/%E6%8F%90%E9%AB%98%E5%A4%B1%E8%81%94%E6%B5%8BD9/"/>
-    <id>http://krrrr.xyz/2019/11/04/提高失联测D9/</id>
+    <link href="http://krrrr.top/2019/11/04/%E6%8F%90%E9%AB%98%E5%A4%B1%E8%81%94%E6%B5%8BD9/"/>
+    <id>http://krrrr.top/2019/11/04/提高失联测D9/</id>
     <published>2019-11-04T00:39:07.000Z</published>
     <updated>2019-11-04T07:44:53.642Z</updated>
     
@@ -196,17 +196,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>普转提撒花</title>
-    <link href="http://krrrr.xyz/2019/11/03/%E6%99%AE%E8%BD%AC%E6%8F%90%E6%92%92%E8%8A%B1/"/>
-    <id>http://krrrr.xyz/2019/11/03/普转提撒花/</id>
+    <link href="http://krrrr.top/2019/11/03/%E6%99%AE%E8%BD%AC%E6%8F%90%E6%92%92%E8%8A%B1/"/>
+    <id>http://krrrr.top/2019/11/03/普转提撒花/</id>
     <published>2019-11-03T08:11:27.000Z</published>
     <updated>2019-11-05T01:07:37.104Z</updated>
     
@@ -219,17 +219,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>[SDOI2019]Elaxia的路线</title>
-    <link href="http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia%E7%9A%84%E8%B7%AF%E7%BA%BF/"/>
-    <id>http://krrrr.xyz/2019/11/01/SDOI2019-Elaxia的路线/</id>
+    <link href="http://krrrr.top/2019/11/01/SDOI2019-Elaxia%E7%9A%84%E8%B7%AF%E7%BA%BF/"/>
+    <id>http://krrrr.top/2019/11/01/SDOI2019-Elaxia的路线/</id>
     <published>2019-11-01T08:35:41.000Z</published>
     <updated>2019-11-01T08:42:00.798Z</updated>
     
@@ -242,19 +242,19 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="图论" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
+      <category term="图论" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="最短路" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+      <category term="最短路" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
   </entry>
   
   <entry>
     <title>校内ACM赛题解选讲</title>
-    <link href="http://krrrr.xyz/2019/10/30/%E6%A0%A1%E5%86%85ACM%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/10/30/校内ACM赛题解/</id>
+    <link href="http://krrrr.top/2019/10/30/%E6%A0%A1%E5%86%85ACM%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/10/30/校内ACM赛题解/</id>
     <published>2019-10-30T08:30:09.000Z</published>
     <updated>2019-11-05T01:08:18.608Z</updated>
     
@@ -267,17 +267,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="模拟赛题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
+      <category term="模拟赛题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>[POJ2284]That Nice Euler Circuit</title>
-    <link href="http://krrrr.xyz/2019/10/28/POJ2284-ThatNiceEulerCircuit/"/>
-    <id>http://krrrr.xyz/2019/10/28/POJ2284-ThatNiceEulerCircuit/</id>
+    <link href="http://krrrr.top/2019/10/28/POJ2284-ThatNiceEulerCircuit/"/>
+    <id>http://krrrr.top/2019/10/28/POJ2284-ThatNiceEulerCircuit/</id>
     <published>2019-10-28T12:38:15.000Z</published>
     <updated>2019-10-28T12:44:38.050Z</updated>
     
@@ -290,19 +290,19 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="计算几何" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+      <category term="计算几何" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
     
-      <category term="数学" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>[AtCoder Beginner Contest 144]题解</title>
-    <link href="http://krrrr.xyz/2019/10/28/AtcoderABC144%E9%A2%98%E8%A7%A3/"/>
-    <id>http://krrrr.xyz/2019/10/28/AtcoderABC144题解/</id>
+    <link href="http://krrrr.top/2019/10/28/AtcoderABC144%E9%A2%98%E8%A7%A3/"/>
+    <id>http://krrrr.top/2019/10/28/AtcoderABC144题解/</id>
     <published>2019-10-28T01:32:17.000Z</published>
     <updated>2019-10-28T07:25:15.455Z</updated>
     
@@ -315,17 +315,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="Atcoder题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/Atcoder%E9%A2%98%E8%A7%A3/"/>
+      <category term="Atcoder题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/Atcoder%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>普转提D6</title>
-    <link href="http://krrrr.xyz/2019/10/28/%E6%99%AE%E8%BD%AC%E6%8F%90D6/"/>
-    <id>http://krrrr.xyz/2019/10/28/普转提D6/</id>
+    <link href="http://krrrr.top/2019/10/28/%E6%99%AE%E8%BD%AC%E6%8F%90D6/"/>
+    <id>http://krrrr.top/2019/10/28/普转提D6/</id>
     <published>2019-10-28T01:31:42.000Z</published>
     <updated>2019-10-28T08:01:32.191Z</updated>
     
@@ -338,17 +338,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>普及五联测D4</title>
-    <link href="http://krrrr.xyz/2019/10/26/%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD4/"/>
-    <id>http://krrrr.xyz/2019/10/26/普及五联测D4/</id>
+    <link href="http://krrrr.top/2019/10/26/%E6%99%AE%E5%8F%8A%E4%BA%94%E8%81%94%E6%B5%8BD4/"/>
+    <id>http://krrrr.top/2019/10/26/普及五联测D4/</id>
     <published>2019-10-26T00:49:08.000Z</published>
     <updated>2019-11-05T01:05:46.975Z</updated>
     
@@ -361,17 +361,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="ZROI" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/ZROI/"/>
+      <category term="ZROI" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/ZROI/"/>
     
   </entry>
   
   <entry>
     <title>Educational Codeforces Round 75题解</title>
-    <link href="http://krrrr.xyz/2019/10/25/Edu75/"/>
-    <id>http://krrrr.xyz/2019/10/25/Edu75/</id>
+    <link href="http://krrrr.top/2019/10/25/Edu75/"/>
+    <id>http://krrrr.top/2019/10/25/Edu75/</id>
     <published>2019-10-25T03:04:47.000Z</published>
     <updated>2019-10-25T08:16:44.355Z</updated>
     
@@ -384,17 +384,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="CodeForces题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
+      <category term="CodeForces题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>[51NodP1682] 中位数计数</title>
-    <link href="http://krrrr.xyz/2019/10/24/51Nod-P1682%E4%B8%AD%E4%BD%8D%E6%95%B0%E8%AE%A1%E6%95%B0/"/>
-    <id>http://krrrr.xyz/2019/10/24/51Nod-P1682中位数计数/</id>
+    <link href="http://krrrr.top/2019/10/24/51Nod-P1682%E4%B8%AD%E4%BD%8D%E6%95%B0%E8%AE%A1%E6%95%B0/"/>
+    <id>http://krrrr.top/2019/10/24/51Nod-P1682中位数计数/</id>
     <published>2019-10-24T12:38:31.000Z</published>
     <updated>2019-10-24T12:48:41.395Z</updated>
     
@@ -407,17 +407,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="思维" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%80%9D%E7%BB%B4/"/>
+      <category term="思维" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
   <entry>
     <title>[JZOJ]平均数</title>
-    <link href="http://krrrr.xyz/2019/10/24/JZOJ-%E5%B9%B3%E5%9D%87%E6%95%B0/"/>
-    <id>http://krrrr.xyz/2019/10/24/JZOJ-平均数/</id>
+    <link href="http://krrrr.top/2019/10/24/JZOJ-%E5%B9%B3%E5%9D%87%E6%95%B0/"/>
+    <id>http://krrrr.top/2019/10/24/JZOJ-平均数/</id>
     <published>2019-10-24T06:26:20.000Z</published>
     <updated>2019-11-05T01:05:31.680Z</updated>
     
@@ -430,21 +430,21 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="二分" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E4%BA%8C%E5%88%86/"/>
+      <category term="二分" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E4%BA%8C%E5%88%86/"/>
     
-      <category term="分治" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E5%88%86%E6%B2%BB/"/>
+      <category term="分治" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E5%88%86%E6%B2%BB/"/>
     
-      <category term="树状数组" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+      <category term="树状数组" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>[51Nod]P1686 第K大区间</title>
-    <link href="http://krrrr.xyz/2019/10/24/51NodP1686-%E7%AC%ACK%E5%A4%A7%E5%8C%BA%E9%97%B4/"/>
-    <id>http://krrrr.xyz/2019/10/24/51NodP1686-第K大区间/</id>
+    <link href="http://krrrr.top/2019/10/24/51NodP1686-%E7%AC%ACK%E5%A4%A7%E5%8C%BA%E9%97%B4/"/>
+    <id>http://krrrr.top/2019/10/24/51NodP1686-第K大区间/</id>
     <published>2019-10-24T01:51:19.000Z</published>
     <updated>2019-10-24T02:02:35.018Z</updated>
     
@@ -457,17 +457,17 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="二分" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/%E4%BA%8C%E5%88%86/"/>
+      <category term="二分" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E4%BA%8C%E5%88%86/"/>
     
   </entry>
   
   <entry>
     <title>Codeforces Round #595 (Div. 3)</title>
-    <link href="http://krrrr.xyz/2019/10/23/Round595/"/>
-    <id>http://krrrr.xyz/2019/10/23/Round595/</id>
+    <link href="http://krrrr.top/2019/10/23/Round595/"/>
+    <id>http://krrrr.top/2019/10/23/Round595/</id>
     <published>2019-10-23T02:40:01.000Z</published>
     <updated>2019-10-23T12:51:51.422Z</updated>
     
@@ -480,10 +480,10 @@
     </summary>
     
     
-      <category term="OI" scheme="http://krrrr.xyz/%E5%88%86%E7%B1%BB/OI/"/>
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
     
     
-      <category term="CodeForces题解" scheme="http://krrrr.xyz/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
+      <category term="CodeForces题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   

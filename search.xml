@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[数分训练]]></title>
     <url>%2F2020%2F10%2F19%2F%E6%95%B0%E5%88%86%E8%AE%AD%E7%BB%83%2F</url>
-    <content type="text"><![CDATA[啥都不会啊QAQ 1.实数集与函数1.实数1.1.1设$a,b,c \in R^+$,证明$|\sqrt{a^2+b^2} - \sqrt{a^2+c^2}| \leq |b - c|$ 证明:首先两边同时乘以$|\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$后有 |a^2+b^2-a^2-c^2| \leq |b - c| \times |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|化简之后可以得到 |b + c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|又$|b + c| \leq |b| + |c|$ ,则只需证明$|b| + |c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$ 又$\sqrt{x}$显然大于$0$,则$\sqrt{a^2+b^2}$显然大于$|b|$,同理,$\sqrt{a^2+c^2}$显然大于$|c|$ 得证. $QED$ 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[啥都不会啊QAQ 1.实数集与函数1.实数1.1.1设$a,b,c \in R^+$,证明$|\sqrt{a^2+b^2} - \sqrt{a^2+c^2}| \leq |b - c|$ 证明:首先两边同时乘以$|\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$后有 |a^2+b^2-a^2-c^2| \leq |b - c| \times |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|化简之后可以得到 |b + c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|又$|b + c| \leq |b| + |c|$ ,则只需证明$|b| + |c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$ 又$\sqrt{x}$显然大于$0$,则$\sqrt{a^2+b^2}$显然大于$|b|$,同理,$\sqrt{a^2+c^2}$显然大于$|c|$ 得证. $QED$ 下面我们来讨论这个柿子的几何意义 我们将这个柿子做一个简简单单的变换 \sqrt{a^2+b^2} = \sqrt{(a-0)^2+(b-0)^2 }即这个柿子可以看成点$(a,b)$到原点的距离,同理,后边的那个柿子可以看成点$(a,c)$到原点的距离.那么那个大柿子就可以看作两点到原点距离之差,而我们又发现这两点之间的距离就等于$|b-c|$.而这两个点与原点又可以构成三角形.所以几何意义显然 三角形两边之差小于第三边. 1.1.2不会了xd 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
         <category>数学</category>
       </categories>

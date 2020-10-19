@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数分训练]]></title>
+    <url>%2F2020%2F10%2F19%2F%E6%95%B0%E5%88%86%E8%AE%AD%E7%BB%83%2F</url>
+    <content type="text"><![CDATA[啥都不会啊QAQ 设$a,b,c \in R^+$,证明$|\sqrt{a^2+b^2} - \sqrt{a^2+c^2}| \leq |b - c|$ 证明:首先两边同时乘以$|\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$后有 |a^2+b^2-a^2-c^2| \leq |b - c| \times |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|化简之后可以得到 |b + c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|又$|b + c| \leq |b| + |c|$ ,则只需证明$|b| + |c| \leq |\sqrt{a^2+b^2}+\sqrt{a^2+c^2}|$ 又$\sqrt{x}$显然大于$0$,则$\sqrt{a^2+b^2}$显然大于$|b|$,同理,$\sqrt{a^2+c^2}$显然大于$|c|$ 得证. $QED$ 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ABC178]]></title>
     <url>%2F2020%2F10%2F09%2FABC178%2F</url>
     <content type="text"><![CDATA[ABC只会E人从来都是笑着面对生活 D.Redistribution 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>

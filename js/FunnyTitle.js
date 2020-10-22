@@ -1,3 +1,3 @@
-// build time:Mon Oct 19 2020 21:16:44 GMT+0800 (GMT+08:00)
+// build time:Thu Oct 22 2020 12:12:53 GMT+0800 (GMT+08:00)
 var OriginTitle=document.title;var titleTime;document.addEventListener("visibilitychange",function(){if(document.hidden){$('[rel="icon"]').attr("href","/img/trhx2.png");document.title="你再看一下嘛qwq";clearTimeout(titleTime)}else{$('[rel="icon"]').attr("href","/img/trhx2.png");document.title="ヾ(Ő∀Ő3)ノ"+OriginTitle;titleTime=setTimeout(function(){document.title=OriginTitle},2e3)}});
 //rebuild by neat 

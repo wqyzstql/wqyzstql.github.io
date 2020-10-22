@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://krrrr.top/"/>
-  <updated>2020-10-19T13:29:37.180Z</updated>
+  <updated>2020-10-22T04:12:33.632Z</updated>
   <id>http://krrrr.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博弈论训练</title>
+    <link href="http://krrrr.top/2020/10/22/%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%AE%AD%E7%BB%83/"/>
+    <id>http://krrrr.top/2020/10/22/博弈论训练/</id>
+    <published>2020-10-22T04:12:33.000Z</published>
+    <updated>2020-10-22T04:12:33.632Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数分训练</title>
@@ -457,29 +483,6 @@
     
     
       <category term="CodeForces题解" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/CodeForces%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[51NodP1682] 中位数计数</title>
-    <link href="http://krrrr.top/2019/10/24/51Nod-P1682%E4%B8%AD%E4%BD%8D%E6%95%B0%E8%AE%A1%E6%95%B0/"/>
-    <id>http://krrrr.top/2019/10/24/51Nod-P1682中位数计数/</id>
-    <published>2019-10-24T12:38:31.000Z</published>
-    <updated>2019-10-24T12:48:41.395Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.51nod.com/Challenge/Problem.html#problemId=1682" target="_blank" rel="noopener">传送门</a><br><a id="more"></a></p><p>发现题目中的数据范围说明我们需要一个时间复杂度为$O(n^2)$的算法.<br>发现我们可以考虑每个数字的贡献,我们发现,对于某个位置上的数字而言,包含这个位置的区间的数量是$n$级别的.<br>所以我们可以尝试对于每个位置的数字,枚举包含这个位置的区间然后统计答案.<br>所以问题就转化成了怎么统计答案.由于权值的范围很大,所以我们考虑设$sum_{n+j}$表示排序后,与$i$这个位置的数字还需要移动正负$j$个单位才能到中位数的位置.<br>然后我们枚举完所有区间之后直接统计就好了.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">8e3</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> num[N], sum[N &lt;&lt; <span class="number">1</span>], ans[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">( <span class="keyword">void</span> )</span> </span>&#123;</span><br><span class="line">ios :: sync_with_stdio ( <span class="literal">false</span> );</span><br><span class="line"><span class="built_in">cin</span>.tie ( <span class="number">0</span> ) , <span class="built_in">cout</span>.tie ( <span class="number">0</span> );</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="keyword">sizeof</span>(sum));</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= <span class="number">0</span>; j--)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &gt; num[i])</span><br><span class="line">cnt++;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &lt; num[i])</span><br><span class="line">cnt--;</span><br><span class="line">            sum[<span class="number">8000</span>+cnt]++;</span><br><span class="line">        &#125;</span><br><span class="line">        cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &gt; num[i])</span><br><span class="line">cnt++;</span><br><span class="line">            <span class="keyword">if</span> (num[j] &lt; num[i])</span><br><span class="line">cnt--;</span><br><span class="line">            ans[i] += sum[<span class="number">8000</span>-cnt];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans[i];</span><br><span class="line">        <span class="keyword">if</span> (i != n<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://www.51nod.com/Challenge/Problem.html#problemId=1682&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="OI" scheme="http://krrrr.top/%E5%88%86%E7%B1%BB/OI/"/>
-    
-    
-      <category term="思维" scheme="http://krrrr.top/%E6%A0%87%E7%AD%BE/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   

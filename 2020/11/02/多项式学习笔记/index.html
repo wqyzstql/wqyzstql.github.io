@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="XiShui&#39;s Blog">
 <meta property="og:description" content="开始跳楼了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-02T08:11:49.706Z">
+<meta property="og:updated_time" content="2020-11-02T09:00:22.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多项式学习笔记">
 <meta name="twitter:description" content="开始跳楼了">
@@ -219,9 +219,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">120</span>
+                <span title="字数统计">1.4k</span>
               
 
               
@@ -508,6 +508,22 @@
       
         <p>开始跳楼了</p>
 <a id="more"></a>
+<h1 id="多项式部分简介"><a href="#多项式部分简介" class="headerlink" title="多项式部分简介"></a>多项式部分简介</h1><h2 id="定义简介"><a href="#定义简介" class="headerlink" title="定义简介"></a>定义简介</h2><p>一个以$x$为变量的定义在代数域$F$上,将函数$A(x)$表示为:  </p>
+<script type="math/tex; mode=display">A(x)=\sum_{j=0}^{n-1}a_jx^j</script><p>其中我们称$a_0,a_1,\dots,a_{n-1}$为系数,如果一个多项式的最高次的非零系数为$a_k$,那么称$A(x)$的次数为$k$,记为$degree(A)=k$,任何一个大于该多项式次数的整数都是这个多项式的<strong>次数界</strong>.  </p>
+<h2 id="多项式的表示"><a href="#多项式的表示" class="headerlink" title="多项式的表示"></a>多项式的表示</h2><ol>
+<li><p>系数表达  :<br>对一个次数界为$n$的多项式$A(x)=\sum_{j=0}^{n-1}a_jx^j$而言,其系数表达是一个由系数组成的向量$\text{a}=(a_0,a_1,\dots,a_{n-1})$.<br>在给定系数求值时,采用霍纳法则(秦九邵算法)可以实现在$O(n)$的复杂度内完成求值运算.  </p>
+<script type="math/tex; mode=display">A(x_0)=a_0+x_0(a_1+x_0(a_2+\dots+x_0(a_{n-1})))</script><p>扩充:霍纳法则:  </p>
+<pre class=" language-lang-cpp"><code class="language-lang-cpp"> void Horner (){
+     for(int i=n-1;i>=1;i--)
+         ans*=x,ans+=a[i];
+ }
+</code></pre>
+</li>
+<li><p>点值表达<br>一个次数界为$n$的多项式$A(x)$的点值表达就是一个由$n$个点值对组成的集合  </p>
+<script type="math/tex; mode=display">\{(x_0,y_0),(x_1,y_1),\dots,(x_{n-1},y_{n-1})\}</script><p>使得对$k=0,1,\dots,n-1$,所有$x_k$各不相同  </p>
+<script type="math/tex; mode=display">y_k=A(x_k)=a_0x_k+a_1x+k+\dots+a_{n-1}x_k</script><p>则$A(x)=\sum_{j=0}^{n-1}A(x_j)$  </p>
+</li>
+</ol>
 <blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
@@ -530,7 +546,7 @@
   <p><span>本文标题:</span><a href="/2020/11/02/多项式学习笔记/">多项式学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 兮水XiShui丶 的个人博客">兮水XiShui丶</a></p>
   <p><span>发布时间:</span>2020年11月02日 - 16:11</p>
-  <p><span>最后更新:</span>2020年11月02日 - 16:11</p>
+  <p><span>最后更新:</span>2020年11月02日 - 17:11</p>
   <p><span>原始链接:</span><a href="/2020/11/02/多项式学习笔记/" title="多项式学习笔记">http://krrrr.top/2020/11/02/多项式学习笔记/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.top/2020/11/02/多项式学习笔记/" aria-label="复制成功！"></i></span>
   </p>
@@ -661,8 +677,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -789,7 +814,9 @@ var jiathis_config={
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -855,6 +882,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式部分简介"><span class="nav-number">1.</span> <span class="nav-text">多项式部分简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义简介"><span class="nav-number">1.1.</span> <span class="nav-text">定义简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的表示"><span class="nav-number">1.2.</span> <span class="nav-text">多项式的表示</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

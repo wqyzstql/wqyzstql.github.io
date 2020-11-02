@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[多项式学习笔记]]></title>
     <url>%2F2020%2F11%2F02%2F%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[开始跳楼了 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[开始跳楼了 多项式部分简介定义简介一个以$x$为变量的定义在代数域$F$上,将函数$A(x)$表示为: A(x)=\sum_{j=0}^{n-1}a_jx^j其中我们称$a_0,a_1,\dots,a_{n-1}$为系数,如果一个多项式的最高次的非零系数为$a_k$,那么称$A(x)$的次数为$k$,记为$degree(A)=k$,任何一个大于该多项式次数的整数都是这个多项式的次数界. 多项式的表示 系数表达 :对一个次数界为$n$的多项式$A(x)=\sum_{j=0}^{n-1}a_jx^j$而言,其系数表达是一个由系数组成的向量$\text{a}=(a_0,a_1,\dots,a_{n-1})$.在给定系数求值时,采用霍纳法则(秦九邵算法)可以实现在$O(n)$的复杂度内完成求值运算. A(x_0)=a_0+x_0(a_1+x_0(a_2+\dots+x_0(a_{n-1})))扩充:霍纳法则: void Horner (){ for(int i=n-1;i>=1;i--) ans*=x,ans+=a[i]; } 点值表达一个次数界为$n$的多项式$A(x)$的点值表达就是一个由$n$个点值对组成的集合 \{(x_0,y_0),(x_1,y_1),\dots,(x_{n-1},y_{n-1})\}使得对$k=0,1,\dots,n-1$,所有$x_k$各不相同 y_k=A(x_k)=a_0x_k+a_1x+k+\dots+a_{n-1}x_k则$A(x)=\sum_{j=0}^{n-1}A(x_j)$ 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
         <category>Algorithm</category>
       </categories>
@@ -14,10 +14,13 @@
   <entry>
     <title><![CDATA[博弈论训练]]></title>
     <url>%2F2020%2F10%2F22%2F%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%AE%AD%E7%BB%83%2F</url>
-    <content type="text"><![CDATA[因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
+    <content type="text"><![CDATA[感觉更多的还是要靠思维…. 因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想]]></content>
       <categories>
-        <category>OI</category>
+        <category>Algorithm</category>
       </categories>
+      <tags>
+        <tag>博弈论</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[数分训练]]></title>

@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="XiShui&#39;s Blog">
 <meta property="og:description" content="开始跳楼了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-03T02:41:30.825Z">
+<meta property="og:updated_time" content="2020-11-03T03:04:03.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多项式学习笔记">
 <meta name="twitter:description" content="开始跳楼了">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">6k</span>
+                <span title="字数统计">6.8k</span>
               
 
               
@@ -486,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 mins.</span>
+                <span title="阅读时长">6 mins.</span>
               
             </div>
           
@@ -531,14 +531,19 @@
 <script type="math/tex; mode=display">f(x)g(x)\equiv1 \ (mod \ x^n)</script><script type="math/tex; mode=display">degree(x) \leq degree(f)</script><p>则称$g(x)$为$f(x)$在模$x^n$下的逆元,记作$f^{-1}(x)$  </p>
 <h2 id="多项式的余数和商"><a href="#多项式的余数和商" class="headerlink" title="多项式的余数和商"></a>多项式的余数和商</h2><p>对于多项式$f(x),g(x)$ ,存在<strong>唯一</strong>的$Q(x)$满足:  </p>
 <script type="math/tex; mode=display">f(x)=Q(x)g(x)+R(x)</script><script type="math/tex; mode=display">degree(Q)=degree(f)-degree(g)</script><script type="math/tex; mode=display">degree(R) < degree(g)</script><p>则称$Q(x)$为$f(x)$除$g(x)$的商,$R(x)$为$f(x)$除$g(x)$的余数.亦可记作  </p>
-<script type="math/tex; mode=display">f(x)\equiv R(x) \ (mod \ g(x))</script><h2 id="多项式的对数函数与指数函数"><a href="#多项式的对数函数与指数函数" class="headerlink" title="多项式的对数函数与指数函数"></a>多项式的对数函数与指数函数</h2><p>对于一个多项式 $f(x),$ 可以将其对数函数看作其与麦克劳林级数的复合:</p>
+<script type="math/tex; mode=display">f(x)\equiv R(x) \ (mod \ g(x))</script><h2 id="多项式的对数函数与指数函数"><a href="#多项式的对数函数与指数函数" class="headerlink" title="多项式的对数函数与指数函数"></a>多项式的对数函数与指数函数</h2><ol>
+<li><p>对数<br>对于一个多项式 $f(x),$ 可以将其对数函数看作其与麦克劳林级数的复合:</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
 \ln (1-f(x)) &=-\sum_{i=1}^{+\infty} \frac{f^{i}(x)}{i} \\
 \ln (1+f(x))=& \sum_{i=1}^{+\infty} \frac{(-1)^{i-1} f^{i}(x)}{i}
-\end{aligned}</script><p>其指数函数同样可以这样定义：</p>
-<script type="math/tex; mode=display">
-\exp f(x)=e^{f(x)}=\sum_{i=0}^{+\infty} \frac{f^{i}(x)}{i !}</script><h3 id="克劳林级数"><a href="#克劳林级数" class="headerlink" title="克劳林级数"></a>克劳林级数</h3><ol>
+\end{aligned}</script><p>注意这里常数项必须为$1$,也就是说求对数的多项式必须满足 $A(x)=1+\sum_{i=1}^{\infty} a_{i} z^{i}$ 。</p>
+</li>
+<li>指数<br>其指数函数同样可以这样定义：<script type="math/tex; mode=display">
+\exp f(x)=e^{f(x)}=\sum_{i=0}^{+\infty} \frac{f^{i}(x)}{i !}</script></li>
+</ol>
+<h3 id="多项式的对数一般求法"><a href="#多项式的对数一般求法" class="headerlink" title="多项式的对数一般求法"></a>多项式的对数一般求法</h3><p>我们设$f(x)$是一个平静的多项式,我们要求$ln[f(x)]$<br>则我们设$g(x)=ln[f(x)]$,那么$g^{\prime}(x)=\frac{f^{\prime}(x)}{f(x)}$,$\ln g(x)=\int \frac{g^{\prime}(x)}{g(x)} \mathrm{d} x$</p>
+<h3 id="麦克劳林级数"><a href="#麦克劳林级数" class="headerlink" title="麦克劳林级数"></a>麦克劳林级数</h3><ol>
 <li>基本介绍:<br>对于一个给定的函数 $f(x),$ 如果能找到一个幂级数 $\sum_{n=0}^{\infty} a_{n} x^{n},$ 使  <script type="math/tex; mode=display">f(x)=\sum_{n=0}^{\infty} a_{n} x^{n}=a_{0}+a_{1} x+a_{2} x^{2}+\ldots+a_{n} x^{n}+\ldots(-R<x<R) \ (1)</script>成立，则称$f(x)$可展开成$x$的幂级数。  <script type="math/tex; mode=display">\begin{array}{c}f^{\prime}(x)=a_{1}+2 a_{2} x+3 a_{3} x^{2}+\ldots+n a_{n} x^{n-1}+\ldots \\f^{\prime \prime}(x)=2 a_{2}+3 \times 2 a_{3} x+\ldots+n(n-1) a_{n} x^{n-2}+\ldots \\f^{(n)}(x)=n ! a_{n}+(n+1) ! a_{n+1} x+\frac{(n+2) !}{2} a_{n+2} x^{2}+\ldots\end{array}</script>把$x=0$代入式$(1)$及上述各式，得<script type="math/tex; mode=display">
 f(0)=a_{0}, f^{\prime}(0)=a_{1}, f^{\prime \prime}(0)=2 ! a_{2}, \ldots, f^{(n)}(0)=n ! a_{n}, \ldots</script>于是<script type="math/tex; mode=display">
 a_{0}=f(0), a_{1}=\frac{f^{\prime}(0)}{1 !}, a_{2}=\frac{f^{\prime \prime}(0)}{2 !}, \ldots, a_{n}=\frac{f^{(n)}(0)}{n !}, \ldots</script>把它们代回式$(1)$，得<script type="math/tex; mode=display">
@@ -551,9 +556,10 @@ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n !} x^{n}(-R<x<R)</script><p>把函�
 <h4 id="直接展开法"><a href="#直接展开法" class="headerlink" title="直接展开法"></a>直接展开法</h4><p>利用麦克劳林级数公式将函数$f(x)$展开成$x$的幂级数的方法，称为直接展开法。步骤可归纳为：    </p>
 <ol>
 <li>求出 $f(x)$ 的各阶导数 $f^{\prime}(x), f^{\prime \prime}(x), \ldots, f^{(n)}(x), \ldots,$ 令 $x=0$ 得 $f(0), f^{\prime}(0), f^{\prime \prime}(0), \ldots, f^{(n)}(0), \ldots$  </li>
-<li>写出f(X)的麦克劳林级数<script type="math/tex; mode=display">
+<li>写出$f(x)$的麦克劳林级数并求出收敛半径$R$<script type="math/tex; mode=display">
 f(0)+\frac{f^{\prime}(0)}{1 !} x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\ldots+\frac{f^{(n)}(0)}{n !} x^{n}+\ldots</script></li>
 </ol>
+<h4 id="间接展开法"><a href="#间接展开法" class="headerlink" title="间接展开法"></a>间接展开法</h4><p>利用麦克劳林级数展开函数，需要求高阶导数，比较麻烦，如果能利用已知函数的展开式，根据幂级数在收敛域内的性质，将所给的函数展开成幂级数，这种方法称为间接展开法  </p>
 </li>
 </ol>
 <h2 id="多项式的多点求值和插值"><a href="#多项式的多点求值和插值" class="headerlink" title="多项式的多点求值和插值"></a>多项式的多点求值和插值</h2><p>多项式的多点求值 $(Multi-point evaluation)$ 即给出一个多项式 $f(x)$ 和 $n$ 个点 $x_{1}, x_{2}, \ldots, x_{n}$ 求</p>
@@ -561,7 +567,7 @@ f(0)+\frac{f^{\prime}(0)}{1 !} x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\ldots+\
 f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{n}\right)</script><p>多项式的插值 $(Interpolation)$ 即给出 $n+1$ 个点</p>
 <script type="math/tex; mode=display">
 \{\left(x_{0}, y_{0}\right),\left(x_{1}, y_{1}\right), \ldots,\left(x_{n}, y_{n}\right)\}</script><p>求一个 $n$ 次多项式 $f(x)$ 使得这 $n+1$ 个点都在 $f(x)$ 上。<br>这两种操作的实质就是将多项式在 系数表示 和 点值表示间转化。</p>
-<blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+<h1 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h1><h1 id="快速傅里叶变换-FFT"><a href="#快速傅里叶变换-FFT" class="headerlink" title="快速傅里叶变换(FFT)"></a>快速傅里叶变换(FFT)</h1><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -583,7 +589,7 @@ f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{n}\right)</script><p
   <p><span>本文标题:</span><a href="/2020/11/02/多项式学习笔记/">多项式学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 兮水XiShui丶 的个人博客">兮水XiShui丶</a></p>
   <p><span>发布时间:</span>2020年11月02日 - 16:11</p>
-  <p><span>最后更新:</span>2020年11月03日 - 10:11</p>
+  <p><span>最后更新:</span>2020年11月03日 - 11:11</p>
   <p><span>原始链接:</span><a href="/2020/11/02/多项式学习笔记/" title="多项式学习笔记">http://krrrr.top/2020/11/02/多项式学习笔记/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.top/2020/11/02/多项式学习笔记/" aria-label="复制成功！"></i></span>
   </p>
@@ -929,7 +935,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式部分简介"><span class="nav-number">1.</span> <span class="nav-text">多项式部分简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义简介"><span class="nav-number">1.1.</span> <span class="nav-text">定义简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的表示"><span class="nav-number">1.2.</span> <span class="nav-text">多项式的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的乘法"><span class="nav-number">1.3.</span> <span class="nav-text">多项式的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的逆元"><span class="nav-number">1.4.</span> <span class="nav-text">多项式的逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的余数和商"><span class="nav-number">1.5.</span> <span class="nav-text">多项式的余数和商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的对数函数与指数函数"><span class="nav-number">1.6.</span> <span class="nav-text">多项式的对数函数与指数函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#克劳林级数"><span class="nav-number">1.6.1.</span> <span class="nav-text">克劳林级数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接展开法"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">直接展开法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的多点求值和插值"><span class="nav-number">1.7.</span> <span class="nav-text">多项式的多点求值和插值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式部分简介"><span class="nav-number">1.</span> <span class="nav-text">多项式部分简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义简介"><span class="nav-number">1.1.</span> <span class="nav-text">定义简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的表示"><span class="nav-number">1.2.</span> <span class="nav-text">多项式的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的乘法"><span class="nav-number">1.3.</span> <span class="nav-text">多项式的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的逆元"><span class="nav-number">1.4.</span> <span class="nav-text">多项式的逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的余数和商"><span class="nav-number">1.5.</span> <span class="nav-text">多项式的余数和商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的对数函数与指数函数"><span class="nav-number">1.6.</span> <span class="nav-text">多项式的对数函数与指数函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式的对数一般求法"><span class="nav-number">1.6.1.</span> <span class="nav-text">多项式的对数一般求法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#麦克劳林级数"><span class="nav-number">1.6.2.</span> <span class="nav-text">麦克劳林级数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接展开法"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">直接展开法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间接展开法"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">间接展开法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的多点求值和插值"><span class="nav-number">1.7.</span> <span class="nav-text">多项式的多点求值和插值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日插值"><span class="nav-number">2.</span> <span class="nav-text">拉格朗日插值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速傅里叶变换-FFT"><span class="nav-number">3.</span> <span class="nav-text">快速傅里叶变换(FFT)</span></a></li></ol></div>
             
 
           </div>

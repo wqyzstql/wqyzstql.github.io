@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="XiShui&#39;s Blog">
 <meta property="og:description" content="开始跳楼了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-03T03:27:12.509Z">
+<meta property="og:updated_time" content="2020-11-03T05:15:27.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多项式学习笔记">
 <meta name="twitter:description" content="开始跳楼了">
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">7.4k</span>
+                <span title="字数统计">9.2k</span>
               
 
               
@@ -486,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 mins.</span>
+                <span title="阅读时长">8 mins.</span>
               
             </div>
           
@@ -572,7 +572,19 @@ f(0)+\frac{f^{\prime}(0)}{1 !} x+\frac{f^{\prime \prime}(0)}{2 !} x^{2}+\ldots+\
 f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{n}\right)</script><p>多项式的插值 $(Interpolation)$ 即给出 $n+1$ 个点</p>
 <script type="math/tex; mode=display">
 \{\left(x_{0}, y_{0}\right),\left(x_{1}, y_{1}\right), \ldots,\left(x_{n}, y_{n}\right)\}</script><p>求一个 $n$ 次多项式 $f(x)$ 使得这 $n+1$ 个点都在 $f(x)$ 上。<br>这两种操作的实质就是将多项式在 系数表示 和 点值表示间转化。</p>
-<h1 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h1><h1 id="快速傅里叶变换-FFT"><a href="#快速傅里叶变换-FFT" class="headerlink" title="快速傅里叶变换(FFT)"></a>快速傅里叶变换(FFT)</h1><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+<h1 id="拉格朗日插值"><a href="#拉格朗日插值" class="headerlink" title="拉格朗日插值"></a>拉格朗日插值</h1><p><a href="https://www.luogu.com.cn/problem/P4781" target="_blank" rel="noopener">这里是题目传送门</a>  </p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出$n$个点$P(x_i,y_i)$,将过这$n$个点的最多$n-1$次多项式记为$f(x)$,求$f(k)$的值.  </p>
+<h2 id="方法1-差分法-差分牛顿插值法"><a href="#方法1-差分法-差分牛顿插值法" class="headerlink" title="方法1:差分法(差分牛顿插值法)"></a>方法1:差分法(差分牛顿插值法)</h2><p>差分牛顿插值法要求是等距的。<br>先来三个概念  </p>
+<script type="math/tex; mode=display">f在x_i的一阶前向差分 \ \Delta f_i=f_{i+1}-f_i</script><script type="math/tex; mode=display">f在x_i的一阶后向差分 \ \nabla f_{i}=f_{i}-f_{i-1}</script><script type="math/tex; mode=display">f在x_i的一阶中心差分 \ \delta f_i=f_{i+\frac{1}{2}}-f_{i-\frac{1}{2}}</script><p>差分分为向前丶向后丶中心差分,记为:  </p>
+<script type="math/tex; mode=display">向前差分:\Delta^nf(x_i)=\Delta^{n-1}f(x_{i+1})-\Delta^{n-1}f(x_{i})</script><script type="math/tex; mode=display">后向差分:\nabla^nf(x_i)=\nabla^{n-1}f(x_i)-\nabla^{n-1}f(x_{i-1})</script><script type="math/tex; mode=display">中心差分:\delta^nf(n_i)=\delta^{n-1}f(x_{i+\frac{1}{2}})-\delta^{n-1}f(x-f_{i-\frac{1}{2}})</script><p>差商的定义：<br>函数$f(x)$在两个互异点$x_i,x_j$处的一阶差商定义为：</p>
+<script type="math/tex; mode=display">
+f\left[x_{i}, x_{j}\right]=\frac{f\left(x_{i}\right)-f\left(x_{j}\right)}{x_{i}-x_{j}}\left(i \neq j, x_{i} \neq x_{j}\right)</script><p>二阶差商:  </p>
+<script type="math/tex; mode=display">
+f\left[x_{i}, x_{j}, x_{k}\right]=\frac{f\left[x_{i}, x_{j}\right]-f\left[x_{j}, x_{k}\right]}{x_{i}-x_{k}}(i \neq k)</script><p>$k+1$阶差商:  </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+f\left[x_{0}, \ldots, x_{k+1}\right]=\frac{f\left[x_{0}, x_{1}, \ldots x_{k}\right]-f\left[x_{1}, \ldots, x_{k}, x_{k+1}\right]}{x_{0}-x_{k+1}}=\frac{f\left[x_{0}, \ldots, x_{k-1}, x_{k}\right]-f\left[x_{0}, \ldots, x_{k-1}, x_{k+1}\right]}{x_{k}-x_{k+1}}
+\end{aligned}</script><h1 id="快速傅里叶变换-FFT"><a href="#快速傅里叶变换-FFT" class="headerlink" title="快速傅里叶变换(FFT)"></a>快速傅里叶变换(FFT)</h1><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -594,7 +606,7 @@ f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{n}\right)</script><p
   <p><span>本文标题:</span><a href="/2020/11/02/多项式学习笔记/">多项式学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 兮水XiShui丶 的个人博客">兮水XiShui丶</a></p>
   <p><span>发布时间:</span>2020年11月02日 - 16:11</p>
-  <p><span>最后更新:</span>2020年11月03日 - 11:11</p>
+  <p><span>最后更新:</span>2020年11月03日 - 13:11</p>
   <p><span>原始链接:</span><a href="/2020/11/02/多项式学习笔记/" title="多项式学习笔记">http://krrrr.top/2020/11/02/多项式学习笔记/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.top/2020/11/02/多项式学习笔记/" aria-label="复制成功！"></i></span>
   </p>
@@ -940,7 +952,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式部分简介"><span class="nav-number">1.</span> <span class="nav-text">多项式部分简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义简介"><span class="nav-number">1.1.</span> <span class="nav-text">定义简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的表示"><span class="nav-number">1.2.</span> <span class="nav-text">多项式的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的乘法"><span class="nav-number">1.3.</span> <span class="nav-text">多项式的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的逆元"><span class="nav-number">1.4.</span> <span class="nav-text">多项式的逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的余数和商"><span class="nav-number">1.5.</span> <span class="nav-text">多项式的余数和商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的对数函数与指数函数"><span class="nav-number">1.6.</span> <span class="nav-text">多项式的对数函数与指数函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式的对数一般求法"><span class="nav-number">1.6.1.</span> <span class="nav-text">多项式的对数一般求法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#麦克劳林级数"><span class="nav-number">1.6.2.</span> <span class="nav-text">麦克劳林级数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接展开法"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">直接展开法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间接展开法"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">间接展开法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的多点求值和插值"><span class="nav-number">1.7.</span> <span class="nav-text">多项式的多点求值和插值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日插值"><span class="nav-number">2.</span> <span class="nav-text">拉格朗日插值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速傅里叶变换-FFT"><span class="nav-number">3.</span> <span class="nav-text">快速傅里叶变换(FFT)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#多项式部分简介"><span class="nav-number">1.</span> <span class="nav-text">多项式部分简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义简介"><span class="nav-number">1.1.</span> <span class="nav-text">定义简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的表示"><span class="nav-number">1.2.</span> <span class="nav-text">多项式的表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的乘法"><span class="nav-number">1.3.</span> <span class="nav-text">多项式的乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的逆元"><span class="nav-number">1.4.</span> <span class="nav-text">多项式的逆元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的余数和商"><span class="nav-number">1.5.</span> <span class="nav-text">多项式的余数和商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的对数函数与指数函数"><span class="nav-number">1.6.</span> <span class="nav-text">多项式的对数函数与指数函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多项式的对数一般求法"><span class="nav-number">1.6.1.</span> <span class="nav-text">多项式的对数一般求法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#麦克劳林级数"><span class="nav-number">1.6.2.</span> <span class="nav-text">麦克劳林级数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接展开法"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">直接展开法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#间接展开法"><span class="nav-number">1.6.2.2.</span> <span class="nav-text">间接展开法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多项式的多点求值和插值"><span class="nav-number">1.7.</span> <span class="nav-text">多项式的多点求值和插值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉格朗日插值"><span class="nav-number">2.</span> <span class="nav-text">拉格朗日插值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">2.1.</span> <span class="nav-text">题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法1-差分法-差分牛顿插值法"><span class="nav-number">2.2.</span> <span class="nav-text">方法1:差分法(差分牛顿插值法)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速傅里叶变换-FFT"><span class="nav-number">3.</span> <span class="nav-text">快速傅里叶变换(FFT)</span></a></li></ol></div>
             
 
           </div>

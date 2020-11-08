@@ -162,7 +162,7 @@
 <meta property="og:site_name" content="XiShui&#39;s Blog">
 <meta property="og:description" content="开始跳楼了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-03T05:15:27.897Z">
+<meta property="og:updated_time" content="2020-11-08T06:50:50.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多项式学习笔记">
 <meta name="twitter:description" content="开始跳楼了">
@@ -219,9 +219,9 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -472,7 +472,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">9.2k</span>
+                <span title="字数统计">12k</span>
               
 
               
@@ -486,7 +486,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 mins.</span>
+                <span title="阅读时长">11 mins.</span>
               
             </div>
           
@@ -576,15 +576,36 @@ f\left(x_{1}\right), f\left(x_{2}\right), \ldots, f\left(x_{n}\right)</script><p
 <h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>给出$n$个点$P(x_i,y_i)$,将过这$n$个点的最多$n-1$次多项式记为$f(x)$,求$f(k)$的值.  </p>
 <h2 id="方法1-差分法-差分牛顿插值法"><a href="#方法1-差分法-差分牛顿插值法" class="headerlink" title="方法1:差分法(差分牛顿插值法)"></a>方法1:差分法(差分牛顿插值法)</h2><p>差分牛顿插值法要求是等距的。<br>先来三个概念  </p>
 <script type="math/tex; mode=display">f在x_i的一阶前向差分 \ \Delta f_i=f_{i+1}-f_i</script><script type="math/tex; mode=display">f在x_i的一阶后向差分 \ \nabla f_{i}=f_{i}-f_{i-1}</script><script type="math/tex; mode=display">f在x_i的一阶中心差分 \ \delta f_i=f_{i+\frac{1}{2}}-f_{i-\frac{1}{2}}</script><p>差分分为向前丶向后丶中心差分,记为:  </p>
-<script type="math/tex; mode=display">向前差分:\Delta^nf(x_i)=\Delta^{n-1}f(x_{i+1})-\Delta^{n-1}f(x_{i})</script><script type="math/tex; mode=display">后向差分:\nabla^nf(x_i)=\nabla^{n-1}f(x_i)-\nabla^{n-1}f(x_{i-1})</script><script type="math/tex; mode=display">中心差分:\delta^nf(n_i)=\delta^{n-1}f(x_{i+\frac{1}{2}})-\delta^{n-1}f(x-f_{i-\frac{1}{2}})</script><p>差商的定义：<br>函数$f(x)$在两个互异点$x_i,x_j$处的一阶差商定义为：</p>
+<script type="math/tex; mode=display">向前差分:\Delta^nf(x_i)=\Delta^{n-1}f(x_{i+1})-\Delta^{n-1}f(x_{i})</script><script type="math/tex; mode=display">后向差分:\nabla^nf(x_i)=\nabla^{n-1}f(x_i)-\nabla^{n-1}f(x_{i-1})</script><script type="math/tex; mode=display">中心差分:\delta^nf(n_i)=\delta^{n-1}f(x_{i+\frac{1}{2}})-\delta^{n-1}f(x-f_{i-\frac{1}{2}})</script><ol>
+<li><p>差商的定义：<br>函数$f(x)$在两个互异点$x_i,x_j$处的一阶差商定义为：</p>
 <script type="math/tex; mode=display">
 f\left[x_{i}, x_{j}\right]=\frac{f\left(x_{i}\right)-f\left(x_{j}\right)}{x_{i}-x_{j}}\left(i \neq j, x_{i} \neq x_{j}\right)</script><p>二阶差商:  </p>
 <script type="math/tex; mode=display">
-f\left[x_{i}, x_{j}, x_{k}\right]=\frac{f\left[x_{i}, x_{j}\right]-f\left[x_{j}, x_{k}\right]}{x_{i}-x_{k}}(i \neq k)</script><p>$k+1$阶差商:  </p>
+f\left[x_{i}, x_{j}, x_{k}\right]=\frac{f\left[x_{i}, x_{j}\right]-f\left[x_{j}, x_{k}\right]}{x_{i}-x_{k}}(i \neq k)</script></li>
+</ol>
+<p>   $k+1$阶差商:  </p>
 <script type="math/tex; mode=display">
-\begin{aligned}
-f\left[x_{0}, \ldots, x_{k+1}\right]=\frac{f\left[x_{0}, x_{1}, \ldots x_{k}\right]-f\left[x_{1}, \ldots, x_{k}, x_{k+1}\right]}{x_{0}-x_{k+1}}=\frac{f\left[x_{0}, \ldots, x_{k-1}, x_{k}\right]-f\left[x_{0}, \ldots, x_{k-1}, x_{k+1}\right]}{x_{k}-x_{k+1}}
-\end{aligned}</script><h1 id="快速傅里叶变换-FFT"><a href="#快速傅里叶变换-FFT" class="headerlink" title="快速傅里叶变换(FFT)"></a>快速傅里叶变换(FFT)</h1><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
+   \begin{aligned}
+   f\left[x_{0}, \ldots, x_{k+1}\right]=\frac{f\left[x_{0}, x_{1}, \ldots x_{k}\right]-f\left[x_{1}, \ldots, x_{k}, x_{k+1}\right]}{x_{0}-x_{k+1}}=\frac{f\left[x_{0}, \ldots, x_{k-1}, x_{k}\right]-f\left[x_{0}, \ldots, x_{k-1}, x_{k+1}\right]}{x_{k}-x_{k+1}}
+   \end{aligned}</script><ol>
+<li><p>差商的性质  </p>
+<p>(<a href="https://blog.csdn.net/littlely_ll/article/details/71107092" target="_blank" rel="noopener">参考连接</a>)  </p>
+<ol>
+<li>$k$阶差商可以表示为函数值$f(x_0),f(x_1),\dots,f(x_k)$的线性组合,即  <script type="math/tex; mode=display">
+f[x_0,x_1,\dots,x_k]=\sum_{j=0}^{k} \frac{f\left(x_{j}\right)}{\prod_{i=0,i\not ={j}}^{k}\left(x_{j}-x_{i}\right)}</script>差商具有对称性,即差商与节点的排列顺序无关.  </li>
+<li><p>若函数$f(x)$在包含节点区间$[a,b]$上存在$k$ 阶导数,则$k$阶差商与导数的关系为  </p>
+<script type="math/tex; mode=display">
+f[x_0,x_1,\dots,x_k]=\frac{f^{(k)}(\xi)}{k!},\xi \in [a,b]</script><p>即$k$次多项式的$k$阶差商为常数,低于$k$次多项式的差商为$0$(推了一会柿子之后发现对于多项式$A(x)=a_0+a_1x^1+\dots+a_kx^k$,他的$k$阶差商就是$a_k$)  </p>
+</li>
+</ol>
+</li>
+<li><p>牛顿插值多项式  </p>
+<ol>
+<li>牛顿插值多项式的推导  <script type="math/tex; mode=display">f[x,x_0]=\frac{f(x)-f(x_0)}{x-x_0}\Rightarrow f(x)=f\left(x_{0}\right)+f\left[x, x_{0}\right]\left(x-x_{0}\right) \ (a)</script><script type="math/tex; mode=display">f[x,x_0,x_1]=\frac{f[x,x_0]-f[x_0,x_1]}{x-x_1}\Rightarrow f[x,x_0]=f[x_0,x_1]+f[x,x_0,x_1](x-x_1) \ (b)</script><script type="math/tex; mode=display">f[x,x_0,x_1,x_2] = \frac{f[x,x_0,x_1]-f[x_0,x_1,x_2]}{x-x_2}\Rightarrow f[x,x_0,x_1]=f[x_0,x_1,x_2]+f[x,x_0,x_1,x_2](x-x_2) \ (c)</script><script type="math/tex; mode=display">\dots</script><script type="math/tex; mode=display">f[x,x_0,\dots,x_n]=\frac{f[x,x_0,\dots,x_{n-1}]-f[x_0,x_1,\dots,x_n]}{x-x_n}\Rightarrow f[x,x_0,\dots,x_{n-1}]=f[x_0,x_1,\dots,x_n]+f[x,x_0,x_1,\dots,x_n](x-x_n) \ (d)</script>然后我们由$a,b,c,d$柿子可以得到  <script type="math/tex; mode=display">f(x)=f\left(x_{0}\right)+f\left[x, x_{0}\right]\left(x-x_{0}\right)</script><script type="math/tex; mode=display">f[x,x_0]=f[x_0,x_1]+f[x,x_0,x_1](x-x_1)</script><script type="math/tex; mode=display">f[x,x_0,x_1]=f[x_0,x_1,x_2]+f[x,x_0,x_1,x_2](x-x_2)</script><script type="math/tex; mode=display">\dots</script><script type="math/tex; mode=display">f[x,x_0,\dots,x_{n-1}]=f[x_0,x_1,\dots,x_n]+f[x,x_0,x_1,\dots,x_n](x-x_n)</script>我们从上到下把柿子分别标为$(1),(2),\dots,(n)$柿,然后我们发现  <script type="math/tex; mode=display">(1)+(x-x_0) \times (2) +(x-x_0) \times (x-x_1) \times ( 3 ) + \dots + (x-x_0)\times \dots \times (x-x_{n-1}) \times (n + 1)</script><script type="math/tex; mode=display">\Rightarrow f(x)=f(x_0)+f[x_0,x_1](x-x_0)+f[x_0,x_1,x_2](x-x_0)(x-x_1)+\dots+f[x_0,\dots,x_n](x-x_0)\dots(x-x_{n-1})</script><script type="math/tex; mode=display">+f\left[x, x_{0}, \ldots, x_{n}\right]\left(x-x_{0}\right) \ldots\left(x-x_{n-1}\right)\left(x-x_{n}\right)</script></li>
+</ol>
+</li>
+</ol>
+<h1 id="快速傅里叶变换-FFT"><a href="#快速傅里叶变换-FFT" class="headerlink" title="快速傅里叶变换(FFT)"></a>快速傅里叶变换(FFT)</h1><blockquote class="blockquote-center">因为知道了自己是多么的菜,所以才要更加努力去追求那个永远也不可能实现的梦想</blockquote>
 
       
     </div>
@@ -606,7 +627,7 @@ f\left[x_{0}, \ldots, x_{k+1}\right]=\frac{f\left[x_{0}, x_{1}, \ldots x_{k}\rig
   <p><span>本文标题:</span><a href="/2020/11/02/多项式学习笔记/">多项式学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 兮水XiShui丶 的个人博客">兮水XiShui丶</a></p>
   <p><span>发布时间:</span>2020年11月02日 - 16:11</p>
-  <p><span>最后更新:</span>2020年11月03日 - 13:11</p>
+  <p><span>最后更新:</span>2020年11月08日 - 14:11</p>
   <p><span>原始链接:</span><a href="/2020/11/02/多项式学习笔记/" title="多项式学习笔记">http://krrrr.top/2020/11/02/多项式学习笔记/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://krrrr.top/2020/11/02/多项式学习笔记/" aria-label="复制成功！"></i></span>
   </p>
